@@ -4,7 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="China sourcing, payment, inspection, consolidation and cross-border logistics to Russia, Belarus, Kazakhstan and Kyrgyzstan.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <title>LiHui International Logistics - China Sourcing & Delivery</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "LiHui International Logistics",
+  "url": "https://lihui-cargo.ru/",
+  "contactPoint": [
+    {"@type": "ContactPoint", "contactType": "customer service", "telephone": "+8615604658910"},
+    {"@type": "ContactPoint", "contactType": "sales", "url": "https://t.me/Lihui9559"}
+  ],
+  "sameAs": ["https://t.me/Lihui9559", "https://wa.me/8615604658910"]
+}
+</script>
 <style>
   :root {
     --navy: #0b2c47;
@@ -229,6 +243,16 @@
   .ceo-card h4 { color: var(--navy); font-size: 17px; }
   .ceo-card p { color: var(--muted); font-size: 13px; margin-top: 5px; }
   .ceo-card .btn { margin-top: 10px; }
+
+  .faq { display: grid; gap: 12px; max-width: 900px; }
+  details.faq-item { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: border-color .2s ease, box-shadow .2s ease; }
+  details.faq-item[open] { border-color: #a8c7db; box-shadow: 0 8px 20px rgba(17,67,97,.08); }
+  details.faq-item summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 20px; cursor: pointer; color: var(--navy); font-size: 16px; font-weight: 850; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item summary::after { content: "+"; color: var(--blue); font-size: 24px; font-weight: 800; line-height: 1; transition: transform .2s ease; }
+  details.faq-item[open] summary::after { transform: rotate(45deg); }
+  details.faq-item .faq-body { padding: 0 20px 18px; color: var(--muted); font-size: 14px; }
+  .faq-section-title { font-size: 22px; color: var(--navy); font-weight: 900; margin-bottom: 22px; }
 
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
   .reveal.in { opacity: 1; transform: translateY(0); }
@@ -571,8 +595,8 @@
               <p data-i18n="form_desc">填写后会自动打开 Telegram，把您的需求发给创始人。</p>
               <form id="requestForm">
                 <div class="form-row">
-                  <label data-i18n="form_name">您的名字<input type="text" id="name" autocomplete="name" placeholder="Name"></label>
-                  <label data-i18n="form_interest">您需要什么服务？
+                  <label><span data-i18n="form_name">您的名字</span><input type="text" id="name" autocomplete="name" data-i18n-placeholder="ph_name" placeholder="您的名字"></label>
+                  <label><span data-i18n="form_interest">您需要什么服务？</span>
                     <select id="service">
                       <option data-i18n="opt_delivery">跨境运输</option>
                       <option data-i18n="opt_purchase">平台代购</option>
@@ -582,11 +606,19 @@
                     </select>
                   </label>
                 </div>
-                <label data-i18n="form_msg">商品链接或货物描述<textarea id="message" placeholder="商品链接、重量、体积、目的城市"></textarea></label>
+                <label><span data-i18n="form_msg">商品链接或货物描述</span><textarea id="message" data-i18n-placeholder="ph_msg" placeholder="商品链接、重量、体积、目的城市"></textarea></label>
                 <label class="consent"><input type="checkbox" id="agree" checked><span data-i18n="form_consent">提交即表示同意我们为此询价使用您的联系方式。</span></label>
                 <button class="btn primary form-submit" type="submit" data-i18n="form_btn">发送到 Telegram</button>
               </form>
             </div>
+          </div>
+
+          <div class="faq-section-title reveal" data-i18n="faq_title">常见问题</div>
+          <div class="faq reveal">
+            <details class="faq-item"><summary data-i18n="faq_1_q">报价需要提供什么信息？</summary><div class="faq-body" data-i18n="faq_1_a">商品链接或照片、数量、预计重量和体积、目的城市。信息越完整，报价越快越准。</div></details>
+            <details class="faq-item"><summary data-i18n="faq_2_q">可以一次买多个店铺的商品吗？</summary><div class="faq-body" data-i18n="faq_2_a">可以。不同店铺和供应商的货会先送到我们的仓库，验货后合并打包，再统一发出，能节省运费。</div></details>
+            <details class="faq-item"><summary data-i18n="faq_3_q">价格和时效什么时候确认？</summary><div class="faq-body" data-i18n="faq_3_a">采购前会确认货价和服务费；发货前会确认实际重量、体积、路线和最终运费，不会在过程中临时加价。</div></details>
+            <details class="faq-item"><summary data-i18n="faq_4_q">支持俄罗斯以外的地方吗？</summary><div class="faq-body" data-i18n="faq_4_a">支持。白俄罗斯、哈萨克斯坦和吉尔吉斯斯坦都有稳定路线，可承接个人件、散货和整柜。</div></details>
           </div>
 
           <div class="ceo-card reveal">
@@ -659,6 +691,12 @@ const I18N = {
     contact_direct_title: "直接联系创始人", contact_direct_desc: "Telegram、WhatsApp 均可直接沟通，工作日通常很快回复。", qr_title: "扫码添加", qr_telegram: "Telegram", qr_whatsapp: "WhatsApp",
     form_title: "提交询价", form_desc: "填写后会自动打开 Telegram，把您的需求发给创始人。", form_name: "您的名字", form_interest: "您需要什么服务？", opt_delivery: "跨境运输", opt_purchase: "平台代购", opt_factory: "工厂定制", opt_payment: "代付货款", opt_other: "其他", form_msg: "商品链接或货物描述", form_consent: "提交即表示同意我们为此询价使用您的联系方式。", form_btn: "发送到 Telegram",
     ceo_name: "李辉 · 创始人", ceo_desc: "负责采购、运输和客户服务的直接对接人。重要问题不需要经过客服转达。",
+    faq_title: "常见问题",
+    faq_1_q: "报价需要提供什么信息？", faq_1_a: "商品链接或照片、数量、预计重量和体积、目的城市。信息越完整，报价越快越准。",
+    faq_2_q: "可以一次买多个店铺的商品吗？", faq_2_a: "可以。不同店铺和供应商的货会先送到我们的仓库，验货后合并打包，再统一发出，能节省运费。",
+    faq_3_q: "价格和时效什么时候确认？", faq_3_a: "采购前会确认货价和服务费；发货前会确认实际重量、体积、路线和最终运费，不会在过程中临时加价。",
+    faq_4_q: "支持俄罗斯以外的地方吗？", faq_4_a: "支持。白俄罗斯、哈萨克斯坦和吉尔吉斯斯坦都有稳定路线，可承接个人件、散货和整柜。",
+    ph_name: "您的名字", ph_msg: "商品链接、重量、体积、目的城市",
     footer_desc: "连接中国供应链与俄罗斯、白俄罗斯、哈萨克斯坦和吉尔吉斯斯坦市场的一站式跨境物流服务。", footer_nav: "导航", footer_markets: "目的地", footer_contact: "联系方式", copyright: "© 2026 LiHui International Logistics · 保留所有权利", footer_note: "本站为信息展示网站，具体报价以沟通确认为准。"
   },
   en: {
@@ -705,6 +743,12 @@ const I18N = {
     contact_direct_title: "Contact the founder directly", contact_direct_desc: "Available on Telegram and WhatsApp, usually with fast replies on working days.", qr_title: "Scan to add", qr_telegram: "Telegram", qr_whatsapp: "WhatsApp",
     form_title: "Submit an inquiry", form_desc: "This will open Telegram with your inquiry sent to the founder.", form_name: "Your name", form_interest: "What do you need?", opt_delivery: "Cross-border delivery", opt_purchase: "Marketplace buying", opt_factory: "Factory customization", opt_payment: "Payment support", opt_other: "Other", form_msg: "Product link or cargo description", form_consent: "By submitting, you agree that we may use your contact details for this inquiry.", form_btn: "Send to Telegram",
     ceo_name: "LiHui · Founder", ceo_desc: "Direct contact for sourcing, shipping and customer service. No support desk in between.",
+    faq_title: "Frequently asked questions",
+    faq_1_q: "What information is needed for a quote?", faq_1_a: "Product link or photos, quantity, estimated weight and volume, and destination city. The more complete the details, the faster and more accurate the quote.",
+    faq_2_q: "Can I order from several stores at once?", faq_2_a: "Yes. Goods from different stores are delivered to our warehouse, inspected, consolidated and shipped together to save freight.",
+    faq_3_q: "When are price and delivery time confirmed?", faq_3_a: "Product and service fees are confirmed before purchase. Actual weight, volume, route and final freight are confirmed before shipment, with no hidden increases.",
+    faq_4_q: "Do you deliver outside Russia?", faq_4_a: "Yes. We have stable routes to Belarus, Kazakhstan and Kyrgyzstan for personal parcels, LCL and full containers.",
+    ph_name: "Your name", ph_msg: "Product link, weight, volume, destination city",
     footer_desc: "One-stop cross-border logistics connecting China with Russia, Belarus, Kazakhstan and Kyrgyzstan.", footer_nav: "Navigation", footer_markets: "Destinations", footer_contact: "Contact", copyright: "© 2026 LiHui International Logistics · All rights reserved", footer_note: "This is an information website. Final quotes are confirmed during communication."
   },
   ru: {
@@ -751,6 +795,12 @@ const I18N = {
     contact_direct_title: "Прямой контакт с руководителем", contact_direct_desc: "Telegram и WhatsApp, быстрые ответы в рабочие дни.", qr_title: "Сканируйте QR", qr_telegram: "Telegram", qr_whatsapp: "WhatsApp",
     form_title: "Оставить заявку", form_desc: "После отправки откроется Telegram с готовым сообщением руководителю.", form_name: "Ваше имя", form_interest: "Что вам нужно?", opt_delivery: "Доставка из Китая", opt_purchase: "Закупка на площадках", opt_factory: "Кастомизация", opt_payment: "Оплата в юанях", opt_other: "Другое", form_msg: "Ссылка или описание груза", form_consent: "Отправляя заявку, вы соглашаетесь на обработку данных для связи.", form_btn: "Отправить в Telegram",
     ceo_name: "Лихуэй · Руководитель", ceo_desc: "Прямой контакт по закупке, доставке и сервису. Без посредников и колл-центра.",
+    faq_title: "Частые вопросы",
+    faq_1_q: "Какая информация нужна для расчёта?", faq_1_a: "Ссылка или фото товара, количество, примерный вес и объём, город назначения. Чем больше данных, тем быстрее расчёт.",
+    faq_2_q: "Можно ли заказать товары из разных магазинов?", faq_2_a: "Да. Грузы приходят на наш склад, проверяются, объединяются и отправляются одной партией, чтобы сэкономить на доставке.",
+    faq_3_q: "Когда подтверждаются цена и срок?", faq_3_a: "Стоимость товара и услуги подтверждается до закупки. Вес, объём, маршрут и итоговую доставку подтверждаем перед отправкой без скрытых доплат.",
+    faq_4_q: "Доставляете ли вы за пределы России?", faq_4_a: "Да. Есть стабильные маршруты в Беларусь, Казахстан и Кыргызстан для личных, сборных и контейнерных грузов.",
+    ph_name: "Ваше имя", ph_msg: "Ссылка, вес, объём, город назначения",
     footer_desc: "Один сервис между Китаем и рынками России, Беларуси, Казахстана и Кыргызстана.", footer_nav: "Разделы", footer_markets: "Направления", footer_contact: "Контакты", copyright: "© 2026 LiHui International Logistics · Все права защищены", footer_note: "Информационный сайт. Точный расчёт подтверждается при общении."
   }
 };
@@ -760,6 +810,11 @@ const navLinks = document.querySelectorAll('.main-nav a');
 const pages = document.querySelectorAll('.page');
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.getElementById('mainNav');
+const PAGE_TITLES = {
+  zh: { home: "国际物流 - 中国采购与跨境配送", services: "跨境物流服务 - 国际物流", contact: "联系报价 - 国际物流" },
+  en: { home: "International Logistics - China Sourcing & Delivery", services: "Cross-border Services - International Logistics", contact: "Contact & Quote - International Logistics" },
+  ru: { home: "Международная логистика - Закупка и доставка из Китая", services: "Услуги - Международная логистика", contact: "Контакты - Международная логистика" }
+};
 
 function applyLang(lang) {
   localStorage.setItem('lh-lang', lang);
@@ -768,22 +823,30 @@ function applyLang(lang) {
     const key = el.dataset.i18n;
     if (I18N[lang] && I18N[lang][key] != null) el.textContent = I18N[lang][key];
   });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (I18N[lang] && I18N[lang][key] != null) el.placeholder = I18N[lang][key];
+  });
   document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-  document.title = lang === 'zh' ? '国际物流 - 中国采购与跨境配送'
-    : lang === 'en' ? 'LiHui International Logistics - China Sourcing & Delivery'
-    : 'Международная логистика - Закупка и доставка из Китая';
+  setPageTitle();
 }
 
 function route(page) {
   pages.forEach(p => p.classList.toggle('active', p.dataset.page === page));
   navLinks.forEach(a => a.classList.toggle('active', a.dataset.page === page));
   mainNav.classList.remove('open');
+  setPageTitle();
   window.scrollTo({ top: 0, behavior: 'auto' });
 }
 
 function currentPage() {
   const h = location.hash.replace('#', '') || 'home';
   return ['home', 'services', 'contact'].includes(h) ? h : 'home';
+}
+
+function setPageTitle() {
+  const page = currentPage();
+  document.title = PAGE_TITLES[root.lang][page];
 }
 
 navLinks.forEach(a => a.addEventListener('click', () => route(a.dataset.page)));
