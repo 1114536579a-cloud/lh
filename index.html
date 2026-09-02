@@ -165,6 +165,17 @@
   .route-visual .city { position: absolute; display: grid; gap: 2px; font-size: 13px; font-weight: 850; color: var(--navy); }
   .route-visual .city b { color: var(--blue); }
 
+  .coverage-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+  .coverage-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; transition: transform .22s ease, box-shadow .22s ease; }
+  .coverage-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .coverage-card .pin { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #eaf4fc; color: var(--blue); font-weight: 900; margin-bottom: 14px; }
+  .coverage-card h3 { color: var(--navy); font-size: 19px; margin-bottom: 4px; }
+  .coverage-card > span { color: var(--muted); font-size: 12px; display: block; margin-bottom: 14px; }
+  .coverage-card ul { display: grid; gap: 8px; }
+  .coverage-card li { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 12px; border-top: 1px dashed var(--line); padding-top: 7px; }
+  .coverage-card li b { color: var(--blue); font-weight: 850; white-space: nowrap; }
+  .coverage-card.min .pin { background: #fff0e3; color: #cc5c1c; }
+
   .page-hero { background: linear-gradient(110deg, #0a66c2, #0b8d83); color: #fff; padding: 74px 0; position: relative; overflow: hidden; }
   .page-hero::after { content: ""; position: absolute; inset: auto -40px -120px auto; width: 320px; height: 320px; border: 2px dashed rgba(255,255,255,.2); border-radius: 50%; animation: orbit 12s linear infinite; }
   @keyframes orbit { to { transform: rotate(360deg); } }
@@ -181,6 +192,13 @@
   .service-card ul { margin-top: 14px; display: grid; gap: 7px; }
   .service-card li { position: relative; padding-left: 17px; color: #47677b; font-size: 13px; }
   .service-card li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+
+  .audience-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .audience-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; min-height: 180px; transition: transform .22s ease, box-shadow .22s ease; }
+  .audience-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .audience-card .audience-no { color: #aec7d6; font-size: 13px; font-weight: 900; letter-spacing: .08em; }
+  .audience-card h3 { color: var(--navy); font-size: 18px; margin: 14px 0 8px; }
+  .audience-card p { color: var(--muted); font-size: 13px; }
 
   .process { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; position: relative; }
   .step { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 18px; min-height: 190px; position: relative; transition: transform .22s ease; }
@@ -286,6 +304,8 @@
     .main-nav { gap: 16px; }
     .brand-name small { display: none; }
     .feature-grid, .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .coverage-grid { grid-template-columns: repeat(3, 1fr); }
+    .audience-grid { grid-template-columns: repeat(2, 1fr); }
     .process { grid-template-columns: repeat(3, 1fr); }
     .market-grid { grid-template-columns: repeat(2, 1fr); }
     .contact-layout { grid-template-columns: 1fr; }
@@ -312,6 +332,8 @@
     .topbar .container { flex-wrap: wrap; gap: 4px 12px; }
     .topbar .contacts { flex-wrap: wrap; justify-content: center; gap: 4px 12px; font-size: 11px; }
     .feature-grid, .service-grid, .mode-grid, .qr-methods, .market-grid { grid-template-columns: 1fr; }
+    .coverage-grid { grid-template-columns: 1fr; }
+    .audience-grid { grid-template-columns: 1fr; }
     .process { grid-template-columns: 1fr 1fr; }
     .hero h1 { font-size: clamp(34px, 10vw, 48px); }
     .hero-lead { font-size: 16px; }
@@ -480,14 +502,33 @@
                 <path d="M80 390 C220 330 340 330 500 90" fill="none" stroke="#b9d9ec" stroke-width="26" stroke-linecap="round"/>
                 <path class="route-path" d="M80 390 C220 330 340 330 500 90" fill="none" stroke="#0a66c2" stroke-width="6" stroke-linecap="round"/>
                 <path d="M500 90 l-16 3 12 11z" fill="#ef742f"/>
+                <path d="M92 372 C160 300 210 245 308 184" fill="none" stroke="#9fd3ea" stroke-width="10" stroke-linecap="round" opacity=".75"/>
+                <path d="M92 372 C160 300 210 245 308 184" fill="none" stroke="#0b8d83" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 9" opacity=".9"/>
                 <circle class="route-dot" r="9" fill="#ef742f">
                   <animateMotion dur="5s" repeatCount="indefinite" path="M80 390 C220 330 340 330 500 90"/>
                 </circle>
               </svg>
               <div class="city" style="left:10%;top:76%"><b data-i18n="city_china">中国 · 义乌 / 广州</b><span data-i18n="city_china_sub">采购 · 验货 · 仓库</span></div>
               <div class="city" style="left:62%;top:30%"><b data-i18n="city_moscow">莫斯科</b><span data-i18n="city_moscow_sub">空运 2-4 天</span></div>
+              <div class="city" style="left:33%;top:22%"><b data-i18n="city_minsk">明斯克</b><span data-i18n="city_minsk_sub">直发 · 按路线报价</span></div>
               <div class="city" style="right:12%;top:78%"><b data-i18n="city_asia">阿拉木图 / 比什凯克</b><span data-i18n="city_asia_sub">陆运 · 空运</span></div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><p class="eyebrow" data-i18n="coverage_eyebrow">目的地覆盖</p><h2 data-i18n="coverage_title">重点城市与参考时效</h2></div>
+            <p class="lead" data-i18n="coverage_lead">以实际货物重量、体积和品类为准，我们会给出准确路线与最终时效。</p>
+          </div>
+          <div class="coverage-grid">
+            <article class="coverage-card reveal"><div class="pin">RU</div><h3 data-i18n="city_moscow">莫斯科</h3><span data-i18n="country_ru">俄罗斯</span><ul><li><span data-i18n="coverage_moscow_air_label">空运</span><b>2-4 天</b></li><li><span data-i18n="coverage_moscow_ground_label">陆运</span><b>12-15 天</b></li></ul></article>
+            <article class="coverage-card reveal"><div class="pin">RU</div><h3 data-i18n="city_nsk">新西伯利亚</h3><span data-i18n="country_ru">俄罗斯</span><ul><li><span data-i18n="coverage_nsk_air_label">空运</span><b>4-6 天</b></li><li><span data-i18n="coverage_nsk_ground_label">陆运</span><b data-i18n="coverage_by_request">按需求</b></li></ul></article>
+            <article class="coverage-card min reveal"><div class="pin">BY</div><h3 data-i18n="city_minsk">明斯克</h3><span data-i18n="country_by">白俄罗斯</span><ul><li><span data-i18n="coverage_minsk_air_label">空运 / 陆运</span><b data-i18n="coverage_minsk_time">直发报价</b></li><li><span data-i18n="coverage_minsk_lcl_label">散货 / 整柜</span><b data-i18n="coverage_supported">可承接</b></li></ul></article>
+            <article class="coverage-card reveal"><div class="pin">KZ</div><h3 data-i18n="city_almaty">阿拉木图</h3><span data-i18n="country_kz">哈萨克斯坦</span><ul><li><span data-i18n="coverage_almaty_air_label">空运</span><b>2-4 天</b></li><li><span data-i18n="coverage_almaty_ground_label">陆运</span><b>5-7 天</b></li></ul></article>
+            <article class="coverage-card min reveal"><div class="pin">KG</div><h3 data-i18n="city_bishkek">比什凯克</h3><span data-i18n="country_kg">吉尔吉斯斯坦</span><ul><li><span data-i18n="coverage_bishkek_air_label">空运 / 陆运</span><b data-i18n="coverage_bishkek_time">直发报价</b></li><li><span data-i18n="coverage_bishkek_lcl_label">散货 / 整柜</span><b data-i18n="coverage_supported">可承接</b></li></ul></article>
           </div>
         </div>
       </section>
@@ -522,6 +563,21 @@
             <article class="service-card reveal"><span class="svc-index">04</span><h3 data-i18n="s4_title">仓储与集运</h3><p data-i18n="s4_desc">多个订单可先集中到国内仓库，重新检查、换包装、合并后统一发出，节省运输成本。</p><ul><li data-i18n="s4_1">免费临时仓储</li><li data-i18n="s4_2">合并包裹与换箱</li><li data-i18n="s4_3">易碎品加固</li></ul></article>
             <article class="service-card reveal"><span class="svc-index">05</span><h3 data-i18n="s5_title">跨境运输</h3><p data-i18n="s5_desc">按时效、重量、体积和预算选择空运、陆运或整柜方案，全程跟进运输状态。</p><ul><li data-i18n="s5_1">空运 2-4 天路线</li><li data-i18n="s5_2">陆运 12-15 天路线</li><li data-i18n="s5_3">哈萨克斯坦、吉尔吉斯斯坦专线</li></ul></article>
             <article class="service-card reveal"><span class="svc-index">06</span><h3 data-i18n="s6_title">长期合作支持</h3><p data-i18n="s6_desc">首单完成后保留已验证的供应商、路线和包装标准，让下一批补货更快更稳定。</p><ul><li data-i18n="s6_1">供应商档案沉淀</li><li data-i18n="s6_2">固定路线价格</li><li data-i18n="s6_3">代购与社群批量订单</li></ul></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><p class="eyebrow" data-i18n="audience_eyebrow">适合谁</p><h2 data-i18n="audience_title">四类客户，共用一套省心流程</h2></div>
+            <p class="lead" data-i18n="audience_lead">无论是一箱样品、整柜大货，还是长期稳定补货，都可以从选品到派送一次对接完成。</p>
+          </div>
+          <div class="audience-grid">
+            <article class="audience-card reveal"><div class="audience-no">01</div><h3 data-i18n="aud_1_title">网店与电商卖家</h3><p data-i18n="aud_1_desc">需要稳定补货、控制到货周期，不想在选品、付款和物流之间反复切换。</p></article>
+            <article class="audience-card reveal"><div class="audience-no">02</div><h3 data-i18n="aud_2_title">批发商与品牌方</h3><p data-i18n="aud_2_desc">需要批量采购、整柜运输、工厂定制，以及更稳定的成本核算。</p></article>
+            <article class="audience-card reveal"><div class="audience-no">03</div><h3 data-i18n="aud_3_title">代购与采购社群</h3><p data-i18n="aud_3_desc">需要把许多成员的订单集中采购、验货、打包并分别发往不同城市。</p></article>
+            <article class="audience-card reveal"><div class="audience-no">04</div><h3 data-i18n="aud_4_title">个人买家</h3><p data-i18n="aud_4_desc">想买淘宝、1688 上的商品，但不会中文付款和转运，需要有人全程处理。</p></article>
           </div>
         </div>
       </section>
@@ -683,10 +739,16 @@ const I18N = {
     about_1: "我们的工作不是简单发货，而是把选品、采购、付款、验货、仓储、集运和跨境交付做成一条完整、透明、可追踪的服务链。",
     about_2: "服务对象包括个人买家、电商卖家、批发商、品牌方、代购社群以及需要稳定补货的零售店。",
     about_point_1: "一次对接，完成从商品需求到海外收货的整个流程", about_point_2: "首单完成后保留已验证的供应商和路线，方便持续补货", about_point_3: "价格、时效和进度都由负责人直接沟通确认",
-    city_china: "中国 · 义乌 / 广州", city_china_sub: "采购 · 验货 · 仓库", city_moscow: "莫斯科", city_moscow_sub: "空运 2-4 天", city_asia: "阿拉木图 / 比什凯克", city_asia_sub: "陆运 · 空运",
+    city_china: "中国 · 义乌 / 广州", city_china_sub: "采购 · 验货 · 仓库", city_moscow: "莫斯科", city_moscow_sub: "空运 2-4 天", city_minsk: "明斯克", city_minsk_sub: "直发 · 按路线报价", city_asia: "阿拉木图 / 比什凯克", city_asia_sub: "陆运 · 空运",
+    city_nsk: "新西伯利亚", city_almaty: "阿拉木图", city_bishkek: "比什凯克",
+    coverage_eyebrow: "目的地覆盖", coverage_title: "重点城市与参考时效", coverage_lead: "以实际货物重量、体积和品类为准，我们会给出准确路线与最终时效。",
+    country_ru: "俄罗斯", country_by: "白俄罗斯", country_kz: "哈萨克斯坦", country_kg: "吉尔吉斯斯坦",
+    coverage_moscow_air_label: "空运", coverage_moscow_ground_label: "陆运", coverage_nsk_air_label: "空运", coverage_nsk_ground_label: "陆运", coverage_by_request: "按需求", coverage_minsk_air_label: "空运 / 陆运", coverage_minsk_time: "直发报价", coverage_minsk_lcl_label: "散货 / 整柜", coverage_supported: "可承接", coverage_almaty_air_label: "空运", coverage_almaty_ground_label: "陆运", coverage_bishkek_air_label: "空运 / 陆运", coverage_bishkek_time: "直发报价", coverage_bishkek_lcl_label: "散货 / 整柜",
     cta_title: "现在发一件货，看看全流程能做到多省心", cta_desc: "把商品链接、重量、体积和目的城市发给我们，即可获得运输方案与报价。", cta_btn: "获取报价",
     services_eyebrow: "服务与流程", services_title: "从选品到海外签收，每一步都有明确责任人", services_lead: "可以只做单个环节，也可以把整条供应链交给我们。价格和时效都会在开始前确认清楚。",
     svc_eyebrow: "核心服务", svc_title: "六类服务，覆盖跨境采购全部关键节点", svc_lead: "每项服务都可以单独选择，也可以组合成完整方案。",
+    audience_eyebrow: "适合谁", audience_title: "四类客户，共用一套省心流程", audience_lead: "无论是一箱样品、整柜大货，还是长期稳定补货，都可以从选品到派送一次对接完成。",
+    aud_1_title: "网店与电商卖家", aud_1_desc: "需要稳定补货、控制到货周期，不想在选品、付款和物流之间反复切换。", aud_2_title: "批发商与品牌方", aud_2_desc: "需要批量采购、整柜运输、工厂定制，以及更稳定的成本核算。", aud_3_title: "代购与采购社群", aud_3_desc: "需要把许多成员的订单集中采购、验货、打包并分别发往不同城市。", aud_4_title: "个人买家", aud_4_desc: "想买淘宝、1688 上的商品，但不会中文付款和转运，需要有人全程处理。",
     s1_title: "选品与采购", s1_desc: "在电商平台、义乌市场和工厂渠道寻找商品，核对价格、MOQ、规格与供应商资质。", s1_1: "1688 / 淘宝 / 拼多多代购", s1_2: "工厂定制与样品确认", s1_3: "价格与货源比较",
     s2_title: "付款与财务", s2_desc: "帮助完成国内付款、人民币结算、对公转账以及供应商沟通，降低跨境交易摩擦。", s2_1: "人民币 / 平台内付款", s2_2: "对公与私人供应商", s2_3: "付款凭证留档",
     s3_title: "验货与质检", s3_desc: "收到货后检查数量、款式、颜色、尺寸、包装和明显质量问题，及时与供应商交涉。", s3_1: "到仓验货与拍照", s3_2: "数量与规格核对", s3_3: "问题商品退换跟进",
@@ -699,7 +761,7 @@ const I18N = {
     mode_air_tag: "更快 · 适合紧急订单", mode_air_title: "航空运输", mode_air_desc: "适合紧急补货、测试样品、高价值商品和对时效要求高的订单。", mode_air_1: "2-4 天", mode_air_1_label: "莫斯科 / 阿拉木图", mode_air_2: "4-6 天", mode_air_2_label: "新西伯利亚", mode_air_3: "样品", mode_air_3_label: "优先推荐",
     mode_ground_tag: "更省 · 适合大货", mode_ground_title: "陆运 / 整柜", mode_ground_desc: "适合大件家具、机械设备、批发整箱和追求更低成本的稳定补货。", mode_ground_1: "12-15 天", mode_ground_1_label: "中国到莫斯科", mode_ground_2: "5-7 天", mode_ground_2_label: "中国到阿拉木图", mode_ground_3: "整柜 / 散货", mode_ground_3_label: "按需报价",
     market_eyebrow: "目的地市场", market_title: "主要覆盖四个俄语区市场", market_lead: "每个市场都有稳定路线，可承接个人件、批发件和整柜货物。",
-    m_ru: "俄罗斯", m_ru_desc: "莫斯科、新西伯利亚等主要城市均有稳定路线。", m_ru_1: "莫斯科空运", m_ru_2: "莫斯科陆运", m_by: "白俄罗斯", m_by_desc: "支持个人订单、零售补货与批量采购。", m_by_1: "空运 / 陆运", m_by_2: "按需", m_by_3: "散货集运", m_by_4: "可承接", m_kz: "哈萨克斯坦", m_kz_desc: "阿拉木图为重要中转和派送节点。", m_kz_1: "阿拉木图空运", m_kz_2: "阿拉木图陆运", m_kg: "吉尔吉斯斯坦", m_kg_desc: "比什凯克是区域内重要的物流分拨中心。", m_kg_1: "空运 / 陆运", m_kg_2: "按需", m_kg_3: "整柜 / 散货", m_kg_4: "可承接",
+    m_ru: "俄罗斯", m_ru_desc: "莫斯科、新西伯利亚等主要城市均有稳定路线。", m_ru_1: "莫斯科空运", m_ru_2: "莫斯科陆运", m_by: "白俄罗斯", m_by_desc: "可直发明斯克及主要城市，支持个人、散货与整柜。", m_by_1: "空运 / 陆运", m_by_2: "按需", m_by_3: "散货集运", m_by_4: "可承接", m_kz: "哈萨克斯坦", m_kz_desc: "阿拉木图为重要中转和派送节点。", m_kz_1: "阿拉木图空运", m_kz_2: "阿拉木图陆运", m_kg: "吉尔吉斯斯坦", m_kg_desc: "比什凯克是区域内重要的物流分拨中心。", m_kg_1: "空运 / 陆运", m_kg_2: "按需", m_kg_3: "整柜 / 散货", m_kg_4: "可承接",
     svc_cta_title: "先告诉我们您的货物和目的地", svc_cta_desc: "我们会在一轮沟通内给出运输建议和初步报价。", svc_cta_btn: "联系报价",
     contact_eyebrow: "联系我们", contact_title: "发来商品链接，我们给您运输方案", contact_lead: "最好附上重量、体积和目的城市，能更快给出准确报价。",
     contact_direct_title: "直接联系创始人", contact_direct_desc: "Telegram、WhatsApp 均可直接沟通，工作日通常很快回复。", qr_title: "扫码添加", qr_telegram: "Telegram", qr_whatsapp: "WhatsApp",
@@ -735,10 +797,16 @@ const I18N = {
     about_1: "We combine sourcing, payment, inspection, warehousing, consolidation and cross-border delivery into one transparent service chain.",
     about_2: "We serve individuals, online sellers, wholesalers, brands, buying groups and retail stores.",
     about_point_1: "One point of contact from product need to final delivery", about_point_2: "Verified suppliers and routes kept for repeat orders", about_point_3: "Prices, timing and progress confirmed directly",
-    city_china: "China · Yiwu / Guangzhou", city_china_sub: "Sourcing · inspection · warehouse", city_moscow: "Moscow", city_moscow_sub: "Air 2-4 days", city_asia: "Almaty / Bishkek", city_asia_sub: "Ground · air",
+    city_china: "China · Yiwu / Guangzhou", city_china_sub: "Sourcing · inspection · warehouse", city_moscow: "Moscow", city_moscow_sub: "Air 2-4 days", city_minsk: "Minsk", city_minsk_sub: "Direct line · quote on route", city_asia: "Almaty / Bishkek", city_asia_sub: "Ground · air",
+    city_nsk: "Novosibirsk", city_almaty: "Almaty", city_bishkek: "Bishkek",
+    coverage_eyebrow: "Coverage", coverage_title: "Key cities and reference timing", coverage_lead: "Final routes and timing depend on actual weight, volume and product category.",
+    country_ru: "Russia", country_by: "Belarus", country_kz: "Kazakhstan", country_kg: "Kyrgyzstan",
+    coverage_moscow_air_label: "Air", coverage_moscow_ground_label: "Ground", coverage_nsk_air_label: "Air", coverage_nsk_ground_label: "Ground", coverage_by_request: "On request", coverage_minsk_air_label: "Air / ground", coverage_minsk_time: "Direct quote", coverage_minsk_lcl_label: "LCL / FCL", coverage_supported: "Available", coverage_almaty_air_label: "Air", coverage_almaty_ground_label: "Ground", coverage_bishkek_air_label: "Air / ground", coverage_bishkek_time: "Direct quote", coverage_bishkek_lcl_label: "LCL / FCL",
     cta_title: "Send one shipment and see how smooth the full process can be", cta_desc: "Share the product link, weight, volume and destination for a route plan and quote.", cta_btn: "Get a quote",
     services_eyebrow: "Services & process", services_title: "From sourcing to final delivery, every step has one clear owner", services_lead: "Use one service or the whole supply chain. Prices and timing are confirmed before you start.",
     svc_eyebrow: "Core services", svc_title: "Six services covering every key step", svc_lead: "Choose individual services or combine them into one complete solution.",
+    audience_eyebrow: "Who we help", audience_title: "Four client types, one simple process", audience_lead: "From one sample carton to full containers and regular restock, the same team handles sourcing through delivery.",
+    aud_1_title: "Online stores & sellers", aud_1_desc: "Need reliable restock and delivery schedules without juggling sourcing, payment and logistics.", aud_2_title: "Wholesalers & brands", aud_2_desc: "Need bulk buying, full-container shipping, factory customization and stable costing.", aud_3_title: "Buying groups & agents", aud_3_desc: "Need to combine member orders, inspect, pack and dispatch to different cities.", aud_4_title: "Individual buyers", aud_4_desc: "Want products from Taobao or 1688 but need help with Chinese payment and forwarding.",
     s1_title: "Sourcing & purchasing", s1_desc: "Find products on marketplaces, in Yiwu or from factories, and check price, MOQ and supplier quality.", s1_1: "1688 / Taobao / Pinduoduo buying", s1_2: "Factory customization and samples", s1_3: "Price and supplier comparison",
     s2_title: "Payment support", s2_desc: "Handle CNY payment, business transfers and supplier communication with less friction.", s2_1: "CNY and in-platform payment", s2_2: "Corporate and private suppliers", s2_3: "Payment records kept",
     s3_title: "Inspection & QC", s3_desc: "Check quantity, style, color, size, packaging and visible defects at the warehouse.", s3_1: "Warehouse check and photos", s3_2: "Quantity and spec verification", s3_3: "Return and replacement follow-up",
@@ -751,7 +819,7 @@ const I18N = {
     mode_air_tag: "Faster · urgent orders", mode_air_title: "Air freight", mode_air_desc: "Best for urgent restock, samples, high-value goods and tight deadlines.", mode_air_1: "2-4 days", mode_air_1_label: "Moscow / Almaty", mode_air_2: "4-6 days", mode_air_2_label: "Novosibirsk", mode_air_3: "Samples", mode_air_3_label: "Recommended",
     mode_ground_tag: "More economical · bulk", mode_ground_title: "Ground / FCL", mode_ground_desc: "Best for large furniture, equipment, wholesale boxes and stable low-cost restock.", mode_ground_1: "12-15 days", mode_ground_1_label: "China to Moscow", mode_ground_2: "5-7 days", mode_ground_2_label: "China to Almaty", mode_ground_3: "LCL / FCL", mode_ground_3_label: "Quote on request",
     market_eyebrow: "Destination markets", market_title: "Four Russian-speaking markets", market_lead: "Stable routes for personal parcels, wholesale and full-container cargo.",
-    m_ru: "Russia", m_ru_desc: "Stable routes to Moscow, Novosibirsk and other major cities.", m_ru_1: "Moscow air", m_ru_2: "Moscow ground", m_by: "Belarus", m_by_desc: "Personal orders, retail restock and bulk purchasing.", m_by_1: "Air / ground", m_by_2: "On request", m_by_3: "LCL consolidation", m_by_4: "Available", m_kz: "Kazakhstan", m_kz_desc: "Almaty is a key transit and delivery hub.", m_kz_1: "Almaty air", m_kz_2: "Almaty ground", m_kg: "Kyrgyzstan", m_kg_desc: "Bishkek is an important regional distribution center.", m_kg_1: "Air / ground", m_kg_2: "On request", m_kg_3: "LCL / FCL", m_kg_4: "Available",
+    m_ru: "Russia", m_ru_desc: "Stable routes to Moscow, Novosibirsk and other major cities.", m_ru_1: "Moscow air", m_ru_2: "Moscow ground", m_by: "Belarus", m_by_desc: "Direct lines to Minsk and major cities for personal parcels, LCL and FCL.", m_by_1: "Air / ground", m_by_2: "On request", m_by_3: "LCL consolidation", m_by_4: "Available", m_kz: "Kazakhstan", m_kz_desc: "Almaty is a key transit and delivery hub.", m_kz_1: "Almaty air", m_kz_2: "Almaty ground", m_kg: "Kyrgyzstan", m_kg_desc: "Bishkek is an important regional distribution center.", m_kg_1: "Air / ground", m_kg_2: "On request", m_kg_3: "LCL / FCL", m_kg_4: "Available",
     svc_cta_title: "Tell us your cargo and destination", svc_cta_desc: "We will send a route recommendation and preliminary quote in one conversation.", svc_cta_btn: "Contact us",
     contact_eyebrow: "Contact us", contact_title: "Send a product link and get a shipping plan", contact_lead: "Include weight, volume and destination city for a faster quote.",
     contact_direct_title: "Contact the founder directly", contact_direct_desc: "Available on Telegram and WhatsApp, usually with fast replies on working days.", qr_title: "Scan to add", qr_telegram: "Telegram", qr_whatsapp: "WhatsApp",
@@ -787,10 +855,16 @@ const I18N = {
     about_1: "Закупка, оплата, проверка, склад, консолидация и доставка выстроены в одну прозрачную цепочку.",
     about_2: "Работаем с частными покупателями, магазинами, оптовиками, брендами и совместными закупками.",
     about_point_1: "Один контакт от потребности до получения груза", about_point_2: "Проверенные поставщики и маршруты для повторных заказов", about_point_3: "Цены, сроки и статус подтверждаются напрямую",
-    city_china: "Китай · Иу / Гуанчжоу", city_china_sub: "Закупка · проверка · склад", city_moscow: "Москва", city_moscow_sub: "Авиа 2-4 дня", city_asia: "Алматы / Бишкек", city_asia_sub: "Наземно · авиа",
+    city_china: "Китай · Иу / Гуанчжоу", city_china_sub: "Закупка · проверка · склад", city_moscow: "Москва", city_moscow_sub: "Авиа 2-4 дня", city_minsk: "Минск", city_minsk_sub: "Прямая линия · расчёт по маршруту", city_asia: "Алматы / Бишкек", city_asia_sub: "Наземно · авиа",
+    city_nsk: "Новосибирск", city_almaty: "Алматы", city_bishkek: "Бишкек",
+    coverage_eyebrow: "Покрытие", coverage_title: "Города и ориентиры по срокам", coverage_lead: "Точный маршрут и срок зависят от веса, объёма и категории груза.",
+    country_ru: "Россия", country_by: "Беларусь", country_kz: "Казахстан", country_kg: "Кыргызстан",
+    coverage_moscow_air_label: "Авиа", coverage_moscow_ground_label: "Наземно", coverage_nsk_air_label: "Авиа", coverage_nsk_ground_label: "Наземно", coverage_by_request: "По запросу", coverage_minsk_air_label: "Авиа / наземно", coverage_minsk_time: "Прямая доставка", coverage_minsk_lcl_label: "Сборный / целый", coverage_supported: "Да", coverage_almaty_air_label: "Авиа", coverage_almaty_ground_label: "Наземно", coverage_bishkek_air_label: "Авиа / наземно", coverage_bishkek_time: "Прямая доставка", coverage_bishkek_lcl_label: "Сборный / целый",
     cta_title: "Отправьте один груз и посмотрите, как просто проходит весь процесс", cta_desc: "Пришлите ссылку на товар, вес, объём и город назначения - получите маршрут и расчёт.", cta_btn: "Получить расчёт",
     services_eyebrow: "Услуги и процесс", services_title: "От закупки до получения - у каждого этапа есть ответственный", services_lead: "Можно заказать один этап или доверить нам всю цепочку.",
     svc_eyebrow: "Основные услуги", svc_title: "Шесть услуг на ключевых этапах", svc_lead: "Выбирайте отдельные услуги или собирайте полное решение.",
+    audience_eyebrow: "Кому помогаем", audience_title: "Четыре типа клиентов и один понятный процесс", audience_lead: "От одной коробки с образцами до контейнеров и регулярных поставок - один контакт на всю цепочку.",
+    aud_1_title: "Магазины и продавцы", aud_1_desc: "Нужны стабильные поставки и понятные сроки без переключения между закупкой и логистикой.", aud_2_title: "Оптовики и бренды", aud_2_desc: "Нужны оптовые закупки, контейнеры, кастомизация и стабильная себестоимость.", aud_3_title: "Совместные закупки", aud_3_desc: "Нужно объединять заказы участников, проверять, упаковывать и отправлять в разные города.", aud_4_title: "Частные покупатели", aud_4_desc: "Хотят товары с Taobao или 1688, но нужна помощь с оплатой в юанях и доставкой.",
     s1_title: "Закупка", s1_desc: "Поиск товара на площадках, в Иу и на фабриках; проверка цены, MOQ и поставщика.", s1_1: "1688 / Taobao / Pinduoduo", s1_2: "Кастомизация и образцы", s1_3: "Сравнение цен и источников",
     s2_title: "Оплата", s2_desc: "Помощь с оплатой в юанях, переводами и перепиской с поставщиками.", s2_1: "Оплата в юанях", s2_2: "Компании и частники", s2_3: "Документы об оплате",
     s3_title: "Проверка", s3_desc: "Контроль количества, вида, цвета, размера, упаковки и видимых дефектов.", s3_1: "Проверка и фото", s3_2: "Сверка количества", s3_3: "Возврат и замена",
@@ -803,7 +877,7 @@ const I18N = {
     mode_air_tag: "Быстрее · для срочного", mode_air_title: "Авиадоставка", mode_air_desc: "Для срочного пополнения, образцов, ценных и срочных грузов.", mode_air_1: "2-4 дня", mode_air_1_label: "Москва / Алматы", mode_air_2: "4-6 дней", mode_air_2_label: "Новосибирск", mode_air_3: "Образцы", mode_air_3_label: "Рекомендуем",
     mode_ground_tag: "Экономнее · для объёма", mode_ground_title: "Наземная / контейнер", mode_ground_desc: "Для крупной мебели, оборудования, оптовых партий и регулярного пополнения.", mode_ground_1: "12-15 дней", mode_ground_1_label: "Китай в Москву", mode_ground_2: "5-7 дней", mode_ground_2_label: "Китай в Алматы", mode_ground_3: "Сборный / целый", mode_ground_3_label: "По запросу",
     market_eyebrow: "Направления", market_title: "Четыре русскоязычных рынка", market_lead: "Личные, оптовые и контейнерные грузы на каждом направлении.",
-    m_ru: "Россия", m_ru_desc: "Стабильные маршруты в Москву, Новосибирск и другие города.", m_ru_1: "Авиа в Москву", m_ru_2: "Наземно в Москву", m_by: "Беларусь", m_by_desc: "Личные заказы, пополнение магазинов, опт.", m_by_1: "Авиа / наземно", m_by_2: "По запросу", m_by_3: "Сборный груз", m_by_4: "Да", m_kz: "Казахстан", m_kz_desc: "Алматы - ключевой узел и город доставки.", m_kz_1: "Авиа в Алматы", m_kz_2: "Наземно в Алматы", m_kg: "Кыргызстан", m_kg_desc: "Бишкек - важный распределительный центр.", m_kg_1: "Авиа / наземно", m_kg_2: "По запросу", m_kg_3: "Сборный / целый", m_kg_4: "Да",
+    m_ru: "Россия", m_ru_desc: "Стабильные маршруты в Москву, Новосибирск и другие города.", m_ru_1: "Авиа в Москву", m_ru_2: "Наземно в Москву", m_by: "Беларусь", m_by_desc: "Прямые доставки в Минск и другие города: личные, сборные и контейнерные.", m_by_1: "Авиа / наземно", m_by_2: "По запросу", m_by_3: "Сборный груз", m_by_4: "Да", m_kz: "Казахстан", m_kz_desc: "Алматы - ключевой узел и город доставки.", m_kz_1: "Авиа в Алматы", m_kz_2: "Наземно в Алматы", m_kg: "Кыргызстан", m_kg_desc: "Бишкек - важный распределительный центр.", m_kg_1: "Авиа / наземно", m_kg_2: "По запросу", m_kg_3: "Сборный / целый", m_kg_4: "Да",
     svc_cta_title: "Опишите груз и город назначения", svc_cta_desc: "Предложим маршрут и предварительную стоимость в одном диалоге.", svc_cta_btn: "Связаться",
     contact_eyebrow: "Контакты", contact_title: "Пришлите ссылку на товар - подберём доставку", contact_lead: "Укажите вес, объём и город назначения для быстрого расчёта.",
     contact_direct_title: "Прямой контакт с руководителем", contact_direct_desc: "Telegram и WhatsApp, быстрые ответы в рабочие дни.", qr_title: "Сканируйте QR", qr_telegram: "Telegram", qr_whatsapp: "WhatsApp",
