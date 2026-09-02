@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="LH Международная логистика - доставка грузов из Китая в Россию, Беларусь, Казахстан и Кыргызстан под ключ.">
-<meta property="og:title" content="LH Международная логистика - доставка из Китая">
+<meta name="description" content="Международная логистика - доставка грузов из Китая в Россию, Беларусь, Казахстан и Кыргызстан под ключ.">
+<meta property="og:title" content="Международная логистика - доставка из Китая">
 <meta property="og:description" content="Закупка в Китае, оплата, склад, консолидация и трансграничная доставка под ключ.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lihui-cargo.ru/">
 <meta property="og:image" content="https://lihui-cargo.ru/assets/hero.jpg">
-<title>LH Международная логистика - доставка грузов из Китая</title>
+<title>Международная логистика - доставка грузов из Китая</title>
 <style>
   :root { --bg: #f5f9fc; --bg-2: #eaf3f9; --panel: #ffffff; --panel-2: #f6fbfd; --line: #d9e7ef; --line-soft: #e8f1f6; --text: #17384d; --muted: #4f6e7e; --muted-2: #728b99; --accent: #e56f35; --accent-2: #0b9287; --blue: #226fc4; --header-h: 76px; --radius: 8px; }
   * { box-sizing: border-box; }
@@ -55,8 +55,10 @@
   .site-header .container { min-height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 0; }
   .brand svg { width: 42px; height: 42px; flex: 0 0 auto; }
-  .brand strong { font-size: 22px; font-weight: 850; line-height: 1; color: #0f3d58; }
+  .brand-name { display: grid; justify-items: start; gap: 2px; min-width: 0; }
+  .brand strong { font-size: 18px; font-weight: 850; line-height: 1; color: #0f3d58; }
   .brand span { color: #547483; font-size: 10px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
+  .brand-line { width: 44px; height: 3px; background: #0a66c2; margin-top: 3px; }
   .main-nav { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 700; }
   .main-nav a { color: #527080; }
   .main-nav a:hover { color: #0d78b4; }
@@ -186,6 +188,12 @@
   .footer-contact a:hover { color: var(--text); }
   .footer-bottom { border-top: 1px solid var(--line-soft); padding-top: 22px; display: flex; justify-content: space-between; gap: 18px; color: var(--muted-2); font-size: 12px; }
   @media (max-width: 1080px) {
+    .brand .brand-name { display: none; }
+  }
+  @media (max-width: 1280px) {
+    .header-cta .btn.ghost { display: none; }
+  }
+  @media (max-width: 1080px) {
     .why-grid { grid-template-columns: repeat(2, 1fr); }
     .steps { grid-template-columns: repeat(3, 1fr); }
     .market-grid { grid-template-columns: repeat(2, 1fr); }
@@ -216,7 +224,8 @@
     .topbar .contacts a { display: inline-block; white-space: normal; font-size: 11px; }
     .why-grid, .steps, .market-grid, .categories-grid { grid-template-columns: 1fr; }
     .brand span { display: none; }
-    .brand strong { font-size: 19px; }
+    .brand strong { font-size: clamp(14px, 4.2vw, 18px); }
+    .brand-line { display: none; }
     .site-header .container { min-height: 64px; }
     .hero-actions .btn { flex: 1 1 100%; }
     .section-head .lead { font-size: 15px; }
@@ -385,23 +394,12 @@
 </div>
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="#top" aria-label="LH Международная логистика">
+    <a class="brand" href="#top" aria-label="Международная логистика">
       <svg viewBox="0 0 120 120" role="img" aria-label="LH logo">
-        <defs>
-          <linearGradient id="lhRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d5a78"/><stop offset="1" stop-color="#0c2436"/></linearGradient>
-          <radialGradient id="lhCore" cx=".35" cy=".3" r="1"><stop offset="0" stop-color="#2d6b8a"/><stop offset="1" stop-color="#0c2436"/></radialGradient>
-          <linearGradient id="lhGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe6a8"/><stop offset="1" stop-color="#d99c34"/></linearGradient>
-        </defs>
-        <circle cx="60" cy="60" r="54" fill="url(#lhRing)"/>
-        <circle cx="60" cy="60" r="54" fill="none" stroke="url(#lhGold)" stroke-width="3"/>
-        <circle cx="60" cy="60" r="42" fill="url(#lhCore)"/>
-        <ellipse cx="60" cy="60" rx="42" ry="14" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" transform="rotate(-25 60 60)"/>
-        <ellipse cx="60" cy="60" rx="42" ry="14" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2" transform="rotate(25 60 60)"/>
-        <text x="60" y="72" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="38" font-weight="800" fill="#fff">LH</text>
-        <circle cx="88" cy="86" r="4" fill="#f2d28d"/>
-        <circle cx="32" cy="34" r="4" fill="#f2d28d"/>
+        <rect x="8" y="8" width="104" height="104" rx="24" fill="#0a66c2"/>
+        <text x="60" y="79" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-size="56" font-weight="900" fill="#ffffff">LH</text>
       </svg>
-      <span class="brand-name"><strong>LH</strong><span>Международная логистика</span></span>
+      <span class="brand-name"><strong>Международная логистика</strong><span>Доставка из Китая</span><div class="brand-line" aria-hidden="true"></div></span>
     </a>
     <nav class="main-nav" aria-label="Основное меню">
       <a href="#services">Услуги</a><a href="#process">Процесс</a><a href="#markets">Рынки</a><a href="#delivery">Доставка</a><a href="#about">О компании</a><a href="#contact">Контакты</a>
@@ -707,17 +705,12 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a class="brand" href="#top" aria-label="LH Международная логистика">
+        <a class="brand" href="#top" aria-label="Международная логистика">
           <svg width="38" height="38" viewBox="0 0 120 120" aria-hidden="true">
-            <defs>
-              <linearGradient id="fhRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d5a78"/><stop offset="1" stop-color="#0c2436"/></linearGradient>
-              <radialGradient id="fhCore" cx=".35" cy=".3" r="1"><stop offset="0" stop-color="#2d6b8a"/><stop offset="1" stop-color="#0c2436"/></radialGradient>
-              <linearGradient id="fhGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe6a8"/><stop offset="1" stop-color="#d99c34"/></linearGradient>
-            </defs>
-            <circle cx="60" cy="60" r="54" fill="url(#fhRing)"/><circle cx="60" cy="60" r="54" fill="none" stroke="url(#fhGold)" stroke-width="3"/><circle cx="60" cy="60" r="42" fill="url(#fhCore)"/>
-            <text x="60" y="72" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="38" font-weight="800" fill="#fff">LH</text>
+            <rect x="8" y="8" width="104" height="104" rx="24" fill="#0a66c2"/>
+            <text x="60" y="79" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-size="56" font-weight="900" fill="#ffffff">LH</text>
           </svg>
-          <span class="brand-name"><strong>LH</strong><span>Международная логистика</span></span>
+          <span class="brand-name"><strong>Международная логистика</strong><span>Доставка из Китая</span><div class="brand-line" aria-hidden="true"></div></span>
         </a>
         <p style="margin-top:16px">Китайская закупка и трансграничная логистика для русскоязычных рынков: один сервис от поиска товара до доставки.</p>
       </div>
@@ -726,7 +719,7 @@
       <div><h4>Контакты</h4><div class="footer-contact"><a href="https://t.me/Lihui9559" target="_blank" rel="noopener">Telegram: @Lihui9559</a><a href="https://wa.me/8615604658910" target="_blank" rel="noopener">WhatsApp: +86 15604658910</a><span>Сроки и стоимость подтверждаются по каждому заказу</span></div></div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 LH Международная логистика · lihui-cargo.ru</span>
+      <span>© 2026 Международная логистика · lihui-cargo.ru</span>
       <span>Сайт носит информационный характер и не является публичной офертой</span>
     </div>
   </div>
