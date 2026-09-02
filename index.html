@@ -321,6 +321,75 @@
   .footer-contact a { color: #cfe4f1; }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,.13); margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; color: #82a0b3; }
 
+  .topbar-actions { display: flex; align-items: center; gap: 7px; }
+  .topbar .site-tool { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 11px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; background: rgba(255,255,255,.07); color: #fff; font-size: 12px; font-weight: 800; transition: background .18s ease, border-color .18s ease; }
+  .topbar .site-tool:hover { background: var(--blue); border-color: var(--blue); }
+  .topbar .site-tool svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; }
+  .topbar .site-tool.fav-on svg { fill: #ffcf63; stroke: #ffcf63; }
+
+  .share-panel { position: fixed; top: 46px; right: 18px; z-index: 96; display: none; flex-direction: column; gap: 13px; width: min(330px, calc(100vw - 28px)); padding: 16px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 18px 48px rgba(8,31,48,.18); }
+  .share-panel.open { display: flex; animation: panelIn .2s ease both; }
+  .share-panel strong { color: var(--navy); font-size: 14px; }
+  .share-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .share-action { display: inline-flex; align-items: center; justify-content: flex-start; gap: 8px; min-width: 0; padding: 9px 10px; border: 1px solid var(--line); border-radius: 7px; background: #f8fbfd; color: var(--navy); font-size: 13px; font-weight: 800; transition: transform .16s ease, border-color .16s ease, background .16s ease; }
+  .share-action:hover { transform: translateY(-1px); border-color: #a9c7d8; background: #fff; }
+  .share-action svg { width: 16px; height: 16px; flex: 0 0 auto; fill: currentColor; }
+  .share-action.tg { color: #1876a8; }
+  .share-action.wa { color: #159a4a; }
+  .share-action.vk { color: #2f5f9f; }
+  .share-action.copy { grid-column: 1 / -1; justify-content: center; background: #eaf4fc; border-color: #cfe4f1; color: var(--blue); }
+  .share-action.copy svg { fill: none; stroke: currentColor; stroke-width: 2; }
+  @keyframes panelIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .quick-contact { position: fixed; right: 18px; bottom: 18px; z-index: 82; display: grid; gap: 10px; }
+  .float-chat { width: 52px; height: 52px; display: grid; place-items: center; border: 0; border-radius: 50%; color: #fff; box-shadow: 0 12px 26px rgba(8,42,62,.24); transition: transform .18s ease; }
+  .float-chat:hover { transform: translateY(-3px) scale(1.05); }
+  .float-chat svg { width: 26px; height: 26px; fill: currentColor; }
+  .float-chat.wa { background: #20b959; animation: chatPulse 2.6s ease-in-out infinite; }
+  .float-chat.tg { background: #2198d2; }
+  @keyframes chatPulse { 0%, 100% { box-shadow: 0 12px 26px rgba(8,42,62,.24); } 50% { box-shadow: 0 0 0 9px rgba(32,185,89,.12), 0 12px 26px rgba(8,42,62,.24); } }
+
+  .toast { position: fixed; left: 50%; bottom: 24px; z-index: 170; transform: translate(-50%, 16px); max-width: min(420px, calc(100vw - 32px)); padding: 11px 18px; border-radius: 999px; background: var(--navy); color: #fff; font-size: 13px; font-weight: 800; box-shadow: 0 12px 30px rgba(8,36,56,.28); opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  .calc-section .calc-tool { display: grid; grid-template-columns: 1.05fr .95fr; gap: 20px; align-items: stretch; }
+  .calc-form { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 8px 20px rgba(21,58,79,.05); }
+  .calc-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .calc-fields label { display: grid; gap: 6px; margin: 0; color: #31526a; font-size: 12px; font-weight: 850; }
+  .calc-fields label.field-full { grid-column: 1 / -1; }
+  .calc-fields label span { display: block; }
+  .calc-fields input, .calc-fields select { min-height: 46px; }
+  .calc-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .calc-actions .btn { flex: 1 1 150px; }
+  .calc-side { display: grid; align-content: start; gap: 16px; background: linear-gradient(140deg, #e9f3fa, #f7fbfd); border: 1px solid #d4e6f0; border-radius: var(--radius); padding: 22px; }
+  .calc-hint { background: rgba(255,255,255,.82); border: 1px solid #d7e8f1; border-radius: 7px; padding: 12px 14px; color: #2d526a; font-size: 13px; }
+  .calc-result { background: var(--navy); border-radius: 8px; padding: 18px; color: #fff; }
+  .calc-result h3 { color: #fff; font-size: 17px; }
+  .calc-mode { display: inline-flex; align-items: center; margin-top: 8px; padding: 5px 9px; border-radius: 999px; background: #ef742f; color: #fff; font-size: 11px; font-weight: 850; }
+  .calc-list { display: grid; gap: 10px; margin-top: 14px; }
+  .calc-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; border-top: 1px solid rgba(255,255,255,.12); padding-top: 10px; color: #b7d0de; font-size: 13px; }
+  .calc-row b { color: #fff; font-size: 15px; }
+  .calc-note { color: #647e8d; font-size: 12px; line-height: 1.5; }
+  .calc-side .btn { width: 100%; }
+
+  .footer-legal { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 16px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.12); font-size: 12px; color: #82a0b3; }
+  .footer-legal .legal-link { border: 0; background: transparent; padding: 0; color: #9eb7c7; font-size: 12px; font-weight: 750; }
+  .footer-legal .legal-link:hover { color: #fff; }
+  .footer-legal .dot { opacity: .4; }
+
+  .legal-backdrop { position: fixed; inset: 0; z-index: 155; display: none; align-items: center; justify-content: center; padding: 18px; background: rgba(5,25,39,.58); backdrop-filter: blur(4px); }
+  .legal-backdrop.open { display: flex; animation: fadeIn .2s ease both; }
+  .legal-panel { width: min(780px, 100%); max-height: min(82vh, 720px); overflow: auto; background: #fff; border-radius: var(--radius); box-shadow: 0 24px 70px rgba(6,23,36,.28); padding: 28px; }
+  .legal-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .legal-top strong { color: var(--navy); font-size: 20px; }
+  .legal-close { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 8px; background: #f7fafc; color: var(--navy); font-size: 22px; line-height: 1; }
+  .legal-close:hover { background: #eaf4fc; border-color: #c8deeb; }
+  .doc-block { display: none; }
+  .doc-block.active { display: block; animation: fadeIn .18s ease both; }
+  .doc-block p { color: var(--muted); font-size: 14px; margin-bottom: 13px; }
+  .doc-meta { color: var(--soft); font-size: 12px; margin-bottom: 16px; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
   @media (max-width: 1100px) {
     .main-nav { gap: 16px; }
     .brand-name small { display: none; }
@@ -347,11 +416,15 @@
     .topbar .container { justify-content: center; }
     .topbar .bar-copy { display: none; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
+    .calc-section .calc-tool { grid-template-columns: 1fr; }
+    .share-panel { top: 56px; right: 12px; }
   }
   @media (max-width: 640px) {
     .container { width: min(100% - 28px, 1180px); }
     .topbar .container { flex-wrap: wrap; gap: 4px 12px; }
     .topbar .contacts { flex-wrap: wrap; justify-content: center; gap: 4px 12px; font-size: 11px; }
+    .topbar .site-tool { padding: 0 10px; }
+    .topbar .tool-label { display: none; }
     .feature-grid, .service-grid, .mode-grid, .qr-methods, .market-grid { grid-template-columns: 1fr; }
     .coverage-grid { grid-template-columns: 1fr; }
     .audience-grid { grid-template-columns: 1fr; }
@@ -368,6 +441,15 @@
     .ceo-card img { width: 90px; height: 90px; }
     .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; }
+    .calc-fields { grid-template-columns: 1fr; }
+    .calc-form, .calc-side { padding: 18px; }
+    .calc-actions .btn { flex-basis: 100%; }
+    .legal-panel { padding: 20px; }
+    .quick-contact { right: 10px; bottom: 10px; gap: 8px; }
+    .share-panel { top: 58px; right: 10px; }
+    .float-chat { width: 48px; height: 48px; }
+    .float-chat svg { width: 24px; height: 24px; }
+    .toast { bottom: 76px; }
     .route-visual { min-height: 360px; }
     .page-hero { padding: 56px 0; }
   }
@@ -375,12 +457,17 @@
     *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   }
 </style>
+<!-- 匿名访问统计：已预留 GoatCounter 配置开关，填入站点代码后即可统计来源国家与页面热度。 -->
 </head>
 <body>
   <div id="scrollProgress" aria-hidden="true"></div>
   <div class="topbar">
     <div class="container">
       <div class="bar-copy"><span data-i18n="top_note">中国采购 · 跨境物流 · 一站式服务</span></div>
+      <div class="topbar-actions">
+        <button class="site-tool" id="favoriteToggle" type="button" data-i18n-title="fav_title" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.92 6.26 6.58.6-5 4.41 1.51 6.53L12 16.9 5.99 19.8l1.51-6.53-5-4.41 6.58-.6z"/></svg><span class="tool-label" data-i18n="fav_label">收藏</span></button>
+        <button class="site-tool" id="shareToggle" type="button" data-i18n-title="share_title" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg><span class="tool-label" data-i18n="share_label">分享</span></button>
+      </div>
       <div class="contacts">
         <a href="https://t.me/Lihui9559" target="_blank" rel="noopener">Telegram: @Lihui9559</a>
         <a href="https://wa.me/8615604658910" target="_blank" rel="noopener">WhatsApp: +86 15604658910</a>
@@ -657,6 +744,53 @@
         </div>
       </section>
 
+      <section class="section calc-section">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><p class="eyebrow" data-i18n="calc_eyebrow">实用工具</p><h2 data-i18n="calc_title">体积重量计算器</h2></div>
+            <p class="lead" data-i18n="calc_lead">输入外箱尺寸与实际重量，先算出计费重量，再用结果联系我们确认最终运费。</p>
+          </div>
+          <div class="calc-tool reveal">
+            <form class="calc-form" id="calcForm" novalidate>
+              <div class="calc-fields">
+                <label><span data-i18n="calc_length">长 (cm)</span><input type="number" id="calcLength" min="1" step="0.1" inputmode="decimal" required></label>
+                <label><span data-i18n="calc_width">宽 (cm)</span><input type="number" id="calcWidth" min="1" step="0.1" inputmode="decimal" required></label>
+                <label><span data-i18n="calc_height">高 (cm)</span><input type="number" id="calcHeight" min="1" step="0.1" inputmode="decimal" required></label>
+                <label><span data-i18n="calc_pieces">件数</span><input type="number" id="calcPieces" min="1" step="1" inputmode="numeric" value="1" required></label>
+                <label class="field-full"><span data-i18n="calc_weight_actual">实际总重量 (kg)</span><input type="number" id="calcActual" min="0.1" step="0.01" inputmode="decimal" required></label>
+                <label class="field-full"><span data-i18n="calc_destination">目的城市</span>
+                  <select id="calcDestination">
+                    <option value="moscow" data-i18n="calc_dest_moscow">莫斯科</option>
+                    <option value="minsk" data-i18n="calc_dest_minsk">明斯克</option>
+                    <option value="almaty" data-i18n="calc_dest_almaty">阿拉木图</option>
+                    <option value="bishkek" data-i18n="calc_dest_bishkek">比什凯克</option>
+                  </select>
+                </label>
+              </div>
+              <div class="calc-actions">
+                <button class="btn primary" type="submit" data-i18n="calc_btn">开始估算</button>
+                <button class="btn ghost" type="button" id="calcClear" data-i18n="calc_clear">清空</button>
+              </div>
+            </form>
+            <aside class="calc-side" aria-live="polite">
+              <div class="calc-hint" data-i18n="calc_air_note">常见空运按 长(cm) × 宽(cm) × 高(cm) ÷ 6000 估算体积重；计费重量取实际重量与体积重的较大值。</div>
+              <div class="calc-result" id="calcResult" hidden>
+                <h3 data-i18n="calc_result_title">估算结果</h3>
+                <span class="calc-mode" id="calcMode" data-i18n="calc_mode_vol">按体积重</span>
+                <div class="calc-list">
+                  <div class="calc-row"><span data-i18n="calc_volume">总体积</span><b id="calcVolume">-</b></div>
+                  <div class="calc-row"><span data-i18n="calc_vol_weight">体积重量</span><b id="calcVolWeight">-</b></div>
+                  <div class="calc-row"><span data-i18n="calc_actual_label">实际重量</span><b id="calcActualOut">-</b></div>
+                  <div class="calc-row"><span data-i18n="calc_chargeable">计费重量</span><b id="calcChargeable">-</b></div>
+                </div>
+              </div>
+              <p class="calc-note" data-i18n="calc_note">仅用于初步估算，正式运费和路线以货物实际情况确认为准。</p>
+              <a class="btn orange" href="#contact" data-i18n="calc_quote">用结果询价</a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
       <section class="section alt">
         <div class="container">
           <div class="section-head reveal">
@@ -757,8 +891,53 @@
         <div><h4 data-i18n="footer_contact">联系方式</h4><div class="footer-contact"><a href="https://t.me/Lihui9559" target="_blank" rel="noopener">Telegram: @Lihui9559</a><a href="https://wa.me/8615604658910" target="_blank" rel="noopener">WhatsApp: +86 15604658910</a><span>lihui-cargo.ru</span></div></div>
       </div>
       <div class="footer-bottom"><span data-i18n="copyright">© 2026 LiHui International Logistics · 保留所有权利</span><span data-i18n="footer_note">本站为信息展示网站，具体报价以沟通确认为准。</span></div>
+      <div class="footer-legal">
+        <button class="legal-link" type="button" data-doc="privacy" data-i18n="privacy_btn">隐私政策</button>
+        <span class="dot" aria-hidden="true">·</span>
+        <button class="legal-link" type="button" data-doc="terms" data-i18n="terms_btn">服务条款</button>
+      </div>
     </div>
   </footer>
+
+  <div class="share-panel" id="sharePanel" role="dialog" aria-label="Share">
+    <strong data-i18n="share_panel_title">把 LiHui 国际物流发给朋友或社群</strong>
+    <div class="share-grid">
+      <a class="share-action tg" href="#" data-share="telegram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 3.7 18.5 19c-.2.9-.8 1.1-1.6.7l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.6L18.1 6.8c.3-.3-.1-.5-.6-.2L7.2 12.6 2.9 11.3c-1-.3-1-1 .2-1.4L20 2.7c.8-.3 1.5.2 1.6 1z"/></svg><span data-i18n="share_tg">Telegram</span></a>
+      <a class="share-action wa" href="#" data-share="whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26C2.05 6.06 6.49 1.63 11.94 1.63c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.29A11.8 11.8 0 0 0 11.94 0C5.4 0 .06 5.33.06 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.31-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41z"/></svg><span data-i18n="share_wa">WhatsApp</span></a>
+      <a class="share-action vk" href="#" data-share="vk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.79 18.7c-6.02 0-9.46-4.13-9.6-11h3.02c.1 5.16 2.38 7.35 4.18 7.8V7.7h2.91v4.45c1.78-.19 3.65-2.22 4.28-4.45h2.9c-.49 2.77-2.52 4.8-3.97 5.64 1.45.68 3.77 2.46 4.65 5.36h-3.2c-.69-2.15-2.4-3.82-4.66-4.05v4.05z"/></svg><span data-i18n="share_vk">VK</span></a>
+      <button class="share-action copy" type="button" id="copyShareBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span data-i18n="share_copy">复制链接</span></button>
+    </div>
+  </div>
+
+  <aside class="quick-contact" aria-label="Contact">
+    <a class="float-chat wa" href="https://wa.me/8615604658910?text=Hello%20LiHui%20International%20Logistics" target="_blank" rel="noopener" data-i18n-title="float_wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26C2.05 6.06 6.49 1.63 11.94 1.63c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.29A11.8 11.8 0 0 0 11.94 0C5.4 0 .06 5.33.06 11.89c0 2.1.55 4.14 1.59 5.95L0 24l6.31-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41z"/></svg></a>
+    <a class="float-chat tg" href="https://t.me/Lihui9559" target="_blank" rel="noopener" data-i18n-title="float_tg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 3.7 18.5 19c-.2.9-.8 1.1-1.6.7l-4.4-3.3-2.1 2c-.2.2-.4.4-.9.4l.3-4.6L18.1 6.8c.3-.3-.1-.5-.6-.2L7.2 12.6 2.9 11.3c-1-.3-1-1 .2-1.4L20 2.7c.8-.3 1.5.2 1.6 1z"/></svg></a>
+  </aside>
+
+  <div class="legal-backdrop" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalLabel">
+    <div class="legal-panel">
+      <div class="legal-top">
+        <strong id="legalLabel" data-i18n="privacy_heading">隐私政策</strong>
+        <button class="legal-close" type="button" id="legalClose" aria-label="Close">&times;</button>
+      </div>
+      <div class="doc-block active" id="privacyDoc">
+        <p class="doc-meta" data-i18n="legal_updated">最近更新：2026 年 9 月</p>
+        <p data-i18n="privacy_p1">本网站用于展示物流服务并接收询价。除您主动在询价表单中填写的信息外，本网站不收集姓名、电话号码或聊天记录。</p>
+        <p data-i18n="privacy_p2">提交询价时，我们会使用您填写的姓名、货物链接或描述来处理报价，并仅在 Telegram 或 WhatsApp 中与您沟通。</p>
+        <p data-i18n="privacy_p3">为改进页面与内容，网站可能启用匿名访问统计。统计只查看访问国家、浏览页面、设备和访问时间等汇总数据，不采集姓名或电话号码。</p>
+        <p data-i18n="privacy_p4">网站托管于 GitHub Pages，页面本身不使用追踪 Cookie。如对个人信息处理有疑问，可通过页面底部 Telegram / WhatsApp 联系我们。</p>
+      </div>
+      <div class="doc-block" id="termsDoc">
+        <p class="doc-meta" data-i18n="legal_updated">最近更新：2026 年 9 月</p>
+        <p data-i18n="terms_p1">本网站提供跨境采购与物流服务的信息展示。页面上的路线、时效与费用描述均为参考，不构成运输合同或最终报价。</p>
+        <p data-i18n="terms_p2">报价与时效需以我们与您沟通并确认的货物信息为准，包括商品、重量、体积、品类、包装与目的城市。</p>
+        <p data-i18n="terms_p3">客户需确保寄送物品符合中国及目的地国家法律。危险品、违禁品或未如实申报的货物由寄件人承担相应责任。</p>
+        <p data-i18n="terms_p4">双方的权利义务以最终确认的服务内容和交易约定为准。如有争议，请先通过 Telegram 或 WhatsApp 与我们联系协商。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 const I18N = {
@@ -938,6 +1117,73 @@ const I18N = {
   }
 };
 
+const I18N_EXTRA = {
+  zh: {
+    fav_label: "收藏", fav_title: "收藏本站", share_label: "分享", share_title: "分享网站", share_panel_title: "把 LiHui 国际物流发给朋友或社群",
+    share_tg: "Telegram", share_wa: "WhatsApp", share_vk: "VK", share_copy: "复制链接",
+    float_wa: "WhatsApp 咨询", float_tg: "Telegram 咨询",
+    privacy_btn: "隐私政策", terms_btn: "服务条款", legal_updated: "最近更新：2026 年 9 月", privacy_heading: "隐私政策", terms_heading: "服务条款",
+    privacy_p1: "本网站用于展示物流服务并接收询价。除您主动在询价表单中填写的信息外，本网站不收集姓名、电话号码或聊天记录。",
+    privacy_p2: "提交询价时，我们会使用您填写的姓名、货物链接或描述来处理报价，并仅在 Telegram 或 WhatsApp 中与您沟通。",
+    privacy_p3: "为改进页面与内容，网站可能启用匿名访问统计。统计只查看访问国家、浏览页面、设备和访问时间等汇总数据，不采集姓名或电话号码。",
+    privacy_p4: "网站托管于 GitHub Pages，页面本身不使用追踪 Cookie。如对个人信息处理有疑问，可通过页面底部 Telegram / WhatsApp 联系我们。",
+    terms_p1: "本网站提供跨境采购与物流服务的信息展示。页面上的路线、时效与费用描述均为参考，不构成运输合同或最终报价。",
+    terms_p2: "报价与时效需以我们与您沟通并确认的货物信息为准，包括商品、重量、体积、品类、包装与目的城市。",
+    terms_p3: "客户需确保寄送物品符合中国及目的地国家法律。危险品、违禁品或未如实申报的货物由寄件人承担相应责任。",
+    terms_p4: "双方的权利义务以最终确认的服务内容和交易约定为准。如有争议，请先通过 Telegram 或 WhatsApp 与我们联系协商。",
+    calc_eyebrow: "实用工具", calc_title: "体积重量计算器", calc_lead: "输入外箱尺寸与实际重量，先算出计费重量，再用结果联系我们确认最终运费。",
+    calc_length: "长 (cm)", calc_width: "宽 (cm)", calc_height: "高 (cm)", calc_pieces: "件数", calc_weight_actual: "实际总重量 (kg)", calc_destination: "目的城市",
+    calc_dest_moscow: "莫斯科", calc_dest_minsk: "明斯克", calc_dest_almaty: "阿拉木图", calc_dest_bishkek: "比什凯克",
+    calc_btn: "开始估算", calc_clear: "清空", calc_air_note: "常见空运按 长(cm) × 宽(cm) × 高(cm) ÷ 6000 估算体积重；计费重量取实际重量与体积重的较大值。",
+    calc_result_title: "估算结果", calc_mode_vol: "按体积重", calc_mode_actual: "按实际重量", calc_volume: "总体积", calc_vol_weight: "体积重量", calc_actual_label: "实际重量", calc_chargeable: "计费重量",
+    calc_note: "仅用于初步估算，正式运费和路线以货物实际情况确认为准。", calc_quote: "用结果询价", calc_error: "请填写长度、宽度、高度和实际重量。", copied: "链接已复制", copy_failed: "复制失败，请手动复制网址",
+    fav_added: "已收藏本站", fav_removed: "已取消收藏"
+  },
+  en: {
+    fav_label: "Save", fav_title: "Save this site", share_label: "Share", share_title: "Share this site", share_panel_title: "Send LiHui International Logistics to friends or groups",
+    share_tg: "Telegram", share_wa: "WhatsApp", share_vk: "VK", share_copy: "Copy link",
+    float_wa: "WhatsApp chat", float_tg: "Telegram chat",
+    privacy_btn: "Privacy Policy", terms_btn: "Terms of Service", legal_updated: "Last updated: September 2026", privacy_heading: "Privacy Policy", terms_heading: "Terms of Service",
+    privacy_p1: "This website presents logistics services and accepts inquiries. Unless you choose to provide information in the inquiry form, we do not collect names, phone numbers or chat history.",
+    privacy_p2: "When you submit an inquiry, we use the name, product link or description you provide to prepare a quote and reply only on Telegram or WhatsApp.",
+    privacy_p3: "The site may use anonymous visitor statistics to improve content. These statistics include country, viewed page, device and time as aggregate data only, and never include your name or phone number.",
+    privacy_p4: "The site is hosted on GitHub Pages and does not use tracking cookies by itself. Questions about personal data can be sent through the Telegram / WhatsApp links at the bottom of the page.",
+    terms_p1: "This website presents cross-border sourcing and logistics services. Route, timing and cost descriptions are reference information and do not create a transport contract or final quote.",
+    terms_p2: "Final pricing and timing are confirmed after we review the actual goods, including product, weight, volume, category, packaging and destination city.",
+    terms_p3: "Customers must ensure that shipments comply with laws in China and the destination country. The sender is responsible for prohibited, dangerous or incorrectly declared goods.",
+    terms_p4: "Rights and obligations are defined by the confirmed service and transaction agreement. For any dispute, contact us first on Telegram or WhatsApp.",
+    calc_eyebrow: "Practical tools", calc_title: "Volumetric weight calculator", calc_lead: "Enter carton dimensions and actual weight to estimate chargeable weight, then contact us for a final quote.",
+    calc_length: "Length (cm)", calc_width: "Width (cm)", calc_height: "Height (cm)", calc_pieces: "Pieces", calc_weight_actual: "Actual total weight (kg)", calc_destination: "Destination city",
+    calc_dest_moscow: "Moscow", calc_dest_minsk: "Minsk", calc_dest_almaty: "Almaty", calc_dest_bishkek: "Bishkek",
+    calc_btn: "Estimate", calc_clear: "Clear", calc_air_note: "Air freight is commonly calculated as length (cm) x width (cm) x height (cm) / 6000. Chargeable weight is the higher of actual and volumetric weight.",
+    calc_result_title: "Estimate result", calc_mode_vol: "By volumetric weight", calc_mode_actual: "By actual weight", calc_volume: "Total volume", calc_vol_weight: "Volumetric weight", calc_actual_label: "Actual weight", calc_chargeable: "Chargeable weight",
+    calc_note: "For initial estimation only. The final route and freight are confirmed based on the actual cargo.", calc_quote: "Request a quote", calc_error: "Please enter length, width, height and actual weight.", copied: "Link copied", copy_failed: "Copy failed. Please copy the link manually.",
+    fav_added: "Site saved", fav_removed: "Saved site removed"
+  },
+  ru: {
+    fav_label: "В избранное", fav_title: "Сохранить сайт", share_label: "Поделиться", share_title: "Поделиться сайтом", share_panel_title: "Отправить LiHui International Logistics друзьям или в чаты",
+    share_tg: "Telegram", share_wa: "WhatsApp", share_vk: "VK", share_copy: "Скопировать ссылку",
+    float_wa: "WhatsApp", float_tg: "Telegram",
+    privacy_btn: "Политика конфиденциальности", terms_btn: "Условия обслуживания", legal_updated: "Обновлено: сентябрь 2026", privacy_heading: "Политика конфиденциальности", terms_heading: "Условия обслуживания",
+    privacy_p1: "Сайт знакомит с услугами логистики и принимает заявки. Мы не собираем имя, телефон или переписку, если вы сами не указали их в форме.",
+    privacy_p2: "При отправке заявки мы используем имя, ссылку или описание товара и контакты, которые вы указали, чтобы подготовить расчёт и ответить в Telegram или WhatsApp.",
+    privacy_p3: "Для улучшения сайта может использоваться анонимная статистика посещений: страна, просмотренные страницы, устройство и время как обобщённые данные. Имя и телефон не собираются.",
+    privacy_p4: "Сайт размещён на GitHub Pages и сам не использует отслеживающие cookie. Вопросы о данных можно задать в Telegram или WhatsApp, указанных внизу.",
+    terms_p1: "Сайт содержит информацию о закупке и логистике. Маршруты, сроки и стоимость на странице являются ориентировочными и не создают договор или окончательный расчёт.",
+    terms_p2: "Итоговая цена и срок подтверждаются после проверки данных о грузе: товар, вес, объём, категория, упаковка и город назначения.",
+    terms_p3: "Клиент обязан соблюдать законы Китая и страны назначения. Отправитель отвечает за запрещённые, опасные или неправильно задекларированные грузы.",
+    terms_p4: "Права и обязанности сторон определяются подтверждёнными условиями услуги. При спорах сначала свяжитесь с нами в Telegram или WhatsApp.",
+    calc_eyebrow: "Полезный инструмент", calc_title: "Калькулятор объёмного веса", calc_lead: "Укажите размеры коробки и фактический вес, чтобы оценить оплачиваемый вес, затем уточните расчёт у нас.",
+    calc_length: "Длина (см)", calc_width: "Ширина (см)", calc_height: "Высота (см)", calc_pieces: "Мест", calc_weight_actual: "Фактический вес (кг)", calc_destination: "Город назначения",
+    calc_dest_moscow: "Москва", calc_dest_minsk: "Минск", calc_dest_almaty: "Алматы", calc_dest_bishkek: "Бишкек",
+    calc_btn: "Рассчитать", calc_clear: "Очистить", calc_air_note: "Для авиа обычно используется формула длина (см) x ширина (см) x высота (см) / 6000. Оплачивается больший из фактического и объёмного веса.",
+    calc_result_title: "Результат", calc_mode_vol: "По объёмному весу", calc_mode_actual: "По фактическому весу", calc_volume: "Общий объём", calc_vol_weight: "Объёмный вес", calc_actual_label: "Фактический вес", calc_chargeable: "Оплачиваемый вес",
+    calc_note: "Только предварительная оценка. Итоговый маршрут и стоимость подтверждаются по фактическому грузу.", calc_quote: "Уточнить расчёт", calc_error: "Укажите длину, ширину, высоту и фактический вес.", copied: "Ссылка скопирована", copy_failed: "Не удалось скопировать. Скопируйте ссылку вручную.",
+    fav_added: "Сайт сохранён", fav_removed: "Сохранение удалено"
+  }
+};
+Object.entries(I18N_EXTRA).forEach(([lang, texts]) => Object.assign(I18N[lang], texts));
+
 const root = document.documentElement;
 const navLinks = document.querySelectorAll('.main-nav a');
 const pages = document.querySelectorAll('.page');
@@ -960,6 +1206,14 @@ function applyLang(lang) {
     const key = el.dataset.i18nPlaceholder;
     if (I18N[lang] && I18N[lang][key] != null) el.placeholder = I18N[lang][key];
   });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.dataset.i18nTitle;
+    const text = I18N[lang] && I18N[lang][key];
+    if (text != null) {
+      el.title = text;
+      el.setAttribute('aria-label', text);
+    }
+  });
   document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
   setPageTitle();
 }
@@ -970,6 +1224,7 @@ function route(page) {
   mainNav.classList.remove('open');
   setPageTitle();
   window.scrollTo({ top: 0, behavior: 'auto' });
+  trackAnalyticsPage();
 }
 
 function currentPage() {
@@ -1067,6 +1322,168 @@ function parallaxInit() {
   }, { passive: true });
 }
 
+const ANALYTICS = {
+  goatcounterUrl: ""
+};
+function trackAnalyticsPage() {
+  if (!ANALYTICS.goatcounterUrl || !window.goatcounter) return;
+  window.goatcounter.count({ path: location.pathname + location.hash || '/' });
+}
+function analyticsInit() {
+  if (!ANALYTICS.goatcounterUrl) return;
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://gc.zgo.at/count.js';
+  s.setAttribute('data-goatcounter', ANALYTICS.goatcounterUrl);
+  s.onload = trackAnalyticsPage;
+  document.head.appendChild(s);
+}
+
+let toastTimer = null;
+function showToast(key) {
+  const el = document.getElementById('toast');
+  if (!el) return;
+  el.textContent = (I18N[root.lang] && I18N[root.lang][key]) || key;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 1900);
+}
+function shareUrl() {
+  const path = location.pathname.replace(/\/index\.html$/, '/');
+  const origin = location.origin && location.origin !== 'null' ? location.origin : 'https://lihui-cargo.ru';
+  return origin + path + location.hash;
+}
+async function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.setAttribute('readonly', '');
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  const ok = document.execCommand('copy');
+  ta.remove();
+  if (!ok) throw new Error('copy failed');
+}
+
+const favoriteBtn = document.getElementById('favoriteToggle');
+const shareToggle = document.getElementById('shareToggle');
+const sharePanel = document.getElementById('sharePanel');
+let favoriteOn = localStorage.getItem('lh-site-fav') === '1';
+function setFavorite(on) {
+  favoriteOn = on;
+  localStorage.setItem('lh-site-fav', on ? '1' : '0');
+  favoriteBtn.classList.toggle('fav-on', on);
+  favoriteBtn.setAttribute('aria-pressed', String(on));
+}
+favoriteBtn.addEventListener('click', () => {
+  setFavorite(!favoriteOn);
+  showToast(favoriteOn ? 'fav_added' : 'fav_removed');
+});
+setFavorite(favoriteOn);
+
+function setShareOpen(open) {
+  sharePanel.classList.toggle('open', open);
+  shareToggle.setAttribute('aria-expanded', String(open));
+}
+shareToggle.addEventListener('click', e => {
+  e.stopPropagation();
+  setShareOpen(!sharePanel.classList.contains('open'));
+});
+document.addEventListener('click', e => {
+  if (sharePanel.classList.contains('open') && !sharePanel.contains(e.target) && !shareToggle.contains(e.target)) setShareOpen(false);
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    setShareOpen(false);
+    closeLegal();
+  }
+});
+
+document.querySelectorAll('[data-share]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const url = shareUrl().split('#')[0];
+    const title = document.title;
+    const target = link.dataset.share;
+    if (target === 'telegram') link.href = 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title);
+    else if (target === 'whatsapp') link.href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(title + '\n' + url);
+    else if (target === 'vk') link.href = 'https://vk.com/share.php?url=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(title);
+    setShareOpen(false);
+    window.open(link.href, '_blank', 'noopener');
+  });
+});
+document.getElementById('copyShareBtn').addEventListener('click', async () => {
+  try {
+    await copyText(shareUrl());
+    showToast('copied');
+  } catch (err) {
+    showToast('copy_failed');
+  }
+});
+
+const legalModal = document.getElementById('legalModal');
+const legalLabel = document.getElementById('legalLabel');
+function openLegal(doc) {
+  const headingKey = doc + '_heading';
+  legalLabel.dataset.i18n = headingKey;
+  legalLabel.textContent = I18N[root.lang][headingKey];
+  document.querySelectorAll('.doc-block').forEach(block => block.classList.toggle('active', block.id === doc + 'Doc'));
+  legalModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLegal() {
+  legalModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.legal-link').forEach(btn => btn.addEventListener('click', () => openLegal(btn.dataset.doc)));
+document.getElementById('legalClose').addEventListener('click', closeLegal);
+legalModal.addEventListener('click', e => {
+  if (e.target === legalModal) closeLegal();
+});
+
+const calcForm = document.getElementById('calcForm');
+const calcResult = document.getElementById('calcResult');
+const calcMode = document.getElementById('calcMode');
+function fmtWeight(value) {
+  return value >= 100 ? String(Math.round(value)) : value.toFixed(2).replace(/0+$/, '').replace(/\.$/, '');
+}
+calcForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const length = Number(document.getElementById('calcLength').value);
+  const width = Number(document.getElementById('calcWidth').value);
+  const height = Number(document.getElementById('calcHeight').value);
+  const pieces = Math.max(1, Number(document.getElementById('calcPieces').value) || 1);
+  const actual = Number(document.getElementById('calcActual').value);
+  if (![length, width, height, actual].every(v => v > 0)) {
+    showToast('calc_error');
+    return;
+  }
+  const volumeCm = length * width * height * pieces;
+  const volumeM = volumeCm / 1e6;
+  const volWeight = volumeCm / 6000;
+  const chargeable = Math.max(volWeight, actual);
+  const useVol = volWeight > actual;
+  document.getElementById('calcVolume').textContent = volumeM.toFixed(3).replace(/0+$/, '').replace(/\.$/, '') + ' m3';
+  document.getElementById('calcVolWeight').textContent = fmtWeight(volWeight) + ' kg';
+  document.getElementById('calcActualOut').textContent = fmtWeight(actual) + ' kg';
+  document.getElementById('calcChargeable').textContent = fmtWeight(chargeable) + ' kg';
+  const modeKey = useVol ? 'calc_mode_vol' : 'calc_mode_actual';
+  calcMode.dataset.i18n = modeKey;
+  calcMode.textContent = I18N[root.lang][modeKey];
+  calcResult.hidden = false;
+});
+document.getElementById('calcClear').addEventListener('click', () => {
+  calcForm.reset();
+  calcResult.hidden = true;
+  calcMode.dataset.i18n = 'calc_mode_vol';
+  calcMode.textContent = I18N[root.lang]['calc_mode_vol'];
+});
+
 const saved = localStorage.getItem('lh-lang') || 'zh';
 applyLang(['zh', 'en', 'ru'].includes(saved) ? saved : 'zh');
 route(currentPage());
@@ -1074,6 +1491,7 @@ revealInit();
 counterInit();
 progressInit();
 parallaxInit();
+analyticsInit();
 </script>
 </body>
 </html>
