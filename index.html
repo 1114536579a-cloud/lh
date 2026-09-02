@@ -1,744 +1,845 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="zh">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Международная логистика - доставка грузов из Китая в Россию, Беларусь, Казахстан и Кыргызстан под ключ.">
-<meta property="og:title" content="Международная логистика - доставка из Китая">
-<meta property="og:description" content="Закупка в Китае, оплата, склад, консолидация и трансграничная доставка под ключ.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lihui-cargo.ru/">
-<meta property="og:image" content="https://lihui-cargo.ru/assets/hero.jpg">
-<title>Международная логистика - доставка грузов из Китая</title>
+<meta name="description" content="China sourcing, payment, inspection, consolidation and cross-border logistics to Russia, Belarus, Kazakhstan and Kyrgyzstan.">
+<title>LiHui International Logistics - China Sourcing & Delivery</title>
 <style>
-  :root { --bg: #f5f9fc; --bg-2: #eaf3f9; --panel: #ffffff; --panel-2: #f6fbfd; --line: #d9e7ef; --line-soft: #e8f1f6; --text: #17384d; --muted: #4f6e7e; --muted-2: #728b99; --accent: #e56f35; --accent-2: #0b9287; --blue: #226fc4; --header-h: 76px; --radius: 8px; }
+  :root {
+    --navy: #0b2c47;
+    --blue: #0a66c2;
+    --sky: #2f96d8;
+    --teal: #0b8d83;
+    --mint: #e6f5f2;
+    --orange: #ef742f;
+    --amber: #ffe1ae;
+    --ink: #142c3c;
+    --muted: #5d7482;
+    --soft: #8ca0ab;
+    --bg: #f5f8fa;
+    --card: #ffffff;
+    --line: #d9e5ec;
+    --shadow: 0 14px 34px rgba(19, 58, 80, .10);
+    --radius: 8px;
+    --header-h: 76px;
+  }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--bg); color: var(--text); font-family: "Aptos", "Segoe UI", "Inter", Arial, sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-  ::selection { background: #cde9fb; color: #17384d; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Segoe UI", "Inter", "Noto Sans SC", Arial, sans-serif; line-height: 1.6; letter-spacing: 0; }
   img { display: block; max-width: 100%; }
   a { color: inherit; text-decoration: none; }
-  button { font: inherit; }
-  p { margin: 0; }
-  h1, h2, h3, h4 { margin: 0; line-height: 1.12; text-wrap: balance; }
-  ul { margin: 0; padding: 0; list-style: none; }
+  p, h1, h2, h3, h4, ul { margin: 0; }
+  ul { padding: 0; list-style: none; }
+  button { font: inherit; cursor: pointer; }
   .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
-  .section { padding: 104px 0; }
-  .section.alt { background: var(--bg-2); }
-  .section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 430px); gap: 28px 60px; align-items: end; margin-bottom: 46px; }
-  .eyebrow { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
-  h1 { font-size: clamp(42px, 6.1vw, 78px); font-weight: 850; letter-spacing: 0; }
-  h2 { font-size: clamp(30px, 4vw, 50px); font-weight: 820; letter-spacing: 0; }
-  h3 { font-size: 20px; font-weight: 750; letter-spacing: 0; }
-  .lead { color: var(--muted); font-size: 17px; max-width: 740px; }
-  .section-head .lead { margin: 0; }
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 20px; border: 1px solid #cbdce6; border-radius: 8px; background: #ffffff; color: #17384d; font-weight: 750; font-size: 15px; box-shadow: 0 1px 2px rgba(37,76,105,.06); cursor: pointer; transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease; }
-  .btn svg { width: 18px; height: 18px; flex: 0 0 auto; }
-  .btn:hover { transform: translateY(-1px); border-color: #9fbfd2; background: #f9fcfe; box-shadow: 0 7px 18px rgba(34,80,111,.10); }
-  .btn.primary { background: linear-gradient(135deg, #1973c3, #45a5de); border-color: transparent; color: #ffffff; box-shadow: 0 8px 20px rgba(25,115,195,.22); }
-  .btn.primary:hover { background: linear-gradient(135deg, #0f65b5, #379bd8); }
-  .btn.telegram { border-color: transparent; background: #29a4e2; color: #ffffff; }
-  .btn.telegram:hover { background: #1b94d4; }
-  .btn.whatsapp { border-color: transparent; background: #25d366; color: #ffffff; }
-  .btn.whatsapp:hover { background: #18bd58; }
-  .btn.ghost { background: transparent; color: #1d6f9e; box-shadow: none; }
-  .btn.ghost:hover { background: #e6f3fb; box-shadow: none; }
-  .btn.small { min-height: 38px; padding: 0 15px; font-size: 13px; border-radius: 6px; }
-  .chip { display: inline-flex; align-items: center; min-height: 28px; padding: 2px 10px; border: 1px solid #dce8ef; border-radius: 999px; background: #f0f6fa; color: #557383; font-size: 12px; font-weight: 650; }
-  .icon { width: 20px; height: 20px; flex: 0 0 auto; }
-  .topbar { background: #e3f1f9; border-bottom: 1px solid #d6e5ed; color: #416273; font-size: 13px; }
-  .topbar .container { min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-  .topbar a { color: #1c628c; font-weight: 650; }
-  .topbar a:hover { color: #0d7fb8; }
+
+  .topbar { background: var(--navy); color: #dce9f2; font-size: 13px; }
+  .topbar .container { min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+  .topbar span { color: #8fb4cc; }
+  .topbar a { color: #ffffff; font-weight: 650; }
+  .topbar a:hover { color: #a8def7; }
   .topbar .contacts { display: flex; align-items: center; gap: 18px; white-space: nowrap; }
-  .site-header { position: sticky; top: 0; z-index: 60; background: rgba(255,255,255,.94); border-bottom: 1px solid #dce9f0; backdrop-filter: blur(16px); box-shadow: 0 1px 10px rgba(31,77,108,.06); }
-  .site-header .container { min-height: var(--header-h); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-  .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 0; }
-  .brand svg { width: 42px; height: 42px; flex: 0 0 auto; }
-  .brand-name { display: grid; justify-items: start; gap: 2px; min-width: 0; }
-  .brand strong { font-size: 18px; font-weight: 850; line-height: 1; color: #0f3d58; }
-  .brand span { color: #547483; font-size: 10px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
-  .brand-line { width: 44px; height: 3px; background: #0a66c2; margin-top: 3px; }
-  .main-nav { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 700; }
-  .main-nav a { color: #527080; }
-  .main-nav a:hover { color: #0d78b4; }
-  .header-cta { display: flex; align-items: center; gap: 10px; }
-  .hero { position: relative; isolation: isolate; overflow: hidden; padding: 96px 0 72px; }
-  .hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(105deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.92) 48%, rgba(245,249,252,.16) 82%), url("assets/hero.jpg") center 30% / cover no-repeat; }
-  .hero::after { content: ""; position: absolute; inset: auto 0 0 0; height: 180px; z-index: -1; background: linear-gradient(0deg, var(--bg) 0%, rgba(245,249,252,0) 100%); }
-  .hero-copy { max-width: 760px; }
-  .hero .eyebrow { display: inline-flex; align-items: center; border: 1px solid #f3c59d; background: rgba(255,255,255,.74); color: #c45a1f; padding: 6px 11px; border-radius: 999px; margin-bottom: 22px; }
-  .hero h1 { max-width: 830px; margin-bottom: 24px; }
-  .hero h1 em { font-style: normal; color: #e0672c; }
-  .hero-lead { max-width: 650px; color: #31556a; background: rgba(255,255,255,.72); border-left: 3px solid #f09a62; border-radius: 8px; padding: 14px 16px; font-size: 18px; margin-bottom: 30px; }
-  .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 42px; }
-  .route-trust { max-width: 780px; display: flex; flex-wrap: wrap; gap: 34px 44px; margin: 26px 0 30px; }
-  .route-item strong { font-size: 19px; font-weight: 800; color: var(--accent-2); }
-  .route-item span { color: var(--muted-2); font-size: 12px; font-weight: 650; letter-spacing: .06em; text-transform: uppercase; }
-  .platform-line { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; border-top: 1px solid var(--line-soft); padding-top: 22px; max-width: 780px; }
-  .platform-line span { color: var(--muted-2); font-size: 12px; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; margin-right: 6px; }
-  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-  .feature-card { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; min-height: 210px; overflow: hidden; }
-  .feature-card::after { content: ""; position: absolute; right: -34px; top: -34px; width: 110px; height: 110px; border-radius: 50%; background: radial-gradient(circle, rgba(82,210,188,.12), transparent 66%); pointer-events: none; }
-  .feature-num { display: flex; width: 40px; height: 40px; align-items: center; justify-content: center; border-radius: 8px; background: rgba(255,195,90,.12); color: var(--accent); font-weight: 800; margin-bottom: 22px; }
-  .feature-card h3 { margin-bottom: 10px; }
+
+  .site-header { position: sticky; top: 0; z-index: 60; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(18px); }
+  .site-header .container { min-height: var(--header-h); display: flex; align-items: center; gap: 18px; }
+  .brand { display: inline-flex; align-items: center; gap: 11px; min-width: 0; }
+  .brand .logo { width: 44px; height: 44px; flex: 0 0 auto; display: grid; place-items: center; background: #0a66c2; border-radius: 9px; }
+  .brand .logo svg { width: 30px; height: 30px; }
+  .brand .logo svg text { font-family: "Arial Black", Arial, sans-serif; font-weight: 900; }
+  .brand-name { display: grid; gap: 1px; min-width: 0; }
+  .brand-name strong { font-size: 17px; font-weight: 900; line-height: 1.1; color: var(--navy); white-space: nowrap; }
+  .brand-name small { color: var(--muted); font-size: 10px; font-weight: 750; text-transform: uppercase; letter-spacing: .08em; white-space: nowrap; }
+
+  .main-nav { display: flex; align-items: center; gap: 26px; margin-left: 18px; }
+  .main-nav a { position: relative; font-size: 15px; font-weight: 750; color: #31526a; }
+  .main-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: var(--blue); transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+  .main-nav a:hover, .main-nav a.active { color: var(--blue); }
+  .main-nav a.active::after, .main-nav a:hover::after { transform: scaleX(1); }
+
+  .lang-switch { display: inline-flex; align-items: center; gap: 4px; background: #eef4f8; border: 1px solid var(--line); border-radius: 999px; padding: 3px; margin-left: auto; }
+  .lang-switch button { border: 0; background: transparent; color: var(--muted); font-size: 12px; font-weight: 800; padding: 6px 9px; border-radius: 999px; }
+  .lang-switch button.active { background: #ffffff; color: var(--blue); box-shadow: 0 2px 6px rgba(17,75,110,.12); }
+  .header-cta { display: inline-flex; align-items: center; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 0 18px; border-radius: var(--radius); border: 1px solid transparent; font-weight: 800; font-size: 15px; transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.primary { background: var(--blue); color: #fff; box-shadow: 0 10px 22px rgba(10,102,194,.24); }
+  .btn.primary:hover { background: #0856aa; }
+  .btn.ghost { background: #fff; color: var(--navy); border-color: var(--line); }
+  .btn.ghost:hover { border-color: #9db9cb; }
+  .btn.whatsapp { background: #20b959; color: #fff; }
+  .btn.telegram { background: #2198d2; color: #fff; }
+  .btn.orange { background: var(--orange); color: #fff; }
+  .btn.small { min-height: 38px; padding: 0 14px; font-size: 13px; }
+
+  .menu-toggle { display: none; margin-left: auto; border: 1px solid var(--line); background: #fff; border-radius: 8px; width: 42px; height: 42px; align-items: center; justify-content: center; }
+  .menu-toggle svg { width: 22px; height: 22px; }
+
+  main { overflow: hidden; }
+  .page { display: none; }
+  .page.active { display: block; animation: pageIn .45s ease both; }
+  @keyframes pageIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+  .hero { position: relative; isolation: isolate; min-height: 640px; display: flex; align-items: center; color: #fff; background: var(--navy); }
+  .hero-media { position: absolute; inset: 0; z-index: -2; }
+  .hero-media img { width: 100%; height: 100%; object-fit: cover; opacity: .56; }
+  .hero-overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, rgba(6,30,52,.94) 0%, rgba(7,41,68,.78) 52%, rgba(7,41,68,.25) 100%); }
+  .hero .container { padding: 84px 0 96px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: #ffd09c; font-size: 13px; font-weight: 850; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 18px; }
+  .eyebrow::before { content: ""; width: 28px; height: 3px; background: #ff9e4f; }
+  .hero h1 { max-width: 850px; font-size: clamp(42px, 6vw, 76px); line-height: 1.04; font-weight: 950; text-wrap: balance; }
+  .hero h1 em { color: #ffbf7a; font-style: normal; }
+  .hero-lead { max-width: 700px; margin: 24px 0 32px; font-size: 19px; color: #e6eef4; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-meta { margin-top: 56px; display: flex; flex-wrap: wrap; gap: 18px; }
+  .stat { background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.16); border-radius: var(--radius); padding: 14px 18px; min-width: 150px; backdrop-filter: blur(12px); }
+  .stat b { display: block; font-size: 25px; font-weight: 950; color: #fff; }
+  .stat span { color: #c6dbe8; font-size: 13px; }
+
+  .route-ribbon { background: #fff; border-bottom: 1px solid var(--line); }
+  .route-ribbon .container { display: flex; align-items: center; gap: 22px; padding-top: 16px; padding-bottom: 16px; }
+  .route-ribbon strong { color: var(--navy); white-space: nowrap; }
+  .route-marquee { overflow: hidden; flex: 1; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .route-track { display: inline-flex; gap: 18px; white-space: nowrap; animation: marquee 26s linear infinite; }
+  .route-track span { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; font-weight: 750; }
+  .route-track span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  .section { padding: 96px 0; }
+  .section.alt { background: #ffffff; }
+  .section-head { display: grid; grid-template-columns: 1fr minmax(260px, 460px); gap: 22px 56px; align-items: end; margin-bottom: 42px; }
+  .section-head h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.1; color: var(--navy); font-weight: 950; text-wrap: balance; }
+  .section-head p { color: var(--muted); font-size: 16px; }
+  .lead { color: var(--muted); font-size: 17px; }
+
+  .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .feature-card { position: relative; min-height: 250px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: 0 8px 20px rgba(21,58,79,.05); transition: transform .22s ease, box-shadow .22s ease; overflow: hidden; }
+  .feature-card::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--blue), var(--teal)); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+  .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+  .feature-card:hover::after { transform: scaleX(1); }
+  .feature-num { color: var(--blue); font-size: 13px; font-weight: 900; letter-spacing: .1em; }
+  .feature-icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 8px; margin: 16px 0 14px; background: #eaf4fc; color: var(--blue); }
+  .feature-icon svg { width: 24px; height: 24px; }
+  .feature-card h3 { font-size: 19px; margin-bottom: 9px; color: var(--navy); }
   .feature-card p { color: var(--muted); font-size: 14px; }
-  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .service-card { display: grid; grid-template-rows: auto auto 1fr auto; gap: 18px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; min-height: 340px; }
-  .service-card .svc-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
-  .svc-index { color: var(--accent-2); font-size: 13px; font-weight: 800; font-style: normal; }
-  .svc-icon { width: 48px; height: 48px; border-radius: 8px; display: grid; place-items: center; background: linear-gradient(145deg, #e6f7f3, #edf4fc); border: 1px solid #d5e7ec; color: #0b8980; }
-  .svc-icon svg { width: 23px; height: 23px; }
-  .service-card h3 { font-size: 21px; }
-  .service-card .svc-body { display: grid; gap: 12px; color: var(--muted); font-size: 14px; }
-  .svc-list { display: grid; gap: 8px; align-self: end; }
-  .svc-list li { display: flex; align-items: flex-start; gap: 9px; color: var(--muted); font-size: 13px; }
-  .svc-list svg { width: 15px; height: 15px; color: var(--accent-2); margin-top: 2px; flex: 0 0 auto; }
-  .steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; counter-reset: step; }
-  .step { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 20px 20px; min-height: 230px; }
-  .step::before { counter-increment: step; content: counter(step, decimal-leading-zero); color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .1em; }
-  .step h3 { font-size: 16px; margin: 18px 0 9px; }
-  .step p { color: var(--muted); font-size: 12.5px; }
+
+  .platform-strip { background: var(--bg); border-block: 1px solid var(--line); padding: 20px 0; }
+  .platform-strip .container { display: flex; align-items: center; gap: 26px; }
+  .platform-strip strong { color: var(--navy); white-space: nowrap; font-size: 14px; text-transform: uppercase; }
+  .platform-chips { display: flex; flex-wrap: wrap; gap: 9px; }
+  .chip { border: 1px solid var(--line); background: #fff; color: #47677b; border-radius: 999px; padding: 7px 12px; font-size: 13px; font-weight: 750; }
+
+  .two-col { display: grid; grid-template-columns: 1.15fr .85fr; gap: 60px; align-items: center; }
+  .about-copy h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.12; color: var(--navy); font-weight: 950; margin-bottom: 18px; }
+  .about-copy p { color: var(--muted); margin-bottom: 15px; }
+  .about-points { display: grid; gap: 11px; margin-top: 20px; }
+  .about-points li { display: flex; gap: 10px; color: #31526a; font-size: 15px; font-weight: 700; }
+  .about-points li::before { content: "✓"; color: var(--teal); font-weight: 900; }
+  .route-visual { position: relative; min-height: 440px; background: linear-gradient(145deg, #eef6fc, #f7fbfc); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .route-visual .route-map { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .route-visual .route-path { stroke-dasharray: 10 12; animation: dashMove 2.4s linear infinite; }
+  @keyframes dashMove { to { stroke-dashoffset: -44; } }
+  .route-visual .city { position: absolute; display: grid; gap: 2px; font-size: 13px; font-weight: 850; color: var(--navy); }
+  .route-visual .city b { color: var(--blue); }
+
+  .page-hero { background: linear-gradient(110deg, #0a66c2, #0b8d83); color: #fff; padding: 74px 0; position: relative; overflow: hidden; }
+  .page-hero::after { content: ""; position: absolute; inset: auto -40px -120px auto; width: 320px; height: 320px; border: 2px dashed rgba(255,255,255,.2); border-radius: 50%; animation: orbit 12s linear infinite; }
+  @keyframes orbit { to { transform: rotate(360deg); } }
+  .page-hero .eyebrow { color: #d6ecff; }
+  .page-hero h1 { font-size: clamp(34px, 5vw, 58px); font-weight: 950; max-width: 850px; line-height: 1.08; }
+  .page-hero p { max-width: 720px; margin-top: 18px; color: #e5f3fa; font-size: 17px; }
+
+  .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .service-card { position: relative; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+  .service-card:hover { transform: translateY(-5px); border-color: #a9c7d8; box-shadow: var(--shadow); }
+  .service-card .svc-index { position: absolute; top: 18px; right: 20px; color: #b7cdda; font-size: 26px; font-weight: 950; }
+  .service-card h3 { color: var(--navy); font-size: 20px; margin: 16px 0 10px; }
+  .service-card p { color: var(--muted); font-size: 14px; }
+  .service-card ul { margin-top: 14px; display: grid; gap: 7px; }
+  .service-card li { position: relative; padding-left: 17px; color: #47677b; font-size: 13px; }
+  .service-card li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+
+  .process { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; position: relative; }
+  .step { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 18px; min-height: 190px; position: relative; transition: transform .22s ease; }
+  .step:hover { transform: translateY(-4px); }
+  .step b { display: block; width: 32px; height: 32px; display: grid; place-items: center; background: var(--blue); color: #fff; border-radius: 8px; margin-bottom: 18px; font-size: 14px; }
+  .step:nth-child(2n) b { background: var(--teal); }
+  .step:nth-child(3n) b { background: var(--orange); }
+  .step h3 { font-size: 16px; color: var(--navy); margin-bottom: 8px; }
+  .step p { color: var(--muted); font-size: 13px; }
+
+  .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .mode-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; background: #fff; }
+  .mode-card.accent { border-top: 4px solid var(--blue); }
+  .mode-card.gold { border-top: 4px solid var(--orange); }
+  .mode-tag { display: inline-block; color: var(--blue); background: #eaf4fc; border-radius: 999px; font-size: 12px; font-weight: 800; padding: 6px 10px; }
+  .mode-card.gold .mode-tag { color: #c35418; background: #fff0e3; }
+  .mode-card h3 { color: var(--navy); font-size: 22px; margin: 14px 0 8px; }
+  .mode-card p { color: var(--muted); font-size: 14px; }
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 20px; }
+  .facts div { background: #f1f6fa; border-radius: 6px; padding: 10px; }
+  .facts b { display: block; color: var(--blue); font-size: 14px; }
+  .facts span { color: var(--muted); font-size: 11px; }
+  .mode-card.gold .facts b { color: #cc5c1c; }
+
   .market-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-  .market-card { background: linear-gradient(165deg, var(--panel), var(--panel-2)); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 22px; min-height: 260px; display: grid; align-content: start; gap: 14px; }
-  .market-card .flag { width: 44px; height: 30px; border-radius: 4px; overflow: hidden; }
-  .market-card h3 { font-size: 22px; }
+  .market-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; transition: transform .2s ease, box-shadow .2s ease; }
+  .market-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .flag { width: 46px; height: 30px; border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
+  .flag .flag-inner { width: 100%; height: 100%; }
+  .market-card h3 { color: var(--navy); font-size: 18px; margin-bottom: 8px; }
   .market-card p { color: var(--muted); font-size: 13px; }
-  .market-card .route-list { display: grid; gap: 8px; border-top: 1px solid var(--line-soft); padding-top: 14px; }
-  .market-card .route-list li { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 12px; }
-  .market-card .route-list b { color: var(--text); font-weight: 750; }
-  .delivery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .delivery-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; min-height: 300px; display: grid; grid-template-rows: auto 1fr auto; gap: 20px; }
-  .delivery-card.accent { border-color: #a8dccf; background: linear-gradient(145deg, #e8f8f3 0%, #ffffff 62%); }
-  .delivery-card.gold { border-color: #efd1a9; background: linear-gradient(145deg, #fff5e7 0%, #ffffff 62%); }
-  .delivery-title { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
-  .mode-tag { color: var(--accent-2); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-  .mode-tag.gold { color: var(--accent); }
-  .delivery-card h3 { font-size: 30px; margin-top: 10px; }
-  .delivery-card p { color: var(--muted); font-size: 14px; }
-  .delivery-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); border-radius: 6px; overflow: hidden; margin-top: 10px; }
-  .fact { background: #f1f7fa; padding: 14px; }
-  .fact b { display: block; font-size: 18px; font-weight: 850; color: var(--accent-2); margin-bottom: 3px; }
-  .fact span { color: var(--muted-2); font-size: 11px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
-  .delivery-card.gold .fact b { color: var(--accent); }
-  .compare-wrap { overflow-x: auto; margin-top: 18px; border: 1px solid var(--line); border-radius: var(--radius); }
-  table { width: 100%; border-collapse: collapse; background: #ffffff; }
-  th, td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line-soft); color: var(--muted); font-size: 13px; }
-  th { color: var(--text); font-size: 12px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
-  tr:last-child th, tr:last-child td { border-bottom: 0; }
-  td:first-child { color: var(--text); font-weight: 700; white-space: nowrap; }
-  .note { margin-top: 14px; color: var(--muted-2); font-size: 12px; }
-  .categories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .category-card { display: grid; grid-template-columns: 76px 1fr; gap: 18px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
-  .category-mark { width: 70px; height: 70px; border-radius: 8px; display: grid; place-items: center; color: var(--blue); background: rgba(79,163,201,.10); border: 1px solid rgba(79,163,201,.18); font-weight: 800; font-size: 11px; text-align: center; line-height: 1.12; overflow-wrap: anywhere; }
-  .category-card:nth-child(3n+2) .category-mark { color: var(--accent); background: rgba(255,195,90,.09); border-color: rgba(255,195,90,.17); }
-  .category-card:nth-child(3n) .category-mark { color: var(--accent-2); background: rgba(82,210,188,.09); border-color: rgba(82,210,188,.17); }
-  .category-card h3 { font-size: 16px; margin-bottom: 6px; }
-  .category-card p { color: var(--muted); font-size: 12.5px; }
-  .about-block { display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
-  .about-copy h2 { margin: 4px 0 22px; }
-  .about-copy > p { color: var(--muted); margin-bottom: 14px; }
-  .about-points { display: grid; gap: 12px; margin-top: 24px; }
-  .about-points li { display: flex; align-items: flex-start; gap: 12px; color: var(--muted); font-size: 14px; }
-  .about-points svg { width: 19px; height: 19px; color: var(--accent); flex: 0 0 auto; }
-  .ceo-wrap { background: linear-gradient(160deg, var(--panel), var(--bg-2)); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
-  .ceo-photo { width: 100%; max-height: 520px; object-fit: cover; object-position: top center; border-radius: 6px; border: 1px solid #d9e7ee; background: #e6eef2; }
-  .ceo-caption { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 16px 4px 0; }
-  .ceo-caption strong { display: block; font-size: 16px; margin-bottom: 2px; }
-  .ceo-caption span { color: var(--muted-2); font-size: 12px; }
-  .ceo-links { display: flex; gap: 8px; margin-top: 15px; }
-  .ceo-links .btn { flex: 1; min-height: 44px; font-size: 13px; padding: 0 10px; }
-  .contact-section { background: linear-gradient(180deg, #f5f9fc 0%, #e4f1f7 50%, #f5f9fc 100%); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-  .contact-info h2 { margin-bottom: 20px; }
-  .contact-info > p { color: var(--muted); margin-bottom: 28px; }
-  .contact-methods { display: grid; gap: 12px; }
-  .contact-method { display: flex; align-items: center; gap: 14px; border: 1px solid #d8e6ed; background: #ffffff; border-radius: var(--radius); padding: 16px 18px; box-shadow: 0 8px 24px rgba(34,77,106,.07); transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease; }
-  .contact-method:hover { border-color: #abc9d8; transform: translateX(2px); box-shadow: 0 12px 30px rgba(34,77,106,.10); }
-  .method-icon { width: 44px; height: 44px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 8px; }
-  .method-icon svg { width: 22px; height: 22px; }
-  .contact-method.telegram { background: #eff8fd; border-color: #bfe2f4; }
-  .contact-method.telegram .method-icon { background: #29a4e2; color: #ffffff; }
-  .contact-method.whatsapp { background: #edfbf2; border-color: #bce8ce; }
-  .contact-method.whatsapp .method-icon { background: #25d366; color: #fff; }
-  .method-meta { min-width: 0; }
-  .method-meta b { display: block; font-size: 15px; margin-bottom: 2px; }
-  .method-meta span { display: block; color: var(--muted-2); font-size: 12px; word-break: break-word; }
-  .contact-form-panel { border: 1px solid #d7e6ee; background: #ffffff; border-radius: var(--radius); padding: 26px; box-shadow: 0 18px 45px rgba(35,78,108,.11); }
-  .contact-form-panel h3 { margin-bottom: 8px; }
-  .contact-form-panel > p { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+  .route-list { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 12px; display: grid; gap: 6px; }
+  .route-list li { display: flex; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 12px; }
+  .route-list b { color: var(--blue); font-weight: 850; }
+
+  .cta-band { background: linear-gradient(100deg, var(--navy), #0a5f9a 58%, #0b8d83); color: #fff; padding: 66px 0; }
+  .cta-band .container { display: flex; align-items: center; justify-content: space-between; gap: 26px; flex-wrap: wrap; }
+  .cta-band h2 { font-size: clamp(28px, 4vw, 44px); max-width: 760px; line-height: 1.1; font-weight: 950; }
+  .cta-band p { color: #d5e9f3; margin-top: 10px; max-width: 680px; }
+  .cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .contact-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+  .panel { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+  .panel h3 { color: var(--navy); font-size: 20px; margin-bottom: 10px; }
+  .panel > p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+  .qr-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .qr-card { display: grid; justify-items: start; gap: 12px; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; transition: transform .2s ease, box-shadow .2s ease; }
+  .qr-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .qr-head { display: flex; align-items: center; gap: 10px; }
+  .qr-head svg { width: 24px; height: 24px; }
+  .qr-head b { color: var(--navy); }
+  .qr-head small { color: var(--muted); font-size: 11px; }
+  .qr-card img { width: 150px; max-width: 100%; height: auto; border: 1px solid #e4edf2; border-radius: 6px; background: #fff; }
+  .contact-direct { display: grid; gap: 12px; }
+  .contact-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+  .contact-row div { min-width: 0; }
+  .contact-row b { color: var(--navy); }
+  .contact-row span { color: var(--muted); font-size: 13px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  label { display: grid; gap: 7px; color: var(--muted); font-size: 12px; font-weight: 700; margin-bottom: 13px; }
-  input, select, textarea { width: 100%; background: #ffffff; border: 1px solid #d2e2eb; border-radius: 6px; color: #17384d; box-shadow: inset 0 1px 2px rgba(38,77,105,.04); font: inherit; padding: 12px 13px; outline: none; transition: border-color .16s ease, box-shadow .16s ease; }
-  input:focus, select:focus, textarea:focus { border-color: #4aa6d8; box-shadow: 0 0 0 3px rgba(74,166,216,.16); }
-  textarea { resize: vertical; min-height: 96px; }
-  select option { background: #ffffff; }
-  .consent { display: flex; align-items: flex-start; gap: 8px; color: var(--muted-2); font-size: 11px; margin: 2px 0 14px; }
+  label { display: grid; gap: 7px; color: #46657a; font-size: 13px; font-weight: 800; margin-bottom: 13px; }
+  input, select, textarea { width: 100%; border: 1px solid #cfdee8; border-radius: 6px; background: #fff; color: var(--ink); padding: 12px 13px; font: inherit; outline: none; }
+  input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(10,102,194,.13); }
+  textarea { resize: vertical; min-height: 110px; }
+  .consent { display: flex; align-items: flex-start; gap: 8px; color: var(--muted); font-size: 11px; font-weight: 500; }
   .consent input { width: 15px; height: 15px; margin-top: 2px; }
   .form-submit { width: 100%; }
-  footer { background: #e5f0f6; border-top: 1px solid #d6e4eb; padding: 54px 0 34px; }
-  .footer-grid { display: grid; grid-template-columns: 1.3fr .8fr .8fr 1fr; gap: 40px; margin-bottom: 40px; }
-  .footer-grid h4 { font-size: 14px; margin-bottom: 16px; letter-spacing: .05em; text-transform: uppercase; }
-  .footer-grid p { color: var(--muted); font-size: 13px; max-width: 320px; }
+  .ceo-card { display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: center; border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-top: 18px; background: #fff; }
+  .ceo-card img { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; }
+  .ceo-card h4 { color: var(--navy); font-size: 17px; }
+  .ceo-card p { color: var(--muted); font-size: 13px; margin-top: 5px; }
+  .ceo-card .btn { margin-top: 10px; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .count-up { font-variant-numeric: tabular-nums; }
+
+  footer { background: var(--navy); color: #c7d8e4; }
+  footer .container { padding: 56px 0 30px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr 1fr; gap: 40px; }
+  .footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .footer-brand .logo { width: 40px; height: 40px; display: grid; place-items: center; background: #0a66c2; border-radius: 8px; }
+  .footer-brand strong { color: #fff; font-size: 17px; }
+  .footer-grid p { color: #9eb7c7; font-size: 13px; max-width: 340px; }
+  .footer-grid h4 { color: #fff; font-size: 14px; margin-bottom: 15px; }
   .footer-links { display: grid; gap: 9px; }
-  .footer-links a { color: var(--muted); font-size: 13px; }
-  .footer-links a:hover { color: var(--text); }
-  .footer-contact { display: grid; gap: 10px; color: var(--muted); font-size: 13px; }
-  .footer-contact a { color: var(--muted); }
-  .footer-contact a:hover { color: var(--text); }
-  .footer-bottom { border-top: 1px solid var(--line-soft); padding-top: 22px; display: flex; justify-content: space-between; gap: 18px; color: var(--muted-2); font-size: 12px; }
-  @media (max-width: 1080px) {
-    .brand .brand-name { display: none; }
-  }
-  @media (max-width: 1280px) {
-    .header-cta .btn.ghost { display: none; }
-  }
-  @media (max-width: 1080px) {
-    .why-grid { grid-template-columns: repeat(2, 1fr); }
-    .steps { grid-template-columns: repeat(3, 1fr); }
+  .footer-links a { color: #9eb7c7; font-size: 13px; }
+  .footer-links a:hover { color: #fff; }
+  .footer-contact { display: grid; gap: 9px; color: #9eb7c7; font-size: 13px; }
+  .footer-contact a { color: #cfe4f1; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.13); margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; color: #82a0b3; }
+
+  @media (max-width: 1100px) {
+    .main-nav { gap: 16px; }
+    .brand-name small { display: none; }
+    .feature-grid, .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .process { grid-template-columns: repeat(3, 1fr); }
     .market-grid { grid-template-columns: repeat(2, 1fr); }
-    .categories-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .about-block, .contact-grid { grid-template-columns: 1fr; }
-    .ceo-wrap { max-width: 520px; }
-    .main-nav { gap: 18px; }
+    .contact-layout { grid-template-columns: 1fr; }
   }
   @media (max-width: 860px) {
-    .section { padding: 78px 0; }
-    .section-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 34px; }
-    .services-grid, .delivery-grid { grid-template-columns: 1fr; }
-    .main-nav { display: none; }
-    .header-cta .btn.ghost { display: none; }
+    .menu-toggle { display: inline-flex; }
+    .main-nav { position: fixed; left: 14px; right: 14px; top: 80px; display: none; flex-direction: column; align-items: stretch; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; box-shadow: var(--shadow); margin: 0; z-index: 70; }
+    .main-nav.open { display: flex; }
+    .main-nav a { padding: 12px 10px; border-radius: 6px; font-size: 16px; }
+    .main-nav a.active { background: #eaf4fc; }
+    .lang-switch { margin-left: auto; }
+    .header-cta { display: none; }
+    .section { padding: 68px 0; }
+    .section-head { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; gap: 30px; }
+    .hero { min-height: 560px; }
+    .hero .container { padding: 64px 0 72px; }
+    .topbar .container { justify-content: center; }
     .topbar .bar-copy { display: none; }
-    .hero { padding: 68px 0 56px; }
-    .hero::before { background: linear-gradient(180deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.86) 52%, rgba(255,255,255,.36) 100%), url("assets/hero.jpg") center / cover no-repeat; }
-    .hero h1 { font-size: clamp(38px, 11vw, 62px); }
-    .hero-lead { font-size: 16px; }
-    .route-trust { gap: 24px 32px; }
-    .service-card, .delivery-card, .step { min-height: 0; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 640px) {
     .container { width: min(100% - 28px, 1180px); }
-    .topbar .container { justify-content: center; gap: 8px; }
-    .topbar .contacts { flex-wrap: wrap; justify-content: center; white-space: normal; gap: 4px 10px; }
-    .topbar .contacts a { display: inline-block; white-space: normal; font-size: 11px; }
-    .why-grid, .steps, .market-grid, .categories-grid { grid-template-columns: 1fr; }
-    .brand span { display: none; }
-    .brand strong { font-size: clamp(14px, 4.2vw, 18px); }
-    .brand-line { display: none; }
-    .site-header .container { min-height: 64px; }
+    .topbar .container { flex-wrap: wrap; gap: 4px 12px; }
+    .topbar .contacts { flex-wrap: wrap; justify-content: center; gap: 4px 12px; font-size: 11px; }
+    .feature-grid, .service-grid, .mode-grid, .qr-methods, .market-grid { grid-template-columns: 1fr; }
+    .process { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: clamp(34px, 10vw, 48px); }
+    .hero-lead { font-size: 16px; }
     .hero-actions .btn { flex: 1 1 100%; }
-    .section-head .lead { font-size: 15px; }
-    .feature-card, .delivery-card, .category-card { min-height: 0; }
-    .delivery-facts { grid-template-columns: 1fr; }
+    .hero-meta { margin-top: 38px; }
+    .stat { min-width: calc(50% - 9px); }
+    .route-ribbon strong { display: none; }
+    .platform-strip .container { align-items: flex-start; flex-direction: column; gap: 12px; }
     .form-row { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; gap: 26px; }
+    .ceo-card { grid-template-columns: 90px 1fr; }
+    .ceo-card img { width: 90px; height: 90px; }
+    .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; }
-    .ceo-wrap { padding: 14px; }
-    .ceo-links { flex-direction: column; }
+    .route-visual { min-height: 360px; }
+    .page-hero { padding: 56px 0; }
   }
   @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .btn, .contact-method { transition: none; }
-  }
-
-  /* Bright professional visual system */
-  :root {
-    --bg: #f5f9fc;
-    --bg-2: #eaf3f9;
-    --panel: #ffffff;
-    --panel-2: #f6fbfd;
-    --line: #d9e7ef;
-    --line-soft: #e8f1f6;
-    --text: #17384d;
-    --muted: #4f6e7e;
-    --muted-2: #728b99;
-    --accent: #e56f35;
-    --accent-2: #0b9287;
-    --blue: #226fc4;
-  }
-  body { background: var(--bg); color: var(--text); font-family: "Aptos", "Segoe UI", "Inter", Arial, sans-serif; }
-  ::selection { background: #cde9fb; color: #17384d; }
-  .section.alt { background: #eef6fa; }
-  .eyebrow { color: #d9692b; }
-  .lead, .section-head .lead { color: #526f7f; }
-  .btn { background: #ffffff; border-color: #cbdce6; color: #17384d; box-shadow: 0 1px 2px rgba(37,76,105,.06); }
-  .btn:hover { background: #f9fcfe; border-color: #9fbfd2; box-shadow: 0 7px 18px rgba(34,80,111,.10); }
-  .btn.primary { background: linear-gradient(135deg, #1973c3, #45a5de); border-color: transparent; color: #ffffff; box-shadow: 0 8px 20px rgba(25,115,195,.22); }
-  .btn.primary:hover { background: linear-gradient(135deg, #0f65b5, #379bd8); }
-  .btn.telegram { background: #29a4e2; border-color: transparent; color: #ffffff; }
-  .btn.telegram:hover { background: #1b94d4; }
-  .btn.whatsapp { background: #25d366; border-color: transparent; color: #ffffff; }
-  .btn.whatsapp:hover { background: #18bd58; }
-  .btn.ghost { background: transparent; color: #1d6f9e; box-shadow: none; }
-  .btn.ghost:hover { background: #e6f3fb; }
-  .chip { background: #f0f6fa; border-color: #dce8ef; color: #557383; }
-  .topbar { background: #e3f1f9; border-bottom-color: #d6e5ed; color: #416273; }
-  .topbar a { color: #1c628c; }
-  .topbar a:hover { color: #0d7fb8; }
-  .site-header { background: rgba(255,255,255,.94); border-bottom-color: #dce9f0; box-shadow: 0 1px 10px rgba(31,77,108,.06); }
-  .brand strong { color: #0f3d58; }
-  .brand span { color: #547483; }
-  .main-nav a { color: #527080; }
-  .main-nav a:hover { color: #0d78b4; }
-  .hero::before { background: linear-gradient(105deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.92) 48%, rgba(255,255,255,.16) 82%), url("assets/hero.jpg") center 30% / cover no-repeat; }
-  .hero::after { background: linear-gradient(0deg, var(--bg) 0%, rgba(245,249,252,0) 100%); }
-  .hero .eyebrow { background: rgba(255,255,255,.74); border-color: #f3c59d; color: #c45a1f; }
-  .hero h1 { color: #123b54; }
-  .hero h1 em { color: #e0672c; }
-  .hero-lead { color: #31556a; background: rgba(255,255,255,.62); padding: 14px 16px; border-radius: 8px; border-left: 3px solid #f09a62; }
-  .route-item strong { color: #0b8c85; }
-  .route-item span { color: #587381; }
-  .platform-line { border-top-color: rgba(62,104,132,.22); }
-  .platform-line span { color: #4f7183; }
-  .feature-card { background: #ffffff; border-color: #dce8ef; box-shadow: 0 12px 34px rgba(41,76,101,.08); }
-  .feature-card::after { background: radial-gradient(circle, rgba(11,146,135,.12), transparent 68%); }
-  .feature-num { background: #e4f4ef; color: #0b877e; }
-  .feature-card:nth-child(2) .feature-num { background: #e9f1fb; color: #2468b4; }
-  .feature-card:nth-child(3) .feature-num { background: #fff0e3; color: #d9682c; }
-  .feature-card:nth-child(4) .feature-num { background: #f3ebfb; color: #7c58cf; }
-  .feature-card p, .service-card p, .service-card .svc-body, .svc-list li, .step p, .market-card p, .market-card .route-list li, .delivery-card p, .about-copy > p, .about-points li, .contact-info > p { color: #577383; }
-  .services-grid, .why-grid, .steps, .market-grid, .delivery-grid, .categories-grid { gap: 16px; }
-  .service-card { background: #ffffff; border-color: #dce8ef; box-shadow: 0 12px 34px rgba(41,76,101,.07); }
-  .svc-index { color: #0e8e9b; }
-  .svc-icon { background: linear-gradient(145deg, #e6f7f3, #edf4fc); border-color: #d5e7ec; color: #0b8980; }
-  .svc-list svg { color: #0b9287; }
-  .step { background: #ffffff; border-color: #dce8ef; box-shadow: 0 10px 30px rgba(41,76,101,.06); }
-  .step::before { color: #e56f35; }
-  .market-card { background: #ffffff; border-color: #dce8ef; box-shadow: 0 10px 28px rgba(41,76,101,.06); }
-  .market-card h3 { color: #143d54; }
-  .market-card .route-list { border-top-color: #e5edf2; }
-  .market-card .route-list b { color: #12394f; }
-  .delivery-card { background: #ffffff; border-color: #dce8ef; box-shadow: 0 12px 34px rgba(41,76,101,.07); }
-  .delivery-card.accent { border-color: #a8dccf; background: linear-gradient(145deg, #e8f8f3 0%, #ffffff 62%); }
-  .delivery-card.gold { border-color: #efd1a9; background: linear-gradient(145deg, #fff5e7 0%, #ffffff 62%); }
-  .mode-tag { color: #0b8981; }
-  .mode-tag.gold { color: #d46e22; }
-  .delivery-facts { background: #dce8ef; border-color: #dce8ef; }
-  .fact { background: #f1f7fa; }
-  .fact b { color: #0b8f85; }
-  .delivery-card.gold .fact b { color: #db772b; }
-  .compare-wrap { background: #ffffff; border-color: #dce8ef; }
-  table { background: #ffffff; }
-  th, td { border-bottom-color: #e5edf2; }
-  th { color: #1b485f; }
-  td:first-child { color: #143d54; }
-  .note { color: #718995; }
-  .category-card { background: #ffffff; border-color: #dce8ef; box-shadow: 0 10px 28px rgba(41,76,101,.06); }
-  .category-mark { background: #e7f1fb; border-color: #cbe2f2; color: #2468b4; }
-  .category-card:nth-child(3n+2) .category-mark { background: #fff0e1; border-color: #f2d2ae; color: #d9682c; }
-  .category-card:nth-child(3n) .category-mark { background: #e4f6f1; border-color: #bfe5d9; color: #0b8d83; }
-  .about-copy h2 { color: #123d55; }
-  .about-points svg { color: #e4672e; }
-  .ceo-wrap { background: linear-gradient(155deg, #ffffff, #f3f9fc); border-color: #dce8ef; box-shadow: 0 16px 40px rgba(33,74,103,.10); }
-  .ceo-photo { background: #e6eef2; border-color: #d9e7ee; }
-  .ceo-caption strong { color: #17384d; }
-  .ceo-caption span { color: #718a97; }
-  .contact-section { background: linear-gradient(180deg, #f5f9fc 0%, #e4f1f7 50%, #f5f9fc 100%); }
-  .contact-info h2 { color: #123d55; }
-  .contact-methods { display: none; }
-  .contact-method { background: #ffffff; border-color: #d8e6ed; box-shadow: 0 8px 24px rgba(34,77,106,.07); }
-  .contact-method.telegram { background: #eff8fd; border-color: #bfe2f4; }
-  .contact-method.whatsapp { background: #edfbf2; border-color: #bce8ce; }
-  .contact-method.telegram .method-icon { background: #29a4e2; color: #ffffff; }
-  .contact-method.whatsapp .method-icon { background: #25d366; color: #ffffff; }
-  .method-meta span { color: #68818e; }
-  .contact-form-panel { background: #ffffff; border-color: #d7e6ee; box-shadow: 0 18px 45px rgba(35,78,108,.11); }
-  .contact-form-panel h3 { color: #143d55; }
-  .contact-form-panel > p { color: #5f7a89; }
-  label { color: #4d6a7a; }
-  input, select, textarea { background: #ffffff; border-color: #d2e2eb; color: #17384d; box-shadow: inset 0 1px 2px rgba(38,77,105,.04); }
-  input:focus, select:focus, textarea:focus { border-color: #4aa6d8; box-shadow: 0 0 0 3px rgba(74,166,216,.16); }
-  select option { background: #ffffff; }
-  .consent { color: #708995; }
-  .qr-methods { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 26px; }
-  .qr-card { position: relative; display: flex; flex-direction: column; gap: 13px; padding: 16px 16px 12px; background: #ffffff; border: 1px solid #d8e6ed; border-radius: var(--radius); color: var(--text); box-shadow: 0 12px 30px rgba(34,77,106,.08); overflow: hidden; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
-  .qr-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
-  .qr-card.telegram::before { background: #29a4e2; }
-  .qr-card.whatsapp::before { background: #25d366; }
-  .qr-card:hover { transform: translateY(-3px); border-color: #abc9d8; box-shadow: 0 18px 38px rgba(33,78,108,.13); }
-  .qr-head { display: flex; align-items: center; gap: 10px; min-width: 0; }
-  .qr-icon { width: 38px; height: 38px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; }
-  .qr-icon svg { width: 21px; height: 21px; fill: #ffffff; }
-  .qr-card.telegram .qr-icon { background: #29a4e2; }
-  .qr-card.whatsapp .qr-icon { background: #25d366; }
-  .qr-info { display: grid; gap: 1px; min-width: 0; }
-  .qr-info b { font-size: 15px; font-weight: 800; color: #17384d; }
-  .qr-info small { color: #66808e; font-size: 11px; overflow-wrap: anywhere; }
-  .qr-image { width: 136px; max-width: 100%; aspect-ratio: 1 / 1; object-fit: contain; margin: 2px auto 0; padding: 8px; background: #ffffff; border: 1px solid #e2ecf2; border-radius: 6px; }
-  .qr-hint { display: block; border-top: 1px solid #edf3f6; padding-top: 10px; text-align: center; color: #7b909b; font-size: 10px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
-  footer { background: #e5f0f6; border-top-color: #d6e4eb; }
-  .footer-grid h4 { color: #214961; }
-  .footer-grid p { color: #527080; }
-  .footer-links a { color: #4d6b7a; }
-  .footer-links a:hover { color: #0c77b2; }
-  .footer-contact { color: #4d6b7a; }
-  .footer-contact a { color: #1d6b9a; }
-  .footer-contact a:hover { color: #0b77b2; }
-  .footer-bottom { border-top-color: #d2e2ea; color: #66808e; }
-  @media (max-width: 640px) {
-    .qr-methods { grid-template-columns: 1fr; }
-    .hero-lead { background: rgba(255,255,255,.74); }
+    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   }
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="container">
-    <div class="bar-copy">Китай в Россию, Беларусь, Казахстан и Кыргызстан</div>
-    <div class="contacts">
-      <a href="https://t.me/Lihui9559" target="_blank" rel="noopener">Telegram: @Lihui9559</a>
-      <a href="https://wa.me/8615604658910" target="_blank" rel="noopener">WhatsApp: +86 15604658910</a>
+  <div class="topbar">
+    <div class="container">
+      <div class="bar-copy"><span data-i18n="top_note">中国采购 · 跨境物流 · 一站式服务</span></div>
+      <div class="contacts">
+        <a href="https://t.me/Lihui9559" target="_blank" rel="noopener">Telegram: @Lihui9559</a>
+        <a href="https://wa.me/8615604658910" target="_blank" rel="noopener">WhatsApp: +86 15604658910</a>
+      </div>
     </div>
   </div>
-</div>
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="#top" aria-label="Международная логистика">
-      <svg viewBox="0 0 120 120" role="img" aria-label="LH logo">
-        <rect x="8" y="8" width="104" height="104" rx="24" fill="#0a66c2"/>
-        <text x="60" y="79" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-size="56" font-weight="900" fill="#ffffff">LH</text>
-      </svg>
-      <span class="brand-name"><strong>Международная логистика</strong><span>Доставка из Китая</span><div class="brand-line" aria-hidden="true"></div></span>
-    </a>
-    <nav class="main-nav" aria-label="Основное меню">
-      <a href="#services">Услуги</a><a href="#process">Процесс</a><a href="#markets">Рынки</a><a href="#delivery">Доставка</a><a href="#about">О компании</a><a href="#contact">Контакты</a>
-    </nav>
-    <div class="header-cta">
-      <a class="btn ghost small" href="#contact">Получить расчёт</a>
-      <a class="btn telegram small" href="https://t.me/Lihui9559" target="_blank" rel="noopener">Telegram</a>
-    </div>
-  </div>
-</header>
-<main id="top">
-  <section class="hero">
+
+  <header class="site-header">
     <div class="container">
-      <div class="hero-copy">
-        <div class="eyebrow">Полный цикл импорта из Китая</div>
-        <h1>Доставка грузов из Китая <em>в Россию и Среднюю Азию</em></h1>
-        <p class="hero-lead">LH помогает пройти путь от товара на Taobao или 1688 до вашего склада: <strong>поиск и закупка, оплата в юанях, проверка, консолидация и трансграничная перевозка</strong> в одном окне.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#contact">Рассчитать доставку</a>
-          <a class="btn telegram" href="https://t.me/Lihui9559" target="_blank" rel="noopener">Написать в Telegram</a>
-          <a class="btn whatsapp" href="https://wa.me/8615604658910" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-        <div class="route-trust">
-          <div class="route-item"><strong>2-4 дня</strong><span>Авиа Китай в Москву</span></div>
-          <div class="route-item"><strong>12-15 дней</strong><span>Наземно Китай в Москву</span></div>
-          <div class="route-item"><strong>5-7 дней</strong><span>Наземно Китай в Алматы</span></div>
-          <div class="route-item"><strong>4 страны</strong><span>Россия, СНГ, Средняя Азия</span></div>
-        </div>
-        <div class="platform-line">
-          <span>Закупаем на платформах</span>
-          <span class="chip">Taobao</span><span class="chip">1688</span><span class="chip">Pinduoduo</span><span class="chip">Poizon</span><span class="chip">Yiwu Go</span><span class="chip">Made-in-China</span>
-        </div>
+      <a class="brand" href="#home">
+        <span class="logo" aria-hidden="true"><svg viewBox="0 0 60 60"><rect width="60" height="60" rx="14" fill="#0a66c2"/><text x="30" y="41" text-anchor="middle" fill="#fff" font-size="32">LH</text></svg></span>
+        <span class="brand-name"><strong data-i18n="brand_name">国际物流</strong><small data-i18n="brand_sub">China Sourcing & Delivery</small></span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#home" data-page="home" data-i18n="nav_home">首页</a>
+        <a href="#services" data-page="services" data-i18n="nav_services">服务</a>
+        <a href="#contact" data-page="contact" data-i18n="nav_contact">联系</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="zh" class="active">中文</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ru">RU</button>
       </div>
+      <button class="menu-toggle" type="button" id="menuToggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
-  </section>
-  <section class="section" id="why">
-    <div class="container">
-      <div class="section-head">
-        <div><p class="eyebrow">Почему LH</p><h2>Один сервис вместо нескольких посредников</h2></div>
-        <p class="lead">Клиенту не нужно отдельно искать закупщика, помощника по оплате, склад в Китае и логистику. LH собирает цепочку в один заказ и сопровождает его до прибытия.</p>
-      </div>
-      <div class="why-grid">
-        <article class="feature-card"><div class="feature-num">01</div><h3>Полный цикл</h3><p>Поиск товара, переговоры с поставщиками, закупка, проверка, доставка и повторное пополнение в одном сервисе.</p></article>
-        <article class="feature-card"><div class="feature-num">02</div><h3>Решает барьеры</h3><p>Китайские платформы, язык, переписка с фабриками, оплата в юанях и объединение грузов - LH снимает типичные сложности.</p></article>
-        <article class="feature-card"><div class="feature-num">03</div><h3>Гибкие объёмы</h3><p>Личные заказы и образцы, пополнение магазинов, опт, крупная мебель и кастомные заказы для бизнеса.</p></article>
-        <article class="feature-card"><div class="feature-num">04</div><h3>Русскоязычные рынки</h3><p>Логистика выстроена для России, Беларуси, Казахстана и Кыргызстана: понятные маршруты и регулярные поставки.</p></article>
-      </div>
-    </div>
-  </section>
-  <section class="section alt" id="services">
-    <div class="container">
-      <div class="section-head">
-        <div><p class="eyebrow">Услуги</p><h2>Полный комплекс услуг</h2></div>
-        <p class="lead">Можно заказать один этап или доверить LH весь процесс: от потребности в товаре до трансграничной доставки.</p>
-      </div>
-      <div class="services-grid">
-        <article class="service-card">
-          <div class="svc-head"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><path d="M7 17v2M17 17v2"/></svg></div><i class="svc-index">01</i></div>
-          <h3>Трансграничная логистика</h3>
-          <div class="svc-body"><p>Принимаем коммерческие и личные заказы из Китая в Россию, Беларусь, Казахстан и Кыргызстан. Подбираем авиа или наземную доставку по весу, срочности и бюджету.</p></div>
-          <ul class="svc-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Срочная авиадоставка</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Наземные перевозки и крупногабарит</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Пополнение склада и подтверждение доставки</li>
-          </ul>
-        </article>
-        <article class="service-card">
-          <div class="svc-head"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35M8 11h6M11 8v6"/></svg></div><i class="svc-index">02</i></div>
-          <h3>Закупка на платформах</h3>
-          <div class="svc-body"><p>Помогаем заказывать на Taobao, 1688, Pinduoduo, Poizon, Yiwu Go и у поставщиков, если нет опыта, языка или времени на самостоятельную работу.</p></div>
-          <ul class="svc-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Поиск товара и заказ за клиента</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Оптовая закупка и переговоры</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Проверка перед отправкой</li>
-          </ul>
-        </article>
-        <article class="service-card">
-          <div class="svc-head"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5a2 2 0 0 1 2-2h13v18H6a2 2 0 0 1-2-2z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div><i class="svc-index">03</i></div>
-          <h3>Подбор фабрик</h3>
-          <div class="svc-body"><p>По спецификации, целевой себестоимости и требованиям к кастомизации находим китайских производителей и строим регулярную цепочку поставок.</p></div>
-          <ul class="svc-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Фабрики по спецификации и кастомизация</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Переговоры с производителем</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>Регулярные поставки</li>
-          </ul>
-        </article>
-        <article class="service-card">
-          <div class="svc-head"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div><i class="svc-index">04</i></div>
-          <h3>Оплата в юанях</h3>
-          <div class="svc-body"><p>Помогаем с оплатой поставщикам и заказам на платформах внутри реальной закупки, чтобы поставщик подтвердил средства и отгрузил товар.</p></div>
-          <ul class="svc-list">
-            <li>Оплата поставщикам и на платформах</li>
-            <li>Расчёт в рамках заказа</li>
-            <li>Оплата логистики после закупки</li>
-          </ul>
-        </article>
-        <article class="service-card">
-          <div class="svc-head"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8v11H8V8zM16 8V5H3v11"/><path d="M7 13h4"/></svg></div><i class="svc-index">05</i></div>
-          <h3>Склад и консолидация</h3>
-          <div class="svc-body"><p>Принимаем грузы внутри Китая, храним, проверяем и объединяем заказы разных поставщиков и платформ в один груз для отправки.</p></div>
-          <ul class="svc-list">
-            <li>Приёмка и проверка товара</li>
-            <li>Объединение заказов</li>
-            <li>Подготовка к отправке</li>
-          </ul>
-        </article>
-        <article class="service-card">
-          <div class="svc-head"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 11h8M8 15h5"/><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m17 9 3 3-3 3"/></svg></div><i class="svc-index">06</i></div>
-          <h3>Партнёрство</h3>
-          <div class="svc-body"><p>Принимаем закупочные и логистические запросы от блогеров, организаторов совместных закупок и команд шопинг-сервисов.</p></div>
-          <ul class="svc-list">
-            <li>Работа с аудиторией партнёра</li>
-            <li>Закупка и логистика под запрос</li>
-            <li>Рекомендации и комиссионная модель</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="process">
-    <div class="container">
-      <div class="section-head">
-        <div><p class="eyebrow">Как мы работаем</p><h2>Путь от запроса до доставки</h2></div>
-        <p class="lead">Процесс начинается с товара или пополнения запасов и завершается трансграничной доставкой, после чего формируется регулярное сотрудничество.</p>
-      </div>
-      <div class="steps">
-        <article class="step"><h3>Запрос</h3><p>Ссылка, фото, спецификация, количество, бюджет, город назначения и срок.</p></article>
-        <article class="step"><h3>Поиск и проверка</h3><p>Находим товар на платформах, у поставщиков или подбираем фабрику под задачу.</p></article>
-        <article class="step"><h3>Закупка и оплата</h3><p>Оформляем заказ, решаем оплату в юанях, поставщик отгружает товар.</p></article>
-        <article class="step"><h3>Приёмка и склад</h3><p>Проверяем, принимаем и консолидируем грузы разных поставщиков.</p></article>
-        <article class="step"><h3>Перевозка</h3><p>Выбираем авиа или наземную доставку под вес, срочность и бюджет.</p></article>
-        <article class="step"><h3>Прибытие</h3><p>Подтверждаем доставку и помогаем организовать следующий цикл закупок.</p></article>
-      </div>
-    </div>
-  </section>
-  <section class="section alt" id="markets">
-    <div class="container">
-      <div class="section-head">
-        <div><p class="eyebrow">Направления</p><h2>Целевые рынки и маршруты</h2></div>
-        <p class="lead">Основные направления LH - русскоязычные рынки России, Беларуси, Казахстана и Кыргызстана с регулярной закупкой и доставкой из Китая.</p>
-      </div>
-      <div class="market-grid">
-        <article class="market-card">
-          <div class="flag" style="background:linear-gradient(180deg,#fff 0 33%,#0039a6 33% 67%,#d52b1e 67%)"></div>
-          <h3>Россия</h3><p>Главный рынок LH: закупка, подготовка к доставке и перевозка до склада клиента.</p>
-          <ul class="route-list"><li><span>Авиа до Москвы</span><b>2-4 дня</b></li><li><span>Наземно до Москвы</span><b>12-15 дней</b></li><li><span>Авиа до Новосибирска</span><b>4-6 дней</b></li></ul>
-        </article>
-        <article class="market-card">
-          <div class="flag" style="background:linear-gradient(180deg,#d52b1e 0 33%,#fff 33% 67%,#007c30 67%)"></div>
-          <h3>Беларусь</h3><p>Трансграничные заказы для частных покупателей, магазинов и оптовиков.</p>
-          <ul class="route-list"><li><span>Авиа и наземно</span><b>под расчёт</b></li><li><span>Постоянные поставки</span><b>по запросу</b></li><li><span>Консолидация грузов</span><b>да</b></li></ul>
-        </article>
-        <article class="market-card">
-          <div class="flag" style="background:linear-gradient(180deg,#00afca 0 33%,#fecb00 33% 67%,#ef3340 67%)"></div>
-          <h3>Казахстан</h3><p>Ключевой узел Средней Азии - Алматы. Удобен для региональных поставок.</p>
-          <ul class="route-list"><li><span>Авиа до Алматы</span><b>2-4 дня</b></li><li><span>Наземно до Алматы</span><b>5-7 дней</b></li><li><span>Регулярные маршруты</span><b>да</b></li></ul>
-        </article>
-        <article class="market-card">
-          <div class="flag" style="background:linear-gradient(180deg,#ef3340 0 33%,#fff 33% 67%,#fecb00 67%)"></div>
-          <h3>Кыргызстан</h3><p>Среднеазиатский рынок с ключевым логистическим узлом в Бишкеке.</p>
-          <ul class="route-list"><li><span>Авиа и наземно</span><b>под расчёт</b></li><li><span>Узел в Бишкеке</span><b>да</b></li><li><span>Опт и сборные грузы</span><b>по запросу</b></li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="delivery">
-    <div class="container">
-      <div class="section-head">
-        <div><p class="eyebrow">Виды доставки</p><h2>Выбираем маршрут под ваш груз</h2></div>
-        <p class="lead">В зависимости от объёма, веса, ценности и срочности подбираем авиаперевозку или наземную доставку. Стоимость и маршрут подтверждаются по каждому заказу.</p>
-      </div>
-      <div class="delivery-grid">
-        <article class="delivery-card accent">
-          <div class="mode-tag">Быстрее, для срочного</div>
-          <div>
-            <h3>Авиадоставка</h3>
-            <p>Подходит для срочного пополнения, тестовых образцов, небольших ценных грузов и заказов с высокими требованиями к срокам.</p>
-            <div class="delivery-facts"><div class="fact"><b>2-4 дня</b><span>Москва, Алматы</span></div><div class="fact"><b>4-6 дней</b><span>Новосибирск</span></div><div class="fact"><b>Образцы</b><span>оптимальный груз</span></div></div>
+  </header>
+
+  <main>
+    <section class="page active" id="home" data-page="home">
+      <div class="hero">
+        <div class="hero-media"><img src="assets/hero.jpg" alt=""></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="eyebrow" data-i18n="hero_eyebrow">中国到俄语区市场的一站式物流</div>
+          <h1><span data-i18n="hero_title_1">中国采购与跨境物流</span><em data-i18n="hero_title_2">一条龙交付</em></h1>
+          <p class="hero-lead" data-i18n="hero_lead">从 1688、淘宝、拼多多等平台选品采购，到验货、仓储、集运和跨境配送，我们帮您把货物安全送到俄罗斯、白俄罗斯、哈萨克斯坦和吉尔吉斯斯坦。</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#services" data-i18n="hero_btn_1">查看服务</a>
+            <a class="btn ghost" href="#contact" data-i18n="hero_btn_2">咨询报价</a>
+            <a class="btn whatsapp" href="https://wa.me/8615604658910" target="_blank" rel="noopener">WhatsApp</a>
           </div>
-        </article>
-        <article class="delivery-card gold">
-          <div class="mode-tag gold">Выгоднее, для объёма</div>
-          <div>
-            <h3>Наземная доставка</h3>
-            <p>Подходит для оптовых и крупногабаритных грузов, мебели, компрессионных диванов, метизов и регулярного пополнения, где важна стоимость перевозки.</p>
-            <div class="delivery-facts"><div class="fact"><b>12-15 дней</b><span>Китай в Москву</span></div><div class="fact"><b>5-7 дней</b><span>Китай в Алматы</span></div><div class="fact"><b>Крупный вес</b><span>оптимальный груз</span></div></div>
-          </div>
-        </article>
-      </div>
-      <div class="compare-wrap">
-        <table>
-          <thead><tr><th>Фактор выбора</th><th>Лучше авиа</th><th>Лучше наземная</th></tr></thead>
-          <tbody>
-            <tr><td>Сроки</td><td>Срочные заказы, образцы, экстренное пополнение</td><td>Обычное пополнение, когда срок не критичен</td></tr>
-            <tr><td>Груз</td><td>Небольшие, ценные, компактные</td><td>Крупногабаритные, оптовые, мебель и метизы</td></tr>
-            <tr><td>Бюджет</td><td>Важнее скорость</td><td>Важнее стоимость доставки</td></tr>
-            <tr><td>Ситуация</td><td>Тестовые заказы, дефицит, жёсткие сроки</td><td>Опт, регулярное пополнение, постоянные перевозки</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note">Сроки указаны как ориентировочные и не являются гарантией. Решение принимается с учётом типа груза, веса, объёма, города назначения и состояния маршрута.</p>
-    </div>
-  </section>
-  <section class="section alt" id="categories">
-    <div class="container">
-      <div class="section-head">
-        <div><p class="eyebrow">Что заказываем</p><h2>Категории закупки и доставки</h2></div>
-        <p class="lead">LH закупает широкий ассортимент китайских товаров под реальные заказы: от личных покупок до фабричных партий.</p>
-      </div>
-      <div class="categories-grid">
-        <article class="category-card"><div class="category-mark">Одежда и обувь</div><div><h3>Одежда и обувь</h3><p>Личные покупки, опт для магазинов, пополнение маркетплейсов и кастомизация.</p></div></article>
-        <article class="category-card"><div class="category-mark">Дом и мебель</div><div><h3>Дом и мебель</h3><p>Кухонные и бытовые товары, крупная мебель и компрессионные изделия.</p></div></article>
-        <article class="category-card"><div class="category-mark">Товары для бизнеса</div><div><h3>Стандартные товары для бизнеса</h3><p>Аксессуары для телефонов, автозапчасти, метизы и оптовые партии.</p></div></article>
-        <article class="category-card"><div class="category-mark">Мелкие товары</div><div><h3>Потребительские товары</h3><p>Товары для животных, игрушки, подарки и мелкие товары из Иу.</p></div></article>
-        <article class="category-card"><div class="category-mark">Taobao и 1688</div><div><h3>Сборные грузы с платформ</h3><p>Объединяем заказы с разных платформ, магазинов и поставщиков в один груз.</p></div></article>
-        <article class="category-card"><div class="category-mark">Кастомный заказ</div><div><h3>Кастомизация и производство</h3><p>Фабричная продукция, материалы, упаковка и заказы по спецификации.</p></div></article>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="about">
-    <div class="container">
-      <div class="about-block">
-        <div class="about-copy">
-          <p class="eyebrow">О компании</p>
-          <h2>LH Международная логистика</h2>
-          <p>Компания соединяет китайскую цепочку поставок с рынками России, Беларуси, Казахстана и Кыргызстана. Основной бизнес - трансграничная логистика, вокруг которой выстроены закупка, подбор фабрик, оплата, склад и исполнение заказов внутри Китая.</p>
-          <p>LH работает с частными покупателями, небольшими магазинами, оптовиками, продавцами маркетплейсов, брендами, организаторами совместных закупок и контент-каналами.</p>
-          <ul class="about-points">
-            <li>Связываем закупку и логистику: товар, фабрику, груз и маршрут подбираем как единую задачу.</li>
-            <li>После первой поставки сохраняем проверенных поставщиков и маршруты для следующего заказа.</li>
-            <li>Принимаем закупочные и логистические запросы от партнёров и аудитории их каналов.</li>
-          </ul>
-        </div>
-        <div class="ceo-wrap">
-          <img class="ceo-photo" src="assets/ceo.jpg" alt="Руководитель LH Международная логистика">
-          <div class="ceo-caption"><div><strong>Руководитель LH</strong><span>Основатель и прямой контакт по заказам</span></div></div>
-          <div class="ceo-links">
-            <a class="btn telegram small" href="https://t.me/Lihui9559" target="_blank" rel="noopener">Telegram</a>
-            <a class="btn whatsapp small" href="https://wa.me/8615604658910" target="_blank" rel="noopener">WhatsApp</a>
+          <div class="hero-meta">
+            <div class="stat"><b><span class="count-up" data-count="7">0</span></b><span data-i18n="stat_days">莫斯科空运平均时效（天）</span></div>
+            <div class="stat"><b><span class="count-up" data-count="4">0</span></b><span data-i18n="stat_countries">覆盖目标国家</span></div>
+            <div class="stat"><b><span class="count-up" data-count="6">0</span></b><span data-i18n="stat_services">全流程服务环节</span></div>
+            <div class="stat"><b><span class="count-up" data-count="100">0</span>%</b><span data-i18n="stat_direct">创始人直接对接</span></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="contact-section section" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p class="eyebrow">Контакты</p>
-          <h2>Связаться с руководителем напрямую</h2>
-          <p>Пришлите ссылку на товар, фото, вес, объём и город назначения - ответим по срокам и стоимости доставки.</p>
-          <div class="contact-methods">
-            <a class="contact-method telegram" href="https://t.me/Lihui9559" target="_blank" rel="noopener">
-              <span class="method-icon">TG</span>
-              <span class="method-meta"><b>Telegram</b><span>@Lihui9559 · t.me/Lihui9559</span></span>
-            </a>
-            <a class="contact-method whatsapp" href="https://wa.me/8615604658910" target="_blank" rel="noopener">
-              <span class="method-icon" aria-label="WhatsApp"><svg viewBox="0 0 24 24" role="img" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
-              <span class="method-meta"><b>WhatsApp</b><span>+86 15604658910 · wa.me/8615604658910</span></span>
-            </a>
-          </div>
-          <div class="qr-methods" aria-label="WhatsApp и Telegram">
-            <a class="qr-card telegram" href="https://t.me/Lihui9559" target="_blank" rel="noopener">
-              <span class="qr-head">
-                <span class="qr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span>
-                <span class="qr-info"><b>Telegram</b><small>@Lihui9559</small></span>
-              </span>
-              <img class="qr-image" src="assets/qr-telegram.png" alt="Telegram: @Lihui9559">
-              <span class="qr-hint">Сканируйте QR-код</span>
-            </a>
-            <a class="qr-card whatsapp" href="https://wa.me/8615604658910" target="_blank" rel="noopener">
-              <span class="qr-head">
-                <span class="qr-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
-                <span class="qr-info"><b>WhatsApp</b><small>+86 15604658910</small></span>
-              </span>
-              <img class="qr-image" src="assets/qr-whatsapp.png" alt="WhatsApp: +86 15604658910">
-              <span class="qr-hint">Сканируйте QR-код</span>
-            </a>
-          </div>
-        </div>
-        <div class="contact-form-panel">
-          <h3>Оставить заявку</h3>
-          <p>Кратко опишите задачу. После отправки откроется Telegram с готовым текстом сообщения.</p>
-          <form id="requestForm">
-            <div class="form-row">
-              <label>Ваше имя<input type="text" id="name" name="name" placeholder="Имя" autocomplete="name"></label>
-              <label>Что вас интересует?
-                <select id="service" name="service">
-                  <option>Доставка из Китая</option><option>Закупка на платформах</option><option>Подбор фабрики</option><option>Оплата в юанях</option><option>Склад и консолидация</option><option>Другое</option>
-                </select>
-              </label>
+
+      <div class="route-ribbon">
+        <div class="container">
+          <strong data-i18n="route_title">常走路线</strong>
+          <div class="route-marquee">
+            <div class="route-track">
+              <span data-i18n="route_1">中国 → 莫斯科：空运 2-4 天</span>
+              <span data-i18n="route_2">中国 → 阿拉木图：空运 2-4 天</span>
+              <span data-i18n="route_3">中国 → 莫斯科：陆运 12-15 天</span>
+              <span data-i18n="route_4">中国 → 比什凯克：整柜 / 散货</span>
+              <span data-i18n="route_1">中国 → 莫斯科：空运 2-4 天</span>
+              <span data-i18n="route_2">中国 → 阿拉木图：空运 2-4 天</span>
+              <span data-i18n="route_3">中国 → 莫斯科：陆运 12-15 天</span>
+              <span data-i18n="route_4">中国 → 比什凯克：整柜 / 散货</span>
             </div>
-            <label>Ссылка или описание товара<textarea id="message" name="message" placeholder="Опишите груз, вес, объём и город назначения"></textarea></label>
-            <label class="consent"><input type="checkbox" id="agree" checked><span>Отправляя заявку, вы соглашаетесь на обработку данных для связи по заказу.</span></label>
-            <button class="btn primary form-submit" type="submit">Отправить в Telegram</button>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a class="brand" href="#top" aria-label="Международная логистика">
-          <svg width="38" height="38" viewBox="0 0 120 120" aria-hidden="true">
-            <rect x="8" y="8" width="104" height="104" rx="24" fill="#0a66c2"/>
-            <text x="60" y="79" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-size="56" font-weight="900" fill="#ffffff">LH</text>
-          </svg>
-          <span class="brand-name"><strong>Международная логистика</strong><span>Доставка из Китая</span><div class="brand-line" aria-hidden="true"></div></span>
-        </a>
-        <p style="margin-top:16px">Китайская закупка и трансграничная логистика для русскоязычных рынков: один сервис от поиска товара до доставки.</p>
+
+      <section class="section" id="home-why">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><p class="eyebrow" data-i18n="why_eyebrow">为什么选择我们</p><h2 data-i18n="why_title">把复杂的跨境采购，做成一条清晰的流水线</h2></div>
+            <p class="lead" data-i18n="why_lead">您不需要同时对接十几个中间人。一个团队负责选品、采购、付款、验货、集运和交付，全程可直接联系创始人。</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <div class="feature-num" data-i18n="feature_1_tag">采购与选品</div>
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16l-1 12H5L4 7z"/><path d="M8 7a4 4 0 1 1 8 0"/></svg></div>
+              <h3 data-i18n="feature_1_title">在平台和工厂找到对的货</h3>
+              <p data-i18n="feature_1_desc">帮您从 1688、淘宝、拼多多、得物、义乌市场及工厂渠道筛选商品并核对规格。</p>
+            </article>
+            <article class="feature-card reveal">
+              <div class="feature-num" data-i18n="feature_2_tag">付款</div>
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+              <h3 data-i18n="feature_2_title">人民币付款，不用跨境转账烦恼</h3>
+              <p data-i18n="feature_2_desc">解决国内付款、对公转账和供应商沟通中的语言与支付障碍。</p>
+            </article>
+            <article class="feature-card reveal">
+              <div class="feature-num" data-i18n="feature_3_tag">验货</div>
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l3-3 3 3M6 4v8"/><path d="M21 12v7H3v-5"/><path d="M15 12l3-3 3 3"/></svg></div>
+              <h3 data-i18n="feature_3_title">仓库验货，减少货不对板</h3>
+              <p data-i18n="feature_3_desc">收到货后检查数量、颜色、尺寸和包装，问题及时与供应商沟通处理。</p>
+            </article>
+            <article class="feature-card reveal">
+              <div class="feature-num" data-i18n="feature_4_tag">集运</div>
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
+              <h3 data-i18n="feature_4_title">多供应商货物合并成一个包裹</h3>
+              <p data-i18n="feature_4_desc">把不同店铺和供应商的订单集中到一个仓库，重新打包后统一发出，省运费。</p>
+            </article>
+            <article class="feature-card reveal">
+              <div class="feature-num" data-i18n="feature_5_tag">配送</div>
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8h14v10H1z"/><path d="M15 11h4l4 4v3h-8"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg></div>
+              <h3 data-i18n="feature_5_title">空运、陆运、整柜灵活选择</h3>
+              <p data-i18n="feature_5_desc">按时效、体积和预算选择最合适的运输方式，全程跟进到目的地。</p>
+            </article>
+            <article class="feature-card reveal">
+              <div class="feature-num" data-i18n="feature_6_tag">直连</div>
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c.5-5 3-7 8-7s7.5 2 8 7"/></svg></div>
+              <h3 data-i18n="feature_6_title">创始人直接沟通，问题不绕圈</h3>
+              <p data-i18n="feature_6_desc">Telegram 和 WhatsApp 都可以直接联系负责人，报价与进度实时确认。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="platform-strip">
+        <div class="container">
+          <strong data-i18n="platforms">支持采购平台</strong>
+          <div class="platform-chips"><span class="chip">1688</span><span class="chip">Taobao</span><span class="chip">Pinduoduo</span><span class="chip">Poizon</span><span class="chip">Yiwu</span><span class="chip">Made in China</span></div>
+        </div>
       </div>
-      <div><h4>Разделы</h4><div class="footer-links"><a href="#services">Услуги</a><a href="#process">Процесс</a><a href="#markets">Рынки</a><a href="#delivery">Доставка</a><a href="#about">О компании</a><a href="#contact">Контакты</a></div></div>
-      <div><h4>Направления</h4><div class="footer-links"><a href="#markets">Россия</a><a href="#markets">Беларусь</a><a href="#markets">Казахстан</a><a href="#markets">Кыргызстан</a></div></div>
-      <div><h4>Контакты</h4><div class="footer-contact"><a href="https://t.me/Lihui9559" target="_blank" rel="noopener">Telegram: @Lihui9559</a><a href="https://wa.me/8615604658910" target="_blank" rel="noopener">WhatsApp: +86 15604658910</a><span>Сроки и стоимость подтверждаются по каждому заказу</span></div></div>
+
+      <section class="section alt">
+        <div class="container">
+          <div class="two-col">
+            <div class="about-copy reveal">
+              <p class="eyebrow" data-i18n="about_eyebrow">关于我们</p>
+              <h2 data-i18n="about_title">一家把中国供应链和俄语区市场连接起来的物流公司</h2>
+              <p data-i18n="about_1">我们的工作不是简单发货，而是把选品、采购、付款、验货、仓储、集运和跨境交付做成一条完整、透明、可追踪的服务链。</p>
+              <p data-i18n="about_2">服务对象包括个人买家、电商卖家、批发商、品牌方、代购社群以及需要稳定补货的零售店。</p>
+              <ul class="about-points">
+                <li data-i18n="about_point_1">一次对接，完成从商品需求到海外收货的整个流程</li>
+                <li data-i18n="about_point_2">首单完成后保留已验证的供应商和路线，方便持续补货</li>
+                <li data-i18n="about_point_3">价格、时效和进度都由负责人直接沟通确认</li>
+              </ul>
+            </div>
+            <div class="route-visual reveal">
+              <svg class="route-map" viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                <path d="M80 390 C220 330 340 330 500 90" fill="none" stroke="#b9d9ec" stroke-width="26" stroke-linecap="round"/>
+                <path class="route-path" d="M80 390 C220 330 340 330 500 90" fill="none" stroke="#0a66c2" stroke-width="6" stroke-linecap="round"/>
+                <path d="M500 90 l-16 3 12 11z" fill="#ef742f"/>
+              </svg>
+              <div class="city" style="left:10%;top:76%"><b data-i18n="city_china">中国 · 义乌 / 广州</b><span data-i18n="city_china_sub">采购 · 验货 · 仓库</span></div>
+              <div class="city" style="left:62%;top:30%"><b data-i18n="city_moscow">莫斯科</b><span data-i18n="city_moscow_sub">空运 2-4 天</span></div>
+              <div class="city" style="right:12%;top:78%"><b data-i18n="city_asia">阿拉木图 / 比什凯克</b><span data-i18n="city_asia_sub">陆运 · 空运</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <div class="container">
+          <div><h2 data-i18n="cta_title">现在发一件货，看看全流程能做到多省心</h2><p data-i18n="cta_desc">把商品链接、重量、体积和目的城市发给我们，即可获得运输方案与报价。</p></div>
+          <div class="cta-actions"><a class="btn orange" href="#contact" data-i18n="cta_btn">获取报价</a><a class="btn whatsapp" href="https://wa.me/8615604658910" target="_blank" rel="noopener">WhatsApp</a></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="page" id="services" data-page="services">
+      <div class="page-hero">
+        <div class="container">
+          <div class="eyebrow" data-i18n="services_eyebrow">服务与流程</div>
+          <h1 data-i18n="services_title">从选品到海外签收，每一步都有明确责任人</h1>
+          <p data-i18n="services_lead">可以只做单个环节，也可以把整条供应链交给我们。价格和时效都会在开始前确认清楚。</p>
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><p class="eyebrow" data-i18n="svc_eyebrow">核心服务</p><h2 data-i18n="svc_title">六类服务，覆盖跨境采购全部关键节点</h2></div>
+            <p class="lead" data-i18n="svc_lead">每项服务都可以单独选择，也可以组合成完整方案。</p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card reveal"><span class="svc-index">01</span><h3 data-i18n="s1_title">选品与采购</h3><p data-i18n="s1_desc">在电商平台、义乌市场和工厂渠道寻找商品，核对价格、MOQ、规格与供应商资质。</p><ul><li data-i18n="s1_1">1688 / 淘宝 / 拼多多代购</li><li data-i18n="s1_2">工厂定制与样品确认</li><li data-i18n="s1_3">价格与货源比较</li></ul></article>
+            <article class="service-card reveal"><span class="svc-index">02</span><h3 data-i18n="s2_title">付款与财务</h3><p data-i18n="s2_desc">帮助完成国内付款、人民币结算、对公转账以及供应商沟通，降低跨境交易摩擦。</p><ul><li data-i18n="s2_1">人民币 / 平台内付款</li><li data-i18n="s2_2">对公与私人供应商</li><li data-i18n="s2_3">付款凭证留档</li></ul></article>
+            <article class="service-card reveal"><span class="svc-index">03</span><h3 data-i18n="s3_title">验货与质检</h3><p data-i18n="s3_desc">收到货后检查数量、款式、颜色、尺寸、包装和明显质量问题，及时与供应商交涉。</p><ul><li data-i18n="s3_1">到仓验货与拍照</li><li data-i18n="s3_2">数量与规格核对</li><li data-i18n="s3_3">问题商品退换跟进</li></ul></article>
+            <article class="service-card reveal"><span class="svc-index">04</span><h3 data-i18n="s4_title">仓储与集运</h3><p data-i18n="s4_desc">多个订单可先集中到国内仓库，重新检查、换包装、合并后统一发出，节省运输成本。</p><ul><li data-i18n="s4_1">免费临时仓储</li><li data-i18n="s4_2">合并包裹与换箱</li><li data-i18n="s4_3">易碎品加固</li></ul></article>
+            <article class="service-card reveal"><span class="svc-index">05</span><h3 data-i18n="s5_title">跨境运输</h3><p data-i18n="s5_desc">按时效、重量、体积和预算选择空运、陆运或整柜方案，全程跟进运输状态。</p><ul><li data-i18n="s5_1">空运 2-4 天路线</li><li data-i18n="s5_2">陆运 12-15 天路线</li><li data-i18n="s5_3">哈萨克斯坦、吉尔吉斯斯坦专线</li></ul></article>
+            <article class="service-card reveal"><span class="svc-index">06</span><h3 data-i18n="s6_title">长期合作支持</h3><p data-i18n="s6_desc">首单完成后保留已验证的供应商、路线和包装标准，让下一批补货更快更稳定。</p><ul><li data-i18n="s6_1">供应商档案沉淀</li><li data-i18n="s6_2">固定路线价格</li><li data-i18n="s6_3">代购与社群批量订单</li></ul></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><p class="eyebrow" data-i18n="process_eyebrow">工作流程</p><h2 data-i18n="process_title">从需求到签收，六个清晰步骤</h2></div>
+            <p class="lead" data-i18n="process_lead">每一步都有记录，您可以随时在 Telegram 或 WhatsApp 上确认进度。</p>
+          </div>
+          <div class="process">
+            <article class="step reveal"><b>1</b><h3 data-i18n="p1_title">提交需求</h3><p data-i18n="p1_desc">商品链接、照片、数量、预算和目的城市。</p></article>
+            <article class="step reveal"><b>2</b><h3 data-i18n="p2_title">报价确认</h3><p data-i18n="p2_desc">确认货价、采购服务费、运费与预计时效。</p></article>
+            <article class="step reveal"><b>3</b><h3 data-i18n="p3_title">采购付款</h3><p data-i18n="p3_desc">下单付款，供应商开始备货或生产。</p></article>
+            <article class="step reveal"><b>4</b><h3 data-i18n="p4_title">到仓验货</h3><p data-i18n="p4_desc">检查数量、规格、外观并重新整理包装。</p></article>
+            <article class="step reveal"><b>5</b><h3 data-i18n="p5_title">集运发出</h3><p data-i18n="p5_desc">选择空运或陆运路线，生成物流跟踪。</p></article>
+            <article class="step reveal"><b>6</b><h3 data-i18n="p6_title">送达签收</h3><p data-i18n="p6_desc">目的地派送并确认签收，准备下一批订单。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><p class="eyebrow" data-i18n="mode_eyebrow">运输方式</p><h2 data-i18n="mode_title">用时效和预算选择路线</h2></div>
+            <p class="lead" data-i18n="mode_lead">正式报价会结合货重、体积、品类和目的城市最终确认。</p>
+          </div>
+          <div class="mode-grid">
+            <article class="mode-card accent reveal"><div class="mode-tag" data-i18n="mode_air_tag">更快 · 适合紧急订单</div><h3 data-i18n="mode_air_title">航空运输</h3><p data-i18n="mode_air_desc">适合紧急补货、测试样品、高价值商品和对时效要求高的订单。</p><div class="facts"><div><b data-i18n="mode_air_1">2-4 天</b><span data-i18n="mode_air_1_label">莫斯科 / 阿拉木图</span></div><div><b data-i18n="mode_air_2">4-6 天</b><span data-i18n="mode_air_2_label">新西伯利亚</span></div><div><b data-i18n="mode_air_3">样品</b><span data-i18n="mode_air_3_label">优先推荐</span></div></div></article>
+            <article class="mode-card gold reveal"><div class="mode-tag" data-i18n="mode_ground_tag">更省 · 适合大货</div><h3 data-i18n="mode_ground_title">陆运 / 整柜</h3><p data-i18n="mode_ground_desc">适合大件家具、机械设备、批发整箱和追求更低成本的稳定补货。</p><div class="facts"><div><b data-i18n="mode_ground_1">12-15 天</b><span data-i18n="mode_ground_1_label">中国到莫斯科</span></div><div><b data-i18n="mode_ground_2">5-7 天</b><span data-i18n="mode_ground_2_label">中国到阿拉木图</span></div><div><b data-i18n="mode_ground_3">整柜 / 散货</b><span data-i18n="mode_ground_3_label">按需报价</span></div></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><p class="eyebrow" data-i18n="market_eyebrow">目的地市场</p><h2 data-i18n="market_title">主要覆盖四个俄语区市场</h2></div>
+            <p class="lead" data-i18n="market_lead">每个市场都有稳定路线，可承接个人件、批发件和整柜货物。</p>
+          </div>
+          <div class="market-grid">
+            <article class="market-card reveal"><div class="flag"><div class="flag-inner" style="background:linear-gradient(180deg,#fff 0 33%,#0039a6 33% 67%,#d52b1e 67%)"></div></div><h3 data-i18n="m_ru">俄罗斯</h3><p data-i18n="m_ru_desc">莫斯科、新西伯利亚等主要城市均有稳定路线。</p><ul class="route-list"><li><span data-i18n="m_ru_1">莫斯科空运</span><b>2-4 天</b></li><li><span data-i18n="m_ru_2">莫斯科陆运</span><b>12-15 天</b></li></ul></article>
+            <article class="market-card reveal"><div class="flag"><div class="flag-inner" style="background:linear-gradient(180deg,#d52b1e 0 33%,#fff 33% 67%,#007c30 67%)"></div></div><h3 data-i18n="m_by">白俄罗斯</h3><p data-i18n="m_by_desc">支持个人订单、零售补货与批量采购。</p><ul class="route-list"><li><span data-i18n="m_by_1">空运 / 陆运</span><b data-i18n="m_by_2">按需</b></li><li><span data-i18n="m_by_3">散货集运</span><b data-i18n="m_by_4">可承接</b></li></ul></article>
+            <article class="market-card reveal"><div class="flag"><div class="flag-inner" style="background:linear-gradient(180deg,#00afca 0 33%,#fecb00 33% 67%,#ef3340 67%)"></div></div><h3 data-i18n="m_kz">哈萨克斯坦</h3><p data-i18n="m_kz_desc">阿拉木图为重要中转和派送节点。</p><ul class="route-list"><li><span data-i18n="m_kz_1">阿拉木图空运</span><b>2-4 天</b></li><li><span data-i18n="m_kz_2">阿拉木图陆运</span><b>5-7 天</b></li></ul></article>
+            <article class="market-card reveal"><div class="flag"><div class="flag-inner" style="background:linear-gradient(180deg,#ef3340 0 33%,#fff 33% 67%,#fecb00 67%)"></div></div><h3 data-i18n="m_kg">吉尔吉斯斯坦</h3><p data-i18n="m_kg_desc">比什凯克是区域内重要的物流分拨中心。</p><ul class="route-list"><li><span data-i18n="m_kg_1">空运 / 陆运</span><b data-i18n="m_kg_2">按需</b></li><li><span data-i18n="m_kg_3">整柜 / 散货</span><b data-i18n="m_kg_4">可承接</b></li></ul></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <div class="container">
+          <div><h2 data-i18n="svc_cta_title">先告诉我们您的货物和目的地</h2><p data-i18n="svc_cta_desc">我们会在一轮沟通内给出运输建议和初步报价。</p></div>
+          <div class="cta-actions"><a class="btn orange" href="#contact" data-i18n="svc_cta_btn">联系报价</a><a class="btn telegram" href="https://t.me/Lihui9559" target="_blank" rel="noopener">Telegram</a></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="page" id="contact" data-page="contact">
+      <div class="page-hero">
+        <div class="container">
+          <div class="eyebrow" data-i18n="contact_eyebrow">联系我们</div>
+          <h1 data-i18n="contact_title">发来商品链接，我们给您运输方案</h1>
+          <p data-i18n="contact_lead">最好附上重量、体积和目的城市，能更快给出准确报价。</p>
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="container">
+          <div class="contact-layout">
+            <div class="panel reveal">
+              <h3 data-i18n="contact_direct_title">直接联系创始人</h3>
+              <p data-i18n="contact_direct_desc">Telegram、WhatsApp 均可直接沟通，工作日通常很快回复。</p>
+              <div class="contact-direct">
+                <a class="contact-row" href="https://t.me/Lihui9559" target="_blank" rel="noopener"><div><b>Telegram</b><span>@Lihui9559</span></div><span>打开 →</span></a>
+                <a class="contact-row" href="https://wa.me/8615604658910" target="_blank" rel="noopener"><div><b>WhatsApp</b><span>+86 15604658910</span></div><span>打开 →</span></a>
+              </div>
+              <h3 style="margin-top:26px" data-i18n="qr_title">扫码添加</h3>
+              <div class="qr-methods">
+                <div class="qr-card"><div class="qr-head"><b data-i18n="qr_telegram">Telegram</b><small>@Lihui9559</small></div><img src="assets/qr-telegram.png" alt="Telegram QR"></div>
+                <div class="qr-card"><div class="qr-head"><b data-i18n="qr_whatsapp">WhatsApp</b><small>+86 15604658910</small></div><img src="assets/qr-whatsapp.png" alt="WhatsApp QR"></div>
+              </div>
+            </div>
+            <div class="panel reveal">
+              <h3 data-i18n="form_title">提交询价</h3>
+              <p data-i18n="form_desc">填写后会自动打开 Telegram，把您的需求发给创始人。</p>
+              <form id="requestForm">
+                <div class="form-row">
+                  <label data-i18n="form_name">您的名字<input type="text" id="name" autocomplete="name" placeholder="Name"></label>
+                  <label data-i18n="form_interest">您需要什么服务？
+                    <select id="service">
+                      <option data-i18n="opt_delivery">跨境运输</option>
+                      <option data-i18n="opt_purchase">平台代购</option>
+                      <option data-i18n="opt_factory">工厂定制</option>
+                      <option data-i18n="opt_payment">代付货款</option>
+                      <option data-i18n="opt_other">其他</option>
+                    </select>
+                  </label>
+                </div>
+                <label data-i18n="form_msg">商品链接或货物描述<textarea id="message" placeholder="商品链接、重量、体积、目的城市"></textarea></label>
+                <label class="consent"><input type="checkbox" id="agree" checked><span data-i18n="form_consent">提交即表示同意我们为此询价使用您的联系方式。</span></label>
+                <button class="btn primary form-submit" type="submit" data-i18n="form_btn">发送到 Telegram</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="ceo-card reveal">
+            <img src="assets/ceo.jpg" alt="">
+            <div><h4 data-i18n="ceo_name">李辉 · 创始人</h4><p data-i18n="ceo_desc">负责采购、运输和客户服务的直接对接人。重要问题不需要经过客服转达。</p><a class="btn telegram small" href="https://t.me/Lihui9559" target="_blank" rel="noopener">Telegram @Lihui9559</a></div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><span class="logo"><svg viewBox="0 0 60 60"><rect width="60" height="60" rx="14" fill="#0a66c2"/><text x="30" y="41" text-anchor="middle" fill="#fff" font-size="32">LH</text></svg></span><strong data-i18n="brand_name">国际物流</strong></div>
+          <p data-i18n="footer_desc">连接中国供应链与俄罗斯、白俄罗斯、哈萨克斯坦和吉尔吉斯斯坦市场的一站式跨境物流服务。</p>
+        </div>
+        <div><h4 data-i18n="footer_nav">导航</h4><div class="footer-links"><a href="#home" data-i18n="nav_home">首页</a><a href="#services" data-i18n="nav_services">服务</a><a href="#contact" data-i18n="nav_contact">联系</a></div></div>
+        <div><h4 data-i18n="footer_markets">目的地</h4><div class="footer-links"><span data-i18n="m_ru">俄罗斯</span><span data-i18n="m_by">白俄罗斯</span><span data-i18n="m_kz">哈萨克斯坦</span><span data-i18n="m_kg">吉尔吉斯斯坦</span></div></div>
+        <div><h4 data-i18n="footer_contact">联系方式</h4><div class="footer-contact"><a href="https://t.me/Lihui9559" target="_blank" rel="noopener">Telegram: @Lihui9559</a><a href="https://wa.me/8615604658910" target="_blank" rel="noopener">WhatsApp: +86 15604658910</a><span>lihui-cargo.ru</span></div></div>
+      </div>
+      <div class="footer-bottom"><span data-i18n="copyright">© 2026 LiHui International Logistics · 保留所有权利</span><span data-i18n="footer_note">本站为信息展示网站，具体报价以沟通确认为准。</span></div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Международная логистика · lihui-cargo.ru</span>
-      <span>Сайт носит информационный характер и не является публичной офертой</span>
-    </div>
-  </div>
-</footer>
+  </footer>
+
 <script>
-  document.getElementById('requestForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-    var name = document.getElementById('name').value.trim();
-    var service = document.getElementById('service').value;
-    var message = document.getElementById('message').value.trim();
-    var agree = document.getElementById('agree').checked;
-    if (!name || !message || !agree) {
-      alert('Пожалуйста, заполните имя, сообщение и отметьте согласие.');
-      return;
-    }
-    var text = 'Здравствуйте, LH! Меня зовут ' + name + '.\\nЗадача: ' + service + '.\\n' + message;
-    var url = 'https://t.me/Lihui9559?text=' + encodeURIComponent(text);
-    window.open(url, '_blank', 'noopener');
+const I18N = {
+  zh: {
+    top_note: "中国采购 · 跨境物流 · 一站式服务",
+    brand_name: "国际物流", brand_sub: "中国采购与跨境交付",
+    nav_home: "首页", nav_services: "服务", nav_contact: "联系",
+    hero_eyebrow: "中国到俄语区市场的一站式物流",
+    hero_title_1: "中国采购与跨境物流", hero_title_2: "一条龙交付",
+    hero_lead: "从 1688、淘宝、拼多多等平台选品采购，到验货、仓储、集运和跨境配送，我们帮您把货物安全送到俄罗斯、白俄罗斯、哈萨克斯坦和吉尔吉斯斯坦。",
+    hero_btn_1: "查看服务", hero_btn_2: "咨询报价",
+    stat_days: "莫斯科空运平均时效（天）", stat_countries: "覆盖目标国家", stat_services: "全流程服务环节", stat_direct: "创始人直接对接",
+    route_title: "常走路线", route_1: "中国 → 莫斯科：空运 2-4 天", route_2: "中国 → 阿拉木图：空运 2-4 天", route_3: "中国 → 莫斯科：陆运 12-15 天", route_4: "中国 → 比什凯克：整柜 / 散货",
+    why_eyebrow: "为什么选择我们", why_title: "把复杂的跨境采购，做成一条清晰的流水线", why_lead: "您不需要同时对接十几个中间人。一个团队负责选品、采购、付款、验货、集运和交付，全程可直接联系创始人。",
+    feature_1_tag: "采购与选品", feature_1_title: "在平台和工厂找到对的货", feature_1_desc: "帮您从 1688、淘宝、拼多多、得物、义乌市场及工厂渠道筛选商品并核对规格。",
+    feature_2_tag: "付款", feature_2_title: "人民币付款，不用跨境转账烦恼", feature_2_desc: "解决国内付款、对公转账和供应商沟通中的语言与支付障碍。",
+    feature_3_tag: "验货", feature_3_title: "仓库验货，减少货不对板", feature_3_desc: "收到货后检查数量、颜色、尺寸和包装，问题及时与供应商沟通处理。",
+    feature_4_tag: "集运", feature_4_title: "多供应商货物合并成一个包裹", feature_4_desc: "把不同店铺和供应商的订单集中到一个仓库，重新打包后统一发出，省运费。",
+    feature_5_tag: "配送", feature_5_title: "空运、陆运、整柜灵活选择", feature_5_desc: "按时效、体积和预算选择最合适的运输方式，全程跟进到目的地。",
+    feature_6_tag: "直连", feature_6_title: "创始人直接沟通，问题不绕圈", feature_6_desc: "Telegram 和 WhatsApp 都可以直接联系负责人，报价与进度实时确认。",
+    platforms: "支持采购平台",
+    about_eyebrow: "关于我们", about_title: "一家把中国供应链和俄语区市场连接起来的物流公司",
+    about_1: "我们的工作不是简单发货，而是把选品、采购、付款、验货、仓储、集运和跨境交付做成一条完整、透明、可追踪的服务链。",
+    about_2: "服务对象包括个人买家、电商卖家、批发商、品牌方、代购社群以及需要稳定补货的零售店。",
+    about_point_1: "一次对接，完成从商品需求到海外收货的整个流程", about_point_2: "首单完成后保留已验证的供应商和路线，方便持续补货", about_point_3: "价格、时效和进度都由负责人直接沟通确认",
+    city_china: "中国 · 义乌 / 广州", city_china_sub: "采购 · 验货 · 仓库", city_moscow: "莫斯科", city_moscow_sub: "空运 2-4 天", city_asia: "阿拉木图 / 比什凯克", city_asia_sub: "陆运 · 空运",
+    cta_title: "现在发一件货，看看全流程能做到多省心", cta_desc: "把商品链接、重量、体积和目的城市发给我们，即可获得运输方案与报价。", cta_btn: "获取报价",
+    services_eyebrow: "服务与流程", services_title: "从选品到海外签收，每一步都有明确责任人", services_lead: "可以只做单个环节，也可以把整条供应链交给我们。价格和时效都会在开始前确认清楚。",
+    svc_eyebrow: "核心服务", svc_title: "六类服务，覆盖跨境采购全部关键节点", svc_lead: "每项服务都可以单独选择，也可以组合成完整方案。",
+    s1_title: "选品与采购", s1_desc: "在电商平台、义乌市场和工厂渠道寻找商品，核对价格、MOQ、规格与供应商资质。", s1_1: "1688 / 淘宝 / 拼多多代购", s1_2: "工厂定制与样品确认", s1_3: "价格与货源比较",
+    s2_title: "付款与财务", s2_desc: "帮助完成国内付款、人民币结算、对公转账以及供应商沟通，降低跨境交易摩擦。", s2_1: "人民币 / 平台内付款", s2_2: "对公与私人供应商", s2_3: "付款凭证留档",
+    s3_title: "验货与质检", s3_desc: "收到货后检查数量、款式、颜色、尺寸、包装和明显质量问题，及时与供应商交涉。", s3_1: "到仓验货与拍照", s3_2: "数量与规格核对", s3_3: "问题商品退换跟进",
+    s4_title: "仓储与集运", s4_desc: "多个订单可先集中到国内仓库，重新检查、换包装、合并后统一发出，节省运输成本。", s4_1: "免费临时仓储", s4_2: "合并包裹与换箱", s4_3: "易碎品加固",
+    s5_title: "跨境运输", s5_desc: "按时效、重量、体积和预算选择空运、陆运或整柜方案，全程跟进运输状态。", s5_1: "空运 2-4 天路线", s5_2: "陆运 12-15 天路线", s5_3: "哈萨克斯坦、吉尔吉斯斯坦专线",
+    s6_title: "长期合作支持", s6_desc: "首单完成后保留已验证的供应商、路线和包装标准，让下一批补货更快更稳定。", s6_1: "供应商档案沉淀", s6_2: "固定路线价格", s6_3: "代购与社群批量订单",
+    process_eyebrow: "工作流程", process_title: "从需求到签收，六个清晰步骤", process_lead: "每一步都有记录，您可以随时在 Telegram 或 WhatsApp 上确认进度。",
+    p1_title: "提交需求", p1_desc: "商品链接、照片、数量、预算和目的城市。", p2_title: "报价确认", p2_desc: "确认货价、采购服务费、运费与预计时效。", p3_title: "采购付款", p3_desc: "下单付款，供应商开始备货或生产。", p4_title: "到仓验货", p4_desc: "检查数量、规格、外观并重新整理包装。", p5_title: "集运发出", p5_desc: "选择空运或陆运路线，生成物流跟踪。", p6_title: "送达签收", p6_desc: "目的地派送并确认签收，准备下一批订单。",
+    mode_eyebrow: "运输方式", mode_title: "用时效和预算选择路线", mode_lead: "正式报价会结合货重、体积、品类和目的城市最终确认。",
+    mode_air_tag: "更快 · 适合紧急订单", mode_air_title: "航空运输", mode_air_desc: "适合紧急补货、测试样品、高价值商品和对时效要求高的订单。", mode_air_1: "2-4 天", mode_air_1_label: "莫斯科 / 阿拉木图", mode_air_2: "4-6 天", mode_air_2_label: "新西伯利亚", mode_air_3: "样品", mode_air_3_label: "优先推荐",
+    mode_ground_tag: "更省 · 适合大货", mode_ground_title: "陆运 / 整柜", mode_ground_desc: "适合大件家具、机械设备、批发整箱和追求更低成本的稳定补货。", mode_ground_1: "12-15 天", mode_ground_1_label: "中国到莫斯科", mode_ground_2: "5-7 天", mode_ground_2_label: "中国到阿拉木图", mode_ground_3: "整柜 / 散货", mode_ground_3_label: "按需报价",
+    market_eyebrow: "目的地市场", market_title: "主要覆盖四个俄语区市场", market_lead: "每个市场都有稳定路线，可承接个人件、批发件和整柜货物。",
+    m_ru: "俄罗斯", m_ru_desc: "莫斯科、新西伯利亚等主要城市均有稳定路线。", m_ru_1: "莫斯科空运", m_ru_2: "莫斯科陆运", m_by: "白俄罗斯", m_by_desc: "支持个人订单、零售补货与批量采购。", m_by_1: "空运 / 陆运", m_by_2: "按需", m_by_3: "散货集运", m_by_4: "可承接", m_kz: "哈萨克斯坦", m_kz_desc: "阿拉木图为重要中转和派送节点。", m_kz_1: "阿拉木图空运", m_kz_2: "阿拉木图陆运", m_kg: "吉尔吉斯斯坦", m_kg_desc: "比什凯克是区域内重要的物流分拨中心。", m_kg_1: "空运 / 陆运", m_kg_2: "按需", m_kg_3: "整柜 / 散货", m_kg_4: "可承接",
+    svc_cta_title: "先告诉我们您的货物和目的地", svc_cta_desc: "我们会在一轮沟通内给出运输建议和初步报价。", svc_cta_btn: "联系报价",
+    contact_eyebrow: "联系我们", contact_title: "发来商品链接，我们给您运输方案", contact_lead: "最好附上重量、体积和目的城市，能更快给出准确报价。",
+    contact_direct_title: "直接联系创始人", contact_direct_desc: "Telegram、WhatsApp 均可直接沟通，工作日通常很快回复。", qr_title: "扫码添加", qr_telegram: "Telegram", qr_whatsapp: "WhatsApp",
+    form_title: "提交询价", form_desc: "填写后会自动打开 Telegram，把您的需求发给创始人。", form_name: "您的名字", form_interest: "您需要什么服务？", opt_delivery: "跨境运输", opt_purchase: "平台代购", opt_factory: "工厂定制", opt_payment: "代付货款", opt_other: "其他", form_msg: "商品链接或货物描述", form_consent: "提交即表示同意我们为此询价使用您的联系方式。", form_btn: "发送到 Telegram",
+    ceo_name: "李辉 · 创始人", ceo_desc: "负责采购、运输和客户服务的直接对接人。重要问题不需要经过客服转达。",
+    footer_desc: "连接中国供应链与俄罗斯、白俄罗斯、哈萨克斯坦和吉尔吉斯斯坦市场的一站式跨境物流服务。", footer_nav: "导航", footer_markets: "目的地", footer_contact: "联系方式", copyright: "© 2026 LiHui International Logistics · 保留所有权利", footer_note: "本站为信息展示网站，具体报价以沟通确认为准。"
+  },
+  en: {
+    top_note: "China sourcing · Cross-border logistics · One-stop service",
+    brand_name: "International Logistics", brand_sub: "China Sourcing & Delivery",
+    nav_home: "Home", nav_services: "Services", nav_contact: "Contact",
+    hero_eyebrow: "One-stop logistics from China to Russian-speaking markets",
+    hero_title_1: "China sourcing & cross-border logistics,", hero_title_2: "delivered end to end",
+    hero_lead: "From product sourcing on 1688, Taobao and Pinduoduo to inspection, warehousing, consolidation and delivery to Russia, Belarus, Kazakhstan and Kyrgyzstan.",
+    hero_btn_1: "View services", hero_btn_2: "Get a quote",
+    stat_days: "Moscow air freight, days", stat_countries: "Destination countries", stat_services: "Service steps", stat_direct: "Direct contact with the founder",
+    route_title: "Popular routes", route_1: "China → Moscow: air 2-4 days", route_2: "China → Almaty: air 2-4 days", route_3: "China → Moscow: ground 12-15 days", route_4: "China → Bishkek: LCL / FCL",
+    why_eyebrow: "Why us", why_title: "A clear pipeline for complex cross-border sourcing", why_lead: "One team handles sourcing, payment, inspection, consolidation and delivery, with direct access to the founder.",
+    feature_1_tag: "Sourcing", feature_1_title: "Find the right products and factories", feature_1_desc: "Product research on 1688, Taobao, Pinduoduo, Poizon, Yiwu and factory channels.",
+    feature_2_tag: "Payment", feature_2_title: "Pay in CNY without cross-border friction", feature_2_desc: "Help with domestic payment, business transfers and supplier communication.",
+    feature_3_tag: "Inspection", feature_3_title: "Warehouse inspection before shipment", feature_3_desc: "Check quantity, color, size and packaging, and resolve issues with suppliers.",
+    feature_4_tag: "Consolidation", feature_4_title: "Combine orders into one shipment", feature_4_desc: "Consolidate orders from multiple stores, repack and dispatch together to save cost.",
+    feature_5_tag: "Delivery", feature_5_title: "Air, ground and full-container options", feature_5_desc: "Choose the right mode by speed, volume and budget, with tracking to destination.",
+    feature_6_tag: "Direct", feature_6_title: "Talk directly to the founder", feature_6_desc: "Reach the owner on Telegram or WhatsApp for quotes and order updates.",
+    platforms: "Sourcing platforms",
+    about_eyebrow: "About us", about_title: "A logistics company connecting China with Russian-speaking markets",
+    about_1: "We combine sourcing, payment, inspection, warehousing, consolidation and cross-border delivery into one transparent service chain.",
+    about_2: "We serve individuals, online sellers, wholesalers, brands, buying groups and retail stores.",
+    about_point_1: "One point of contact from product need to final delivery", about_point_2: "Verified suppliers and routes kept for repeat orders", about_point_3: "Prices, timing and progress confirmed directly",
+    city_china: "China · Yiwu / Guangzhou", city_china_sub: "Sourcing · inspection · warehouse", city_moscow: "Moscow", city_moscow_sub: "Air 2-4 days", city_asia: "Almaty / Bishkek", city_asia_sub: "Ground · air",
+    cta_title: "Send one shipment and see how smooth the full process can be", cta_desc: "Share the product link, weight, volume and destination for a route plan and quote.", cta_btn: "Get a quote",
+    services_eyebrow: "Services & process", services_title: "From sourcing to final delivery, every step has one clear owner", services_lead: "Use one service or the whole supply chain. Prices and timing are confirmed before you start.",
+    svc_eyebrow: "Core services", svc_title: "Six services covering every key step", svc_lead: "Choose individual services or combine them into one complete solution.",
+    s1_title: "Sourcing & purchasing", s1_desc: "Find products on marketplaces, in Yiwu or from factories, and check price, MOQ and supplier quality.", s1_1: "1688 / Taobao / Pinduoduo buying", s1_2: "Factory customization and samples", s1_3: "Price and supplier comparison",
+    s2_title: "Payment support", s2_desc: "Handle CNY payment, business transfers and supplier communication with less friction.", s2_1: "CNY and in-platform payment", s2_2: "Corporate and private suppliers", s2_3: "Payment records kept",
+    s3_title: "Inspection & QC", s3_desc: "Check quantity, style, color, size, packaging and visible defects at the warehouse.", s3_1: "Warehouse check and photos", s3_2: "Quantity and spec verification", s3_3: "Return and replacement follow-up",
+    s4_title: "Warehouse & consolidation", s4_desc: "Combine multiple orders, recheck, repack and dispatch as one shipment to save freight.", s4_1: "Temporary free storage", s4_2: "Consolidation and repacking", s4_3: "Extra protection for fragile goods",
+    s5_title: "Cross-border shipping", s5_desc: "Choose air, ground or full-container shipping by speed, volume and budget.", s5_1: "Air routes 2-4 days", s5_2: "Ground routes 12-15 days", s5_3: "Kazakhstan and Kyrgyzstan lines",
+    s6_title: "Long-term partnership", s6_desc: "Keep verified suppliers, routes and packing standards for faster repeat orders.", s6_1: "Supplier records", s6_2: "Stable route pricing", s6_3: "Buying groups and bulk orders",
+    process_eyebrow: "How it works", process_title: "Six clear steps from request to delivery", process_lead: "Every step is tracked, and you can confirm progress anytime on Telegram or WhatsApp.",
+    p1_title: "Submit request", p1_desc: "Product link, photos, quantity, budget and destination city.", p2_title: "Confirm quote", p2_desc: "Confirm product cost, service fee, freight and estimated time.", p3_title: "Order & pay", p3_desc: "Place the order and the supplier starts preparing or producing.", p4_title: "Warehouse check", p4_desc: "Check quantity, specs and appearance, then repack.", p5_title: "Consolidate & ship", p5_desc: "Choose air or ground and receive tracking.", p6_title: "Final delivery", p6_desc: "Delivery and confirmation of receipt, ready for the next order.",
+    mode_eyebrow: "Shipping modes", mode_title: "Choose by speed and budget", mode_lead: "Final quotes depend on weight, volume, category and destination city.",
+    mode_air_tag: "Faster · urgent orders", mode_air_title: "Air freight", mode_air_desc: "Best for urgent restock, samples, high-value goods and tight deadlines.", mode_air_1: "2-4 days", mode_air_1_label: "Moscow / Almaty", mode_air_2: "4-6 days", mode_air_2_label: "Novosibirsk", mode_air_3: "Samples", mode_air_3_label: "Recommended",
+    mode_ground_tag: "More economical · bulk", mode_ground_title: "Ground / FCL", mode_ground_desc: "Best for large furniture, equipment, wholesale boxes and stable low-cost restock.", mode_ground_1: "12-15 days", mode_ground_1_label: "China to Moscow", mode_ground_2: "5-7 days", mode_ground_2_label: "China to Almaty", mode_ground_3: "LCL / FCL", mode_ground_3_label: "Quote on request",
+    market_eyebrow: "Destination markets", market_title: "Four Russian-speaking markets", market_lead: "Stable routes for personal parcels, wholesale and full-container cargo.",
+    m_ru: "Russia", m_ru_desc: "Stable routes to Moscow, Novosibirsk and other major cities.", m_ru_1: "Moscow air", m_ru_2: "Moscow ground", m_by: "Belarus", m_by_desc: "Personal orders, retail restock and bulk purchasing.", m_by_1: "Air / ground", m_by_2: "On request", m_by_3: "LCL consolidation", m_by_4: "Available", m_kz: "Kazakhstan", m_kz_desc: "Almaty is a key transit and delivery hub.", m_kz_1: "Almaty air", m_kz_2: "Almaty ground", m_kg: "Kyrgyzstan", m_kg_desc: "Bishkek is an important regional distribution center.", m_kg_1: "Air / ground", m_kg_2: "On request", m_kg_3: "LCL / FCL", m_kg_4: "Available",
+    svc_cta_title: "Tell us your cargo and destination", svc_cta_desc: "We will send a route recommendation and preliminary quote in one conversation.", svc_cta_btn: "Contact us",
+    contact_eyebrow: "Contact us", contact_title: "Send a product link and get a shipping plan", contact_lead: "Include weight, volume and destination city for a faster quote.",
+    contact_direct_title: "Contact the founder directly", contact_direct_desc: "Available on Telegram and WhatsApp, usually with fast replies on working days.", qr_title: "Scan to add", qr_telegram: "Telegram", qr_whatsapp: "WhatsApp",
+    form_title: "Submit an inquiry", form_desc: "This will open Telegram with your inquiry sent to the founder.", form_name: "Your name", form_interest: "What do you need?", opt_delivery: "Cross-border delivery", opt_purchase: "Marketplace buying", opt_factory: "Factory customization", opt_payment: "Payment support", opt_other: "Other", form_msg: "Product link or cargo description", form_consent: "By submitting, you agree that we may use your contact details for this inquiry.", form_btn: "Send to Telegram",
+    ceo_name: "LiHui · Founder", ceo_desc: "Direct contact for sourcing, shipping and customer service. No support desk in between.",
+    footer_desc: "One-stop cross-border logistics connecting China with Russia, Belarus, Kazakhstan and Kyrgyzstan.", footer_nav: "Navigation", footer_markets: "Destinations", footer_contact: "Contact", copyright: "© 2026 LiHui International Logistics · All rights reserved", footer_note: "This is an information website. Final quotes are confirmed during communication."
+  },
+  ru: {
+    top_note: "Закупка в Китае · Логистика · Один сервис",
+    brand_name: "Международная логистика", brand_sub: "Закупка и доставка из Китая",
+    nav_home: "Главная", nav_services: "Услуги", nav_contact: "Контакты",
+    hero_eyebrow: "Одна логистика из Китая в русскоязычные рынки",
+    hero_title_1: "Закупка и доставка из Китая,", hero_title_2: "полный цикл в одном сервисе",
+    hero_lead: "От подбора товара на 1688, Taobao и Pinduoduo до проверки, склада, консолидации и доставки в Россию, Беларусь, Казахстан и Кыргызстан.",
+    hero_btn_1: "Наши услуги", hero_btn_2: "Получить расчёт",
+    stat_days: "Авиа в Москву, дней", stat_countries: "Страны доставки", stat_services: "Этапов работы", stat_direct: "Прямая связь с руководителем",
+    route_title: "Популярные маршруты", route_1: "Китай → Москва: авиа 2-4 дня", route_2: "Китай → Алматы: авиа 2-4 дня", route_3: "Китай → Москва: наземно 12-15 дней", route_4: "Китай → Бишкек: сборный / целый груз",
+    why_eyebrow: "Почему мы", why_title: "Сложный кроссбордер-процесс как понятный конвейер", why_lead: "Один менеджер отвечает за подбор, оплату, проверку, склад и доставку. Руководитель всегда на связи.",
+    feature_1_tag: "Закупка", feature_1_title: "Правильный товар на площадках и фабриках", feature_1_desc: "Подбор на 1688, Taobao, Pinduoduo, Poizon, в Иу и у производителей.",
+    feature_2_tag: "Оплата", feature_2_title: "Оплата в юанях без лишних сложностей", feature_2_desc: "Помощь с оплатой, переводами и перепиской с поставщиками.",
+    feature_3_tag: "Проверка", feature_3_title: "Проверка на складе до отправки", feature_3_desc: "Контроль количества, цвета, размера и упаковки, решение вопросов с поставщиком.",
+    feature_4_tag: "Склад", feature_4_title: "Собираем заказы в одну отправку", feature_4_desc: "Объединяем заказы из разных магазинов, переупаковываем и отправляем вместе.",
+    feature_5_tag: "Доставка", feature_5_title: "Авиа, наземная и целые контейнеры", feature_5_desc: "Выбираем способ по сроку, объёму и бюджету, отслеживаем до получателя.",
+    feature_6_tag: "Прямой", feature_6_title: "Прямая связь с руководителем", feature_6_desc: "WhatsApp и Telegram для расчётов и статуса заказа.",
+    platforms: "Площадки закупки",
+    about_eyebrow: "О компании", about_title: "Логистическая компания между Китаем и русскоязычными рынками",
+    about_1: "Закупка, оплата, проверка, склад, консолидация и доставка выстроены в одну прозрачную цепочку.",
+    about_2: "Работаем с частными покупателями, магазинами, оптовиками, брендами и совместными закупками.",
+    about_point_1: "Один контакт от потребности до получения груза", about_point_2: "Проверенные поставщики и маршруты для повторных заказов", about_point_3: "Цены, сроки и статус подтверждаются напрямую",
+    city_china: "Китай · Иу / Гуанчжоу", city_china_sub: "Закупка · проверка · склад", city_moscow: "Москва", city_moscow_sub: "Авиа 2-4 дня", city_asia: "Алматы / Бишкек", city_asia_sub: "Наземно · авиа",
+    cta_title: "Отправьте один груз и посмотрите, как просто проходит весь процесс", cta_desc: "Пришлите ссылку на товар, вес, объём и город назначения - получите маршрут и расчёт.", cta_btn: "Получить расчёт",
+    services_eyebrow: "Услуги и процесс", services_title: "От закупки до получения - у каждого этапа есть ответственный", services_lead: "Можно заказать один этап или доверить нам всю цепочку.",
+    svc_eyebrow: "Основные услуги", svc_title: "Шесть услуг на ключевых этапах", svc_lead: "Выбирайте отдельные услуги или собирайте полное решение.",
+    s1_title: "Закупка", s1_desc: "Поиск товара на площадках, в Иу и на фабриках; проверка цены, MOQ и поставщика.", s1_1: "1688 / Taobao / Pinduoduo", s1_2: "Кастомизация и образцы", s1_3: "Сравнение цен и источников",
+    s2_title: "Оплата", s2_desc: "Помощь с оплатой в юанях, переводами и перепиской с поставщиками.", s2_1: "Оплата в юанях", s2_2: "Компании и частники", s2_3: "Документы об оплате",
+    s3_title: "Проверка", s3_desc: "Контроль количества, вида, цвета, размера, упаковки и видимых дефектов.", s3_1: "Проверка и фото", s3_2: "Сверка количества", s3_3: "Возврат и замена",
+    s4_title: "Склад и сборка", s4_desc: "Объединяем заказы, проверяем, переупаковываем и отправляем одним грузом.", s4_1: "Временное хранение", s4_2: "Сборка и переупаковка", s4_3: "Защита хрупкого",
+    s5_title: "Доставка", s5_desc: "Авиа, наземная или контейнер по сроку, весу и бюджету.", s5_1: "Авиа 2-4 дня", s5_2: "Наземно 12-15 дней", s5_3: "Казахстан и Кыргызстан",
+    s6_title: "Постоянное партнёрство", s6_desc: "Сохраняем поставщиков, маршруты и стандарты упаковки для повторных заказов.", s6_1: "База поставщиков", s6_2: "Стабильные цены маршрутов", s6_3: "Совместные закупки",
+    process_eyebrow: "Как мы работаем", process_title: "Шесть понятных шагов", process_lead: "Каждый шаг фиксируется, статус можно уточнять в Telegram или WhatsApp.",
+    p1_title: "Заявка", p1_desc: "Ссылка, фото, количество, бюджет и город.", p2_title: "Расчёт", p2_desc: "Цена товара, услуги, доставка и срок.", p3_title: "Оплата", p3_desc: "Заказ и подготовка поставщиком.", p4_title: "Проверка", p4_desc: "Количество, качество, упаковка.", p5_title: "Отправка", p5_desc: "Выбор авиа или наземной доставки.", p6_title: "Получение", p6_desc: "Доставка, подтверждение, новый заказ.",
+    mode_eyebrow: "Способы доставки", mode_title: "Маршрут по сроку и бюджету", mode_lead: "Точный расчёт зависит от веса, объёма, категории и города.",
+    mode_air_tag: "Быстрее · для срочного", mode_air_title: "Авиадоставка", mode_air_desc: "Для срочного пополнения, образцов, ценных и срочных грузов.", mode_air_1: "2-4 дня", mode_air_1_label: "Москва / Алматы", mode_air_2: "4-6 дней", mode_air_2_label: "Новосибирск", mode_air_3: "Образцы", mode_air_3_label: "Рекомендуем",
+    mode_ground_tag: "Экономнее · для объёма", mode_ground_title: "Наземная / контейнер", mode_ground_desc: "Для крупной мебели, оборудования, оптовых партий и регулярного пополнения.", mode_ground_1: "12-15 дней", mode_ground_1_label: "Китай в Москву", mode_ground_2: "5-7 дней", mode_ground_2_label: "Китай в Алматы", mode_ground_3: "Сборный / целый", mode_ground_3_label: "По запросу",
+    market_eyebrow: "Направления", market_title: "Четыре русскоязычных рынка", market_lead: "Личные, оптовые и контейнерные грузы на каждом направлении.",
+    m_ru: "Россия", m_ru_desc: "Стабильные маршруты в Москву, Новосибирск и другие города.", m_ru_1: "Авиа в Москву", m_ru_2: "Наземно в Москву", m_by: "Беларусь", m_by_desc: "Личные заказы, пополнение магазинов, опт.", m_by_1: "Авиа / наземно", m_by_2: "По запросу", m_by_3: "Сборный груз", m_by_4: "Да", m_kz: "Казахстан", m_kz_desc: "Алматы - ключевой узел и город доставки.", m_kz_1: "Авиа в Алматы", m_kz_2: "Наземно в Алматы", m_kg: "Кыргызстан", m_kg_desc: "Бишкек - важный распределительный центр.", m_kg_1: "Авиа / наземно", m_kg_2: "По запросу", m_kg_3: "Сборный / целый", m_kg_4: "Да",
+    svc_cta_title: "Опишите груз и город назначения", svc_cta_desc: "Предложим маршрут и предварительную стоимость в одном диалоге.", svc_cta_btn: "Связаться",
+    contact_eyebrow: "Контакты", contact_title: "Пришлите ссылку на товар - подберём доставку", contact_lead: "Укажите вес, объём и город назначения для быстрого расчёта.",
+    contact_direct_title: "Прямой контакт с руководителем", contact_direct_desc: "Telegram и WhatsApp, быстрые ответы в рабочие дни.", qr_title: "Сканируйте QR", qr_telegram: "Telegram", qr_whatsapp: "WhatsApp",
+    form_title: "Оставить заявку", form_desc: "После отправки откроется Telegram с готовым сообщением руководителю.", form_name: "Ваше имя", form_interest: "Что вам нужно?", opt_delivery: "Доставка из Китая", opt_purchase: "Закупка на площадках", opt_factory: "Кастомизация", opt_payment: "Оплата в юанях", opt_other: "Другое", form_msg: "Ссылка или описание груза", form_consent: "Отправляя заявку, вы соглашаетесь на обработку данных для связи.", form_btn: "Отправить в Telegram",
+    ceo_name: "Лихуэй · Руководитель", ceo_desc: "Прямой контакт по закупке, доставке и сервису. Без посредников и колл-центра.",
+    footer_desc: "Один сервис между Китаем и рынками России, Беларуси, Казахстана и Кыргызстана.", footer_nav: "Разделы", footer_markets: "Направления", footer_contact: "Контакты", copyright: "© 2026 LiHui International Logistics · Все права защищены", footer_note: "Информационный сайт. Точный расчёт подтверждается при общении."
+  }
+};
+
+const root = document.documentElement;
+const navLinks = document.querySelectorAll('.main-nav a');
+const pages = document.querySelectorAll('.page');
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+
+function applyLang(lang) {
+  localStorage.setItem('lh-lang', lang);
+  root.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (I18N[lang] && I18N[lang][key] != null) el.textContent = I18N[lang][key];
   });
+  document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+  document.title = lang === 'zh' ? '国际物流 - 中国采购与跨境配送'
+    : lang === 'en' ? 'LiHui International Logistics - China Sourcing & Delivery'
+    : 'Международная логистика - Закупка и доставка из Китая';
+}
+
+function route(page) {
+  pages.forEach(p => p.classList.toggle('active', p.dataset.page === page));
+  navLinks.forEach(a => a.classList.toggle('active', a.dataset.page === page));
+  mainNav.classList.remove('open');
+  window.scrollTo({ top: 0, behavior: 'auto' });
+}
+
+function currentPage() {
+  const h = location.hash.replace('#', '') || 'home';
+  return ['home', 'services', 'contact'].includes(h) ? h : 'home';
+}
+
+navLinks.forEach(a => a.addEventListener('click', () => route(a.dataset.page)));
+menuToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
+document.querySelectorAll('.lang-switch button').forEach(btn => btn.addEventListener('click', () => applyLang(btn.dataset.lang)));
+window.addEventListener('hashchange', () => route(currentPage()));
+
+const requestForm = document.getElementById('requestForm');
+requestForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const lang = root.lang;
+  const text = lang === 'zh'
+    ? 'Здравствуйте, LiHui! Меня зовут ' + document.getElementById('name').value + '. Задача: ' + document.getElementById('service').value + '. ' + document.getElementById('message').value
+    : lang === 'en'
+    ? 'Hello, LiHui! My name is ' + document.getElementById('name').value + '. Service: ' + document.getElementById('service').value + '. ' + document.getElementById('message').value
+    : 'Здравствуйте, LiHui! Меня зовут ' + document.getElementById('name').value + '. Задача: ' + document.getElementById('service').value + '. ' + document.getElementById('message').value;
+  window.open('https://t.me/Lihui9559?text=' + encodeURIComponent(text), '_blank');
+});
+
+function revealInit() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.classList.add('in');
+        observer.unobserve(en.target);
+      }
+    });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+function counterInit() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target;
+      const target = Number(el.dataset.count);
+      const dur = 900;
+      const start = performance.now();
+      function tick(now) {
+        const t = Math.min(1, (now - start) / dur);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - t, 3)));
+        if (t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      observer.unobserve(el);
+    });
+  }, { threshold: .6 });
+  document.querySelectorAll('.count-up').forEach(el => observer.observe(el));
+}
+
+const saved = localStorage.getItem('lh-lang') || 'zh';
+applyLang(['zh', 'en', 'ru'].includes(saved) ? saved : 'zh');
+route(currentPage());
+revealInit();
+counterInit();
 </script>
 </body>
 </html>
