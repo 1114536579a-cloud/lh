@@ -186,7 +186,8 @@ function writeSitemap(pages) {
   const urls = pages
     .filter((p) => !p.noindex)
     .map((p) => {
-      const loc = p.canonical ? `${SITE.origin}/${p.canonical}` : `${SITE.origin}/`;
+      const cleanPath = String(p.canonical || '').replace(/index\.html$/, '').replace(/\.html$/, '');
+      const loc = `${SITE.origin}/${cleanPath}`;
       const priority = p.file === 'index.html' ? '1.0' : p.file === 'contacts.html' ? '0.9' : '0.7';
       return `  <url>
     <loc>${loc}</loc>

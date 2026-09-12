@@ -265,6 +265,7 @@ export function orgSchema() {
 }
 
 export function breadcrumbSchema(items) {
+  const clean = (value) => String(value || '').replace(/index\.html$/, '').replace(/\.html$/, '');
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -272,13 +273,17 @@ export function breadcrumbSchema(items) {
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `${SITE.origin}/${item.path}`,
+      item: `${SITE.origin}/${clean(item.path)}`,
     })),
   };
 }
 
 export function head({ page, titleKey, descKey, canonical, schemas = [] }) {
   const allSchemas = [orgSchema(), ...schemas];
+  // Cloudflare Pages serves extensionless URLs (services.html -> /services), so
+  // canonical and Open Graph URLs point at the final address.
+  const cleanPath = String(canonical || '').replace(/index\.html$/, '').replace(/\.html$/, '');
+  const canonicalUrl = `${SITE.origin}/${cleanPath}`;
   return `<!DOCTYPE html>
 <html lang="ru" data-lang="ru">
 <head>
@@ -288,7 +293,7 @@ export function head({ page, titleKey, descKey, canonical, schemas = [] }) {
 <meta name="description" content="${esc(t(descKey))}" data-i18n-desc="${descKey}">
 <meta name="theme-color" content="#0b3d68">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="${SITE.origin}/${canonical}">
+<link rel="canonical" href="${canonicalUrl}">
 <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/brand/favicon.svg">
 <link rel="manifest" href="site.webmanifest">
@@ -296,7 +301,7 @@ export function head({ page, titleKey, descKey, canonical, schemas = [] }) {
 <meta property="og:site_name" content="${esc(SITE.brand)}">
 <meta property="og:title" content="${esc(t(titleKey))}" data-i18n-ogtitle="${titleKey}">
 <meta property="og:description" content="${esc(t(descKey))}" data-i18n-ogdesc="${descKey}">
-<meta property="og:url" content="${SITE.origin}/${canonical}">
+<meta property="og:url" content="${canonicalUrl}">
 <meta property="og:image" content="${SITE.origin}/assets/hero.jpg">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
