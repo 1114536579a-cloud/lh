@@ -1652,3 +1652,95 @@ body { background: var(--bg); background-image: none; letter-spacing: -.005em; }
   .hero__status { right:16px; }
   .stat-tile__value { font-size:29px; }
 }
+
+/* Final page-by-page refinement: tighter hierarchy, quieter surfaces. */
+.hero .h1 { max-width:680px; }
+.pagehead .h1 { font-size:clamp(38px,4.2vw,58px); line-height:1.06; max-width:850px; }
+.pagehead .lead { max-width:760px; font-size:17px; }
+.section { padding:84px 0; }
+.section__head { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); column-gap:70px; align-items:end; max-width:none; margin-bottom:40px; }
+.section__head .eyebrow { grid-column:1/-1; }
+.section__head .lead { margin:0; }
+.section__head--dark .lead { color:#b9c7d6; }
+
+/* Services: compact six-card catalogue instead of oversized alternating slabs. */
+.svc-list { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.svc { grid-template-columns:1fr auto; gap:26px; min-height:0; align-items:start; padding:30px; border-radius:10px; box-shadow:none; }
+.svc--flip .svc__text { order:0; }
+.svc__art { min-height:0; width:78px; height:78px; border-radius:10px; }
+.svc__art::before { display:none; }
+.svc__icon { width:58px; height:58px; border-radius:8px; }
+.svc__icon .icon { width:28px; height:28px; }
+.svc__text .lead { font-size:15px; margin-top:0; }
+.svc__text .ticks { margin:0 0 4px; }
+.svc__text .btn { margin-top:6px; }
+
+/* Route explorer: strong information table with less decorative weight. */
+.seg { border-radius:8px; padding:4px; border:1px solid var(--line); box-shadow:none; }
+.seg__btn { border-radius:5px; }
+.seg__btn.is-active { box-shadow:none; }
+.routecard { border-radius:10px; box-shadow:none; }
+.routecard__head { background:#0d2b46; padding:17px 22px; }
+.table th,.table td { padding:16px 20px; }
+.table tbody tr:hover { background:#f3f7ff; }
+
+/* Calculator: make the form feel like a tool, not another marketing card. */
+.calc { gap:18px; }
+.calc__form,.calc__result,.calc__side { border-radius:10px; box-shadow:none; padding:28px; }
+.calc__form { border-top:4px solid var(--violet-500); }
+.calc__side { background:#fff; }
+.calc__result { background:#0d2b46; }
+.calc__stats div { border-radius:6px; }
+
+/* About, FAQ and contacts share one restrained editorial system. */
+.about { align-items:stretch; gap:18px; }
+.about__text { padding:34px; background:#fff; border:1px solid var(--line); border-radius:10px; }
+.about__art { min-height:320px; border-radius:10px; }
+.geo { grid-template-columns:repeat(5,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); }
+.geo__item { border:0; border-radius:0; box-shadow:none; background:#fff; padding:24px 20px; }
+.faq-layout { grid-template-columns:minmax(0,1.7fr) minmax(260px,.7fr); gap:18px; }
+.faq__item { border-radius:8px; box-shadow:none; }
+.faq__item[open] { box-shadow:none; border-color:#9bb0e8; }
+.faq-card { border-radius:10px; background:#0d2b46; }
+.channels { gap:1px; background:var(--line); border:1px solid var(--line); }
+.channel { border:0; border-radius:0; box-shadow:none; }
+.contact-grid { gap:18px; }
+.ceo,.qr,.facts,.request,.track { border-radius:10px; box-shadow:none; }
+.ceo { grid-template-columns:150px 1fr; }
+.ceo__photo { aspect-ratio:4/5; }
+.form__row { gap:14px; }
+
+.band { padding:52px 0; }
+.footer__grid { padding-top:40px; }
+
+@media (max-width:900px) {
+  .section__head { grid-template-columns:1fr; gap:0; }
+  .section__head .lead { margin-top:12px; }
+  .svc-list { grid-template-columns:1fr; }
+  .geo { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+
+@media (max-width:780px) {
+  .section { padding:62px 0; }
+  .section__head { margin-bottom:30px; }
+  .pagehead .h1 { font-size:clamp(34px,9vw,46px); }
+  .svc { padding:24px; grid-template-columns:1fr; }
+  .svc__art { grid-row:1; width:64px; height:64px; }
+  .geo { grid-template-columns:1fr; }
+  .geo__item { padding:20px; }
+  .calc__form,.calc__result,.calc__side { padding:22px; }
+  .ceo { grid-template-columns:110px 1fr; }
+}
+
+@media (max-width:520px) {
+  .topbar { display:none; }
+  .hero { padding-top:46px; }
+  .hero__visual { height:260px; }
+  .hero__route { font-size:12px; }
+  .hero__status { padding:12px 14px; }
+  .media-strip__intro { display:none; }
+  .stat-tiles { grid-template-columns:repeat(2,1fr); }
+  .stat-tile { min-height:112px; }
+  .ceo { grid-template-columns:1fr; }
+  .ceo__photo { max-width:150px; }
+}

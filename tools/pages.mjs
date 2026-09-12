@@ -613,23 +613,12 @@ export function homePage() {
     hero(),
     mediaStrip(),
     servicesGrid(),
-    processGrid(),
     routesSection(),
-    modesSection(),
     whyGrid(),
-    audienceGrid(),
-    platformsStrip(),
+    processGrid(),
     calculatorBlock({ id: 'calculator', compact: true }),
-    `<section class="section" id="examples">
-      <div class="container">
-        ${sectionHead({ eyebrow: 'home.ex.eyebrow', title: 'home.ex.title', lead: 'home.ex.lead' })}
-        <div class="grid grid--4">${EXAMPLES.map(exampleCard).join('')}</div>
-      </div>
-    </section>`,
-    docsGrid(),
-    faqSection({ keys: [1, 2, 3, 4, 5, 6], more: { href: 'faq.html', label: 'home.faq.more' }, alt: true }),
+    faqSection({ keys: [1, 2, 3, 5], more: { href: 'faq.html', label: 'home.faq.more' }, alt: true }),
     ctaBand(),
-    contactSection(),
   ].join('\n');
 }
 
