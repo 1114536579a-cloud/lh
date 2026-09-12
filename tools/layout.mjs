@@ -308,10 +308,10 @@ export function head({ page, titleKey, descKey, canonical, schemas = [] }) {
 <meta name="twitter:description" content="${esc(t(descKey))}" data-i18n-twdesc="${descKey}">
 <meta name="twitter:image" content="${SITE.origin}/assets/hero.jpg">
 <meta name="format-detection" content="telephone=no">
-<link rel="stylesheet" href="assets/css/styles.css?v=20260913-5">
+<link rel="stylesheet" href="assets/css/styles.css?v=20260913-6">
 <script type="application/ld+json">${JSON.stringify(allSchemas.length === 1 ? allSchemas[0] : allSchemas)}</script>
-<script defer src="assets/js/i18n.js?v=20260913-5"></script>
-<script defer src="assets/js/site.js?v=20260913-5"></script>
+<script defer src="assets/js/i18n.js?v=20260913-6"></script>
+<script defer src="assets/js/site.js?v=20260913-6"></script>
 </head>
 <body data-page="${page}">
 <a class="skip" href="#main" data-i18n="ui.skipLink">${txt('ui.skipLink')}</a>`;

@@ -101,9 +101,11 @@ function hero() {
       </div>
     </div>
   </div>
-  <div class="container hero__workspace">
-    <div class="hero__workspace-copy">
-      <span class="workspace__index">01</span>
+</section>
+<section class="quote-bar" aria-label="${esc(t('home.card.title'))}">
+  <div class="container quote-bar__inner">
+    <div class="quote-bar__head">
+      <span class="quote-bar__index">01</span>
       <div><strong data-i18n="home.card.title">${txt('home.card.title')}</strong><p data-i18n="home.card.desc">${txt('home.card.desc')}</p></div>
     </div>
     <aside class="hero__panel">${quickForm()}</aside>
@@ -160,11 +162,6 @@ function mediaStrip() {
   ];
   return `<section class="media-strip">
   <div class="container media-strip__grid">
-    <div class="media-strip__intro">
-      <span class="media-strip__kicker" data-i18n="top.note">${txt('top.note')}</span>
-      <strong data-i18n="proc.title">${txt('proc.title')}</strong>
-      <p data-i18n="proc.lead">${txt('proc.lead')}</p>
-    </div>
     <div class="stat-tiles">
       ${items
         .map(
