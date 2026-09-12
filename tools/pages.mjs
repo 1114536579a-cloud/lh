@@ -87,6 +87,25 @@ function hero() {
         ${['home.b1', 'home.b2', 'home.b3'].map((k) => `<li>${icon('check', 'icon icon--tick')}<span data-i18n="${k}">${txt(k)}</span></li>`).join('')}
       </ul>
     </div>
+    <div class="hero__visual" aria-hidden="true">
+      <img src="assets/img/hero.jpg" alt="" decoding="async">
+      <div class="hero__route">
+        <span class="hero__route-dot"></span>
+        <div><small data-i18n="city.china">${txt('city.china')}</small><strong data-i18n="about.geoChinaValue">${txt('about.geoChinaValue')}</strong></div>
+        ${icon('arrow', 'icon icon--sm')}
+        <div><small data-i18n="routes.country.ru">${txt('routes.country.ru')}</small><strong data-i18n="city.moscow">${txt('city.moscow')}</strong></div>
+      </div>
+      <div class="hero__status">
+        ${icon('plane', 'icon')}
+        <span><small data-i18n="routes.th.air">${txt('routes.th.air')}</small><strong data-i18n="home.b1">${txt('home.b1')}</strong></span>
+      </div>
+    </div>
+  </div>
+  <div class="container hero__workspace">
+    <div class="hero__workspace-copy">
+      <span class="workspace__index">01</span>
+      <div><strong data-i18n="home.card.title">${txt('home.card.title')}</strong><p data-i18n="home.card.desc">${txt('home.card.desc')}</p></div>
+    </div>
     <aside class="hero__panel">${quickForm()}</aside>
   </div>
 </section>`;
@@ -141,13 +160,11 @@ function mediaStrip() {
   ];
   return `<section class="media-strip">
   <div class="container media-strip__grid">
-    <figure class="media-card">
-      <img src="assets/img/hero.jpg" alt="" loading="lazy" decoding="async">
-      <figcaption>
-        <span class="media-card__tag" data-i18n="city.china">${txt('city.china')}</span>
-        <strong data-i18n="about.geoChinaValue">${txt('about.geoChinaValue')}</strong>
-      </figcaption>
-    </figure>
+    <div class="media-strip__intro">
+      <span class="media-strip__kicker" data-i18n="top.note">${txt('top.note')}</span>
+      <strong data-i18n="proc.title">${txt('proc.title')}</strong>
+      <p data-i18n="proc.lead">${txt('proc.lead')}</p>
+    </div>
     <div class="stat-tiles">
       ${items
         .map(
