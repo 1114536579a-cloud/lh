@@ -499,7 +499,7 @@ export const en = {
   'legal.privacy.p3': 'The data is used solely to prepare a quote, reply to your request and run the order. We do not sell it or share it with third parties for advertising.',
   'legal.privacy.p4': 'Forms on this site do not send data to a server: they open a Telegram or WhatsApp chat with a ready message that you send yourself. The conversation is stored in those messengers under their own rules.',
   'legal.privacy.p5': 'For convenience, the site stores technical settings in your browser: the selected language, the notice acknowledgement and the “saved” mark. This data never leaves your device and is not used for profiling.',
-  'legal.privacy.p6': 'The site is hosted on GitHub Pages and does not set tracking cookies itself. The hosting provider and content delivery network may keep technical access logs (IP address, time, requested page) for attack protection.',
+  'legal.privacy.p6': 'The site is hosted on Cloudflare Pages and does not set tracking cookies itself. The hosting provider and content delivery network may keep technical access logs (IP address, time, requested page) for attack protection.',
   'legal.privacy.p7': 'If you want to clarify, change or delete the data you provided, message us on Telegram or WhatsApp. We will reply and delete the information unless it is required for an active order.',
   'legal.privacy.p8': 'By sending a request you confirm your consent to the processing of that data for the described purposes and to the extent needed to prepare a quote and provide the service.',
   'legal.terms.p1': 'This site provides information about sourcing, payment, inspection, warehousing, consolidation and delivery services from China, as well as a preliminary calculation tool.',

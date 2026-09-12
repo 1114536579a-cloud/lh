@@ -91,6 +91,19 @@ export const PRICING = {
 
 ## Публикация
 
-Сайт размещён на GitHub Pages из ветки `main` репозитория `1114536579a-cloud/lh`.
-Домен `lihui-cargo.ru` задаётся файлом `CNAME`. Достаточно закоммитить изменения
-и запушить в `main` — сборка и публикация происходят автоматически.
+Живой сайт обслуживает **Cloudflare Pages**, проект `lh-cargo-ru`
+(домены: `lihui-cargo.ru`, `www.lihui-cargo.ru`, `lh-cargo-ru.pages.dev`).
+Проект создан прямой загрузкой (Git Provider: No), поэтому публикация выполняется
+вручную командой `wrangler` из папки с готовыми файлами:
+
+```bash
+wrangler pages deploy ./dist --project-name lh-cargo-ru --branch main
+```
+
+Где `./dist` — папка только со статикой: все `*.html`, `assets/`, `robots.txt`,
+`sitemap.xml`, `site.webmanifest` (без `tools/`, `src/`, `README.md`).
+
+Репозиторий `github.com/1114536579a-cloud/lh` хранит исходники и историю версий,
+но сам по себе сайт не публикует: пуш в `main` не обновляет `lihui-cargo.ru`.
+После правок порядок такой: `node tools/build.mjs` → сложить готовые файлы в
+отдельную папку → `wrangler pages deploy`.
