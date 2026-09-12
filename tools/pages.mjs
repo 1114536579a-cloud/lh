@@ -18,6 +18,15 @@ function sectionHead({ eyebrow, title, lead, cls = 'section__head' }) {
   return parts.join('\n');
 }
 
+function sectionHeadDark({ eyebrow, title, lead }) {
+  const parts = [`<div class="section__head section__head--dark">`];
+  if (eyebrow) parts.push(el('p', eyebrow, { cls: 'eyebrow eyebrow--light' }));
+  parts.push(el('h2', title, { cls: 'h2 h2--light' }));
+  if (lead) parts.push(el('p', lead, { cls: 'lead lead--light' }));
+  parts.push('</div>');
+  return parts.join('\n');
+}
+
 function ctaBand({ title = 'cta.title', desc = 'cta.desc' } = {}) {
   return `<section class="band">
   <div class="container band__inner">
@@ -60,13 +69,17 @@ function quickForm() {
 
 function hero() {
   return `<section class="hero">
-  <div class="hero__media" aria-hidden="true"></div>
+  <div class="hero__bg" aria-hidden="true">
+    <span class="hero__blob hero__blob--a"></span>
+    <span class="hero__blob hero__blob--b"></span>
+    <span class="hero__mesh"></span>
+  </div>
   <div class="container hero__inner">
-    <div class="hero__text">
+    <div class="hero__copy">
       ${el('p', 'home.eyebrow', { cls: 'eyebrow eyebrow--light' })}
       ${el('h1', 'home.title', { cls: 'h1', html: true })}
       ${el('p', 'home.lead', { cls: 'lead lead--light' })}
-      <div class="hero__actions">
+      <div class="hero__cta">
         <a class="btn btn--accent" href="calculator.html">${icon('calc', 'icon icon--sm')}<span data-i18n="home.btn1">${txt('home.btn1')}</span></a>
         <a class="btn btn--ghost btn--ghost-light" href="${SITE.telegram}" target="_blank" rel="noopener">${icon('telegram', 'icon icon--sm')}<span data-i18n="home.btn2">${txt('home.btn2')}</span></a>
       </div>
@@ -74,7 +87,7 @@ function hero() {
         ${['home.b1', 'home.b2', 'home.b3'].map((k) => `<li>${icon('check', 'icon icon--tick')}<span data-i18n="${k}">${txt(k)}</span></li>`).join('')}
       </ul>
     </div>
-    <div class="hero__aside">${quickForm()}</div>
+    <aside class="hero__panel">${quickForm()}</aside>
   </div>
 </section>`;
 }
@@ -118,24 +131,57 @@ function statsBand() {
 </section>`;
 }
 
+/** Photo + KPI tiles that overlap the hero, replacing the old flat stat bar. */
+function mediaStrip() {
+  const items = [
+    ['stat.air.value', 'stat.air.label'],
+    ['stat.countries.value', 'stat.countries.label'],
+    ['stat.steps.value', 'stat.steps.label'],
+    ['stat.manager.value', 'stat.manager.label'],
+  ];
+  return `<section class="media-strip">
+  <div class="container media-strip__grid">
+    <figure class="media-card">
+      <img src="assets/img/hero.jpg" alt="" loading="lazy" decoding="async">
+      <figcaption>
+        <span class="media-card__tag" data-i18n="city.china">${txt('city.china')}</span>
+        <strong data-i18n="about.geoChinaValue">${txt('about.geoChinaValue')}</strong>
+      </figcaption>
+    </figure>
+    <div class="stat-tiles">
+      ${items
+        .map(
+          ([valueKey, labelKey]) => `<div class="stat-tile">
+        <p class="stat-tile__value" data-i18n="${valueKey}">${txt(valueKey)}</p>
+        <p class="stat-tile__label" data-i18n="${labelKey}">${txt(labelKey)}</p>
+      </div>`,
+        )
+        .join('')}
+    </div>
+  </div>
+</section>`;
+}
+
 function servicesGrid() {
   const icons = { s1: 'search', s2: 'wallet', s3: 'shield', s4: 'box', s5: 'plane', s6: 'refresh' };
   const cards = ['s1', 's2', 's3', 's4', 's5', 's6']
     .map(
-      (k) => `<article class="card card--service reveal">
-      <span class="card__icon">${icon(icons[k], 'icon')}</span>
-      <p class="tag" data-i18n="${k}.tag">${txt(`${k}.tag`)}</p>
+      (k, index) => `<article class="bcard${index < 2 ? ' bcard--lg' : ''} reveal">
+      <header class="bcard__top">
+        <span class="bcard__icon">${icon(icons[k], 'icon')}</span>
+        <span class="tag" data-i18n="${k}.tag">${txt(`${k}.tag`)}</span>
+      </header>
       <h3 data-i18n="${k}.title">${txt(`${k}.title`)}</h3>
       <p data-i18n="${k}.desc">${txt(`${k}.desc`)}</p>
       ${bullets([`${k}.b1`, `${k}.b2`, `${k}.b3`])}
-      <a class="card__link" href="services.html#${k}"><span data-i18n="ui.moreDetails">${txt('ui.moreDetails')}</span>${icon('arrow', 'icon icon--sm')}</a>
+      <a class="bcard__link" href="services.html#${k}"><span data-i18n="ui.moreDetails">${txt('ui.moreDetails')}</span>${icon('arrow', 'icon icon--sm')}</a>
     </article>`,
     )
     .join('');
   return `<section class="section" id="services">
   <div class="container">
     ${sectionHead({ eyebrow: 'home.svc.eyebrow', title: 'home.svc.title', lead: 'home.svc.lead' })}
-    <div class="grid grid--3">${cards}</div>
+    <div class="bento">${cards}</div>
     <p class="section__more"><a class="link-arrow" href="services.html"><span data-i18n="home.svc.more">${txt('home.svc.more')}</span>${icon('arrow', 'icon icon--sm')}</a></p>
   </div>
 </section>`;
@@ -144,17 +190,19 @@ function servicesGrid() {
 function processGrid() {
   const steps = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6']
     .map(
-      (k, i) => `<li class="step reveal">
-      <span class="step__num">${String(i + 1).padStart(2, '0')}</span>
-      <h3 data-i18n="${k}.title">${txt(`${k}.title`)}</h3>
-      <p data-i18n="${k}.desc">${txt(`${k}.desc`)}</p>
+      (k, i) => `<li class="timeline__item reveal">
+      <span class="timeline__num">${String(i + 1).padStart(2, '0')}</span>
+      <div class="timeline__body">
+        <h3 data-i18n="${k}.title">${txt(`${k}.title`)}</h3>
+        <p data-i18n="${k}.desc">${txt(`${k}.desc`)}</p>
+      </div>
     </li>`,
     )
     .join('');
   return `<section class="section section--alt" id="process">
   <div class="container">
     ${sectionHead({ eyebrow: 'proc.eyebrow', title: 'proc.title', lead: 'proc.lead' })}
-    <ol class="steps">${steps}</ol>
+    <ol class="timeline">${steps}</ol>
   </div>
 </section>`;
 }
@@ -198,10 +246,18 @@ function routeCard(country) {
 }
 
 function routesSection({ withHead = true } = {}) {
+  const tabs = COUNTRIES.map(
+    (country, index) =>
+      `<button class="seg__btn${index === 0 ? ' is-active' : ''}" type="button" role="tab" aria-selected="${index === 0 ? 'true' : 'false'}" data-country="${country.key}" data-i18n="routes.country.${country.key}">${txt(`routes.country.${country.key}`)}</button>`,
+  ).join('');
+  const panels = COUNTRIES.map(
+    (country, index) => routeCard(country).replace('class="routecard reveal"', `class="routepanel${index === 0 ? ' is-active' : ''}" data-country="${country.key}"`),
+  ).join('');
   return `<section class="section" id="routes">
   <div class="container">
     ${withHead ? sectionHead({ eyebrow: 'routes.eyebrow', title: 'routes.title', lead: 'routes.lead' }) : ''}
-    <div class="grid grid--2">${COUNTRIES.map(routeCard).join('')}</div>
+    <div class="seg" role="tablist" aria-label="${esc(t('routes.tabLabel'))}" data-i18n-aria="routes.tabLabel">${tabs}</div>
+    <div class="routepanels">${panels}</div>
     <p class="note" data-i18n="routes.note">${txt('routes.note')}</p>
   </div>
 </section>`;
@@ -210,14 +266,14 @@ function routesSection({ withHead = true } = {}) {
 function modesSection() {
   const card = (mode) => {
     const iconName = mode === 'air' ? 'plane' : 'truck';
-    return `<article class="mode mode--${mode} reveal">
-      <header>
-        <span class="mode__icon">${icon(iconName, 'icon')}</span>
+    return `<article class="ticket ticket--${mode} reveal">
+      <header class="ticket__head">
+        <span class="ticket__icon">${icon(iconName, 'icon')}</span>
         <span class="tag tag--light" data-i18n="modes.${mode}.tag">${txt(`modes.${mode}.tag`)}</span>
       </header>
       <h3 data-i18n="modes.${mode}.title">${txt(`modes.${mode}.title`)}</h3>
       <p data-i18n="modes.${mode}.desc">${txt(`modes.${mode}.desc`)}</p>
-      <dl class="mode__facts">
+      <dl class="ticket__facts">
         ${[1, 2, 3]
           .map(
             (i) => `<div><dt data-i18n="modes.${mode}.t${i}">${txt(`modes.${mode}.t${i}`)}</dt><dd data-i18n="modes.${mode}.t${i}label">${txt(`modes.${mode}.t${i}label`)}</dd></div>`,
@@ -229,7 +285,7 @@ function modesSection() {
   return `<section class="section section--alt" id="modes">
   <div class="container">
     ${sectionHead({ eyebrow: 'modes.eyebrow', title: 'modes.title', lead: 'modes.lead' })}
-    <div class="grid grid--2">${card('air')}${card('ground')}</div>
+    <div class="tickets">${card('air')}${card('ground')}</div>
   </div>
 </section>`;
 }
@@ -237,16 +293,17 @@ function modesSection() {
 function whyGrid() {
   const items = ['w1', 'w2', 'w3', 'w4', 'w5', 'w6']
     .map(
-      (k) => `<li class="feature reveal">
+      (k) => `<li class="gcard reveal">
       <h3 data-i18n="${k}.title">${txt(`${k}.title`)}</h3>
       <p data-i18n="${k}.desc">${txt(`${k}.desc`)}</p>
     </li>`,
     )
     .join('');
-  return `<section class="section" id="why">
+  return `<section class="section section--dark" id="why">
+  <div class="section__glow" aria-hidden="true"></div>
   <div class="container">
-    ${sectionHead({ eyebrow: 'why.eyebrow', title: 'why.title', lead: 'why.lead' })}
-    <ul class="features">${items}</ul>
+    ${sectionHeadDark({ eyebrow: 'why.eyebrow', title: 'why.title', lead: 'why.lead' })}
+    <ul class="gcards">${items}</ul>
   </div>
 </section>`;
 }
@@ -254,7 +311,8 @@ function whyGrid() {
 function audienceGrid() {
   const items = ['1', '2', '3', '4']
     .map(
-      (i) => `<article class="card card--plain reveal">
+      (i) => `<article class="acard reveal">
+      <span class="acard__num">${i}</span>
       <h3 data-i18n="aud.${i}.title">${txt(`aud.${i}.title`)}</h3>
       <p data-i18n="aud.${i}.desc">${txt(`aud.${i}.desc`)}</p>
     </article>`,
@@ -263,7 +321,7 @@ function audienceGrid() {
   return `<section class="section section--alt" id="audience">
   <div class="container">
     ${sectionHead({ eyebrow: 'aud.eyebrow', title: 'aud.title', lead: 'aud.lead' })}
-    <div class="grid grid--4">${items}</div>
+    <div class="acards">${items}</div>
   </div>
 </section>`;
 }
@@ -287,6 +345,7 @@ function calculatorBlock({ id = 'calculator', compact = false } = {}) {
   <div class="container">
     ${sectionHead({ eyebrow: 'calc.eyebrow', title: 'calc.title', lead: 'calc.lead' })}
     <div class="calc">
+      <div class="calc__col">
       <form class="calc__form" id="calcForm" novalidate>
         <div class="calc__fields">
           <label class="field"><span data-i18n="calc.length">${txt('calc.length')}</span><input type="number" id="calcLength" inputmode="decimal" min="1" step="0.1" autocomplete="off" required></label>
@@ -322,6 +381,7 @@ function calculatorBlock({ id = 'calculator', compact = false } = {}) {
           <button class="btn btn--ghost" type="button" id="calcPrint">${icon('doc', 'icon icon--sm')}<span data-i18n="calc.printBtn">${txt('calc.printBtn')}</span></button>
         </div>
       </div>
+      </div>
       <aside class="calc__side">
         <h3 data-i18n="calc.formulaTitle">${txt('calc.formulaTitle')}</h3>
         <p class="calc__formula" data-i18n="calc.formula">${txt('calc.formula')}</p>
@@ -354,8 +414,8 @@ function docsGrid() {
   const icons = { 1: 'doc', 2: 'box', 3: 'wallet', 4: 'clock', 5: 'shield' };
   const items = ['1', '2', '3', '4', '5']
     .map(
-      (i) => `<li class="doc reveal">
-      <span class="doc__icon">${icon(icons[i], 'icon')}</span>
+      (i) => `<li class="rail__item reveal">
+      <span class="rail__dot">${icon(icons[i], 'icon icon--sm')}</span>
       <h3 data-i18n="doc.${i}.title">${txt(`doc.${i}.title`)}</h3>
       <p data-i18n="doc.${i}.desc">${txt(`doc.${i}.desc`)}</p>
     </li>`,
@@ -364,7 +424,7 @@ function docsGrid() {
   return `<section class="section" id="documents">
   <div class="container">
     ${sectionHead({ eyebrow: 'docs.eyebrow', title: 'docs.title', lead: 'docs.lead' })}
-    <ul class="docs">${items}</ul>
+    <ul class="rail">${items}</ul>
   </div>
 </section>`;
 }
@@ -381,8 +441,28 @@ function faqSection({ keys, eyebrow = 'home.faq.eyebrow', title = 'home.faq.titl
   return `<section class="section${alt ? ' section--alt' : ''}" id="faq">
   <div class="container">
     ${sectionHead({ eyebrow, title, lead })}
-    <div class="faq">${items}</div>
-    ${more ? `<p class="section__more"><a class="link-arrow" href="${more.href}"><span data-i18n="${more.label}">${txt(more.label)}</span>${icon('arrow', 'icon icon--sm')}</a></p>` : ''}
+    <div class="faq-layout">
+      <div class="faq__col">
+        <div class="faq__tools">
+          <label class="search">
+            <span class="sr-only" data-i18n="faq.searchLabel">${txt('faq.searchLabel')}</span>
+            <span class="search__icon">${icon('search', 'icon icon--sm')}</span>
+            <input type="search" id="faqSearch" autocomplete="off"${ph('faq.searchPh')}>
+          </label>
+        </div>
+        <div class="faq">${items}</div>
+        <p class="faq__empty" id="faqEmpty" hidden data-i18n="faq.searchEmpty">${txt('faq.searchEmpty')}</p>
+      </div>
+      <aside class="faq__side">
+        <div class="faq-card">
+          <h3 data-i18n="contact.directTitle">${txt('contact.directTitle')}</h3>
+          <p data-i18n="contact.directDesc">${txt('contact.directDesc')}</p>
+          <a class="btn btn--primary btn--sm" href="${SITE.telegram}" target="_blank" rel="noopener">${icon('telegram', 'icon icon--sm')}<span data-i18n="ui.writeTg">${txt('ui.writeTg')}</span></a>
+          <a class="btn btn--ghost btn--sm" href="${SITE.whatsapp}" target="_blank" rel="noopener">${icon('whatsapp', 'icon icon--sm')}<span data-i18n="ui.writeWa">${txt('ui.writeWa')}</span></a>
+          ${more ? `<a class="link-arrow" href="${more.href}"><span data-i18n="${more.label}">${txt(more.label)}</span>${icon('arrow', 'icon icon--sm')}</a>` : ''}
+        </div>
+      </aside>
+    </div>
   </div>
 </section>`;
 }
@@ -514,7 +594,7 @@ function contactSection({ alt = false } = {}) {
 export function homePage() {
   return [
     hero(),
-    statsBand(),
+    mediaStrip(),
     servicesGrid(),
     processGrid(),
     routesSection(),
@@ -577,9 +657,9 @@ export function servicesPage() {
     `<section class="section section--alt" id="work">
       <div class="container">
         ${sectionHead({ eyebrow: 'svcpage.workEyebrow', title: 'svcpage.workTitle', lead: 'svcpage.workLead' })}
-        <ol class="steps steps--alt">${['p1', 'p2', 'p3', 'p4', 'p5', 'p6']
+        <ol class="timeline">${['p1', 'p2', 'p3', 'p4', 'p5', 'p6']
           .map(
-            (k, i) => `<li class="step reveal"><span class="step__num">${String(i + 1).padStart(2, '0')}</span><h3 data-i18n="${k}.title">${txt(`${k}.title`)}</h3><p data-i18n="${k}.desc">${txt(`${k}.desc`)}</p></li>`,
+            (k, i) => `<li class="timeline__item reveal"><span class="timeline__num">${String(i + 1).padStart(2, '0')}</span><div class="timeline__body"><h3 data-i18n="${k}.title">${txt(`${k}.title`)}</h3><p data-i18n="${k}.desc">${txt(`${k}.desc`)}</p></div></li>`,
           )
           .join('')}</ol>
       </div>

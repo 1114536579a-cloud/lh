@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n-doctitle="meta.terms.title">Условия обслуживания | LiHui Cargo</title>
 <meta name="description" content="Условия использования сайта и порядок оказания услуг закупки, проверки, консолидации и доставки грузов из Китая." data-i18n-desc="meta.terms.desc">
-<meta name="theme-color" content="#0b3d68">
+<meta name="theme-color" content="#2b2dc0">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.lihui-cargo.ru/terms">
-<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/brand/favicon.svg">
+<link rel="icon" href="assets/brand/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/logo.png">
 <link rel="manifest" href="site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LiHui International Logistics">
@@ -41,30 +41,25 @@
   </div>
 </div>
 <header class="header" id="header">
-  <div class="container header__inner">
-    <a class="brand" href="index.html" aria-label="LiHui International Logistics">
-      <svg class="brand__svg" viewBox="0 0 48 48" role="img" aria-label="LiHui Cargo">
-    <rect width="48" height="48" rx="12" fill="#0b3d68"/>
-    <path d="M11 31.5h18.5" stroke="#f0a63c" stroke-width="3" stroke-linecap="round"/>
-    <path d="M14.5 24.5h13.5" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".85"/>
-    <path d="M18 17.5h10" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".55"/>
-    <circle cx="34" cy="24" r="6.5" fill="none" stroke="#f0a63c" stroke-width="2.4"/>
-    <path d="M34 20.5v7m-3.5-3.5h7" stroke="#f0a63c" stroke-width="2.2" stroke-linecap="round"/>
-  </svg>
-      <span class="brand__text">
-        <strong data-i18n="brand.name">LiHui International Logistics</strong>
-        <small data-i18n="brand.sub">Закупка и доставка из Китая</small>
-      </span>
-    </a>
-    <nav class="nav" aria-label="Основная навигация" data-i18n-aria="nav.aria"><a href="services.html" data-i18n="nav.services">Услуги</a><a href="routes.html" data-i18n="nav.routes">Маршруты</a><a href="calculator.html" data-i18n="nav.calculator">Калькулятор</a><a href="about.html" data-i18n="nav.about">О компании</a><a href="contacts.html" data-i18n="nav.contacts">Контакты</a></nav>
-    <div class="header__side">
-      <div class="lang" role="group" aria-label="Язык сайта" data-i18n-aria="ui.langLabel">
+  <div class="container">
+    <div class="header__bar" id="headerBar">
+      <a class="brand" href="index.html" aria-label="LiHui International Logistics">
+        <img class="brand__logo" src="assets/brand/logo.png" width="46" height="46" alt="" aria-hidden="true" decoding="async">
+        <span class="brand__text">
+          <strong data-i18n="brand.name">LiHui International Logistics</strong>
+          <small data-i18n="brand.sub">Закупка и доставка из Китая</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация" data-i18n-aria="nav.aria"><a href="services.html" data-i18n="nav.services">Услуги</a><a href="routes.html" data-i18n="nav.routes">Маршруты</a><a href="calculator.html" data-i18n="nav.calculator">Калькулятор</a><a href="about.html" data-i18n="nav.about">О компании</a><a href="contacts.html" data-i18n="nav.contacts">Контакты</a></nav>
+      <div class="header__side">
+        <div class="lang" role="group" aria-label="Язык сайта" data-i18n-aria="ui.langLabel">
     <button type="button" data-lang="ru" aria-pressed="true">RU</button><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="zh" aria-pressed="false">中文</button>
   </div>
-      <a class="btn btn--primary btn--sm header__cta" href="contacts.html#request">
-        <span data-i18n="ui.requestQuote">Получить расчёт</span>
-      </a>
-      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Меню" data-i18n-aria="ui.menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <a class="btn btn--primary btn--sm header__cta" href="contacts.html#request">
+          <span data-i18n="ui.requestQuote">Получить расчёт</span>
+        </a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Меню" data-i18n-aria="ui.menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
     </div>
   </div>
   <nav class="drawer" id="drawer" aria-label="Основная навигация" data-i18n-aria="nav.aria" hidden>
@@ -111,14 +106,7 @@
   <div class="container footer__grid">
     <div class="footer__col footer__col--brand">
       <a class="brand brand--footer" href="index.html">
-        <svg class="brand__svg" viewBox="0 0 48 48" role="img" aria-label="LiHui Cargo">
-    <rect width="48" height="48" rx="12" fill="#0b3d68"/>
-    <path d="M11 31.5h18.5" stroke="#f0a63c" stroke-width="3" stroke-linecap="round"/>
-    <path d="M14.5 24.5h13.5" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".85"/>
-    <path d="M18 17.5h10" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".55"/>
-    <circle cx="34" cy="24" r="6.5" fill="none" stroke="#f0a63c" stroke-width="2.4"/>
-    <path d="M34 20.5v7m-3.5-3.5h7" stroke="#f0a63c" stroke-width="2.2" stroke-linecap="round"/>
-  </svg>
+        <img class="brand__logo brand__logo--footer" src="assets/brand/logo.png" width="46" height="46" alt="" aria-hidden="true" decoding="async">
         <span class="brand__text"><strong data-i18n="brand.name">LiHui International Logistics</strong><small data-i18n="footer.builtFor">Китай — Россия · Беларусь · Казахстан · Кыргызстан</small></span>
       </a>
       <p data-i18n="footer.desc">Закупка, проверка, консолидация и доставка из Китая в Россию, Беларусь, Казахстан и Кыргызстан — в одном сервисе.</p>

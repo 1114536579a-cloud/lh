@@ -316,6 +316,9 @@ export const en = {
 
   'faq.title': 'Frequently asked questions',
   'faq.lead': 'Sourcing, payment, inspection, consolidation, delivery and restrictions — collected in one place.',
+  'faq.searchLabel': 'Search the FAQ',
+  'faq.searchPh': 'Find an answer: payment, transit time, duties…',
+  'faq.searchEmpty': 'Nothing matched that query. Message us and we will answer personally.',
   'faq.q1': 'What do you need to prepare a quote?',
   'faq.a1': 'A product link or photo, quantity, approximate weight and packaging dimensions, and the destination city. The more precise the data, the faster and more accurate the quote. If dimensions are unknown, we estimate by product category and confirm after receiving at the warehouse.',
   'faq.q2': 'Can you combine goods from different shops?',

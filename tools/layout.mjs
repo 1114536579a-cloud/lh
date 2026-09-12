@@ -93,15 +93,12 @@ export function icon(name, cls = 'icon') {
   return body.replace('<svg', `<svg class="${cls}"`);
 }
 
-function brandMark() {
-  return `<svg class="brand__svg" viewBox="0 0 48 48" role="img" aria-label="${esc(SITE.brandShort)}">
-    <rect width="48" height="48" rx="12" fill="#0b3d68"/>
-    <path d="M11 31.5h18.5" stroke="#f0a63c" stroke-width="3" stroke-linecap="round"/>
-    <path d="M14.5 24.5h13.5" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".85"/>
-    <path d="M18 17.5h10" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".55"/>
-    <circle cx="34" cy="24" r="6.5" fill="none" stroke="#f0a63c" stroke-width="2.4"/>
-    <path d="M34 20.5v7m-3.5-3.5h7" stroke="#f0a63c" stroke-width="2.2" stroke-linecap="round"/>
-  </svg>`;
+/**
+ * Brand mark: the client-provided logo file is used as-is, never redrawn.
+ * It sits in a rounded frame so the square artwork aligns with the UI grid.
+ */
+function brandMark(cls = 'brand__logo') {
+  return `<img class="${cls}" src="assets/brand/logo.png" width="46" height="46" alt="" aria-hidden="true" decoding="async">`;
 }
 
 function langSwitch(cls = 'lang') {
@@ -142,21 +139,23 @@ export function header(active) {
 
   return `${topbar()}
 <header class="header" id="header">
-  <div class="container header__inner">
-    <a class="brand" href="index.html" aria-label="${esc(SITE.brand)}">
-      ${brandMark()}
-      <span class="brand__text">
-        <strong data-i18n="brand.name">${txt('brand.name')}</strong>
-        <small data-i18n="brand.sub">${txt('brand.sub')}</small>
-      </span>
-    </a>
-    <nav class="nav" aria-label="${esc(t('nav.aria'))}" data-i18n-aria="nav.aria">${links}</nav>
-    <div class="header__side">
-      ${langSwitch()}
-      <a class="btn btn--primary btn--sm header__cta" href="contacts.html#request">
-        <span data-i18n="ui.requestQuote">${txt('ui.requestQuote')}</span>
+  <div class="container">
+    <div class="header__bar" id="headerBar">
+      <a class="brand" href="index.html" aria-label="${esc(SITE.brand)}">
+        ${brandMark()}
+        <span class="brand__text">
+          <strong data-i18n="brand.name">${txt('brand.name')}</strong>
+          <small data-i18n="brand.sub">${txt('brand.sub')}</small>
+        </span>
       </a>
-      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="${esc(t('ui.menu'))}" data-i18n-aria="ui.menu">${icon('menu')}</button>
+      <nav class="nav" aria-label="${esc(t('nav.aria'))}" data-i18n-aria="nav.aria">${links}</nav>
+      <div class="header__side">
+        ${langSwitch()}
+        <a class="btn btn--primary btn--sm header__cta" href="contacts.html#request">
+          <span data-i18n="ui.requestQuote">${txt('ui.requestQuote')}</span>
+        </a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="${esc(t('ui.menu'))}" data-i18n-aria="ui.menu">${icon('menu')}</button>
+      </div>
     </div>
   </div>
   <nav class="drawer" id="drawer" aria-label="${esc(t('nav.aria'))}" data-i18n-aria="nav.aria" hidden>
@@ -214,7 +213,7 @@ export function footer() {
   <div class="container footer__grid">
     <div class="footer__col footer__col--brand">
       <a class="brand brand--footer" href="index.html">
-        ${brandMark()}
+        ${brandMark('brand__logo brand__logo--footer')}
         <span class="brand__text"><strong data-i18n="brand.name">${txt('brand.name')}</strong><small data-i18n="footer.builtFor">${txt('footer.builtFor')}</small></span>
       </a>
       <p data-i18n="footer.desc">${txt('footer.desc')}</p>
@@ -291,11 +290,11 @@ export function head({ page, titleKey, descKey, canonical, schemas = [] }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n-doctitle="${titleKey}">${esc(t(titleKey))}</title>
 <meta name="description" content="${esc(t(descKey))}" data-i18n-desc="${descKey}">
-<meta name="theme-color" content="#0b3d68">
+<meta name="theme-color" content="#2b2dc0">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${canonicalUrl}">
-<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/brand/favicon.svg">
+<link rel="icon" href="assets/brand/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/logo.png">
 <link rel="manifest" href="site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${esc(SITE.brand)}">

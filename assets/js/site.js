@@ -536,10 +536,69 @@
 
   function parallax() {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var media = $('.hero__media');
-    if (!media) return;
-    var offset = Math.min(90, (window.pageYOffset || 0) * 0.08);
-    media.style.transform = 'translate3d(0,' + offset + 'px,0)';
+    var y = Math.min(120, (window.pageYOffset || 0) * 0.09);
+    var first = $('.hero__blob--a');
+    var second = $('.hero__blob--b');
+    if (first) first.style.transform = 'translate3d(0,' + y + 'px,0)';
+    if (second) second.style.transform = 'translate3d(0,' + y * -0.55 + 'px,0)';
+  }
+
+  /** Segmented route explorer: country pills switch a single table panel. */
+  function initRouteTabs() {
+    var seg = $('.seg');
+    var panels = $$('.routepanel');
+    if (!seg || !panels.length) return;
+    var buttons = $$('.seg__btn', seg);
+    if (!buttons.length) return;
+
+    function activate(key) {
+      buttons.forEach(function (button) {
+        var on = button.getAttribute('data-country') === key;
+        button.classList.toggle('is-active', on);
+        button.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      panels.forEach(function (panel) {
+        panel.classList.toggle('is-active', panel.getAttribute('data-country') === key);
+      });
+      track('routes_tab', { country: key });
+    }
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        activate(button.getAttribute('data-country'));
+      });
+    });
+  }
+
+  /** Live FAQ filter — matches the visible answer text in the current language. */
+  function initFaqSearch() {
+    var input = $('#faqSearch');
+    if (!input) return;
+    var items = $$('.faq__item');
+    if (!items.length) return;
+    var empty = $('#faqEmpty');
+
+    function run(trackIt) {
+      var query = (input.value || '').trim().toLowerCase();
+      var visible = 0;
+      items.forEach(function (item) {
+        var match = !query || item.textContent.toLowerCase().indexOf(query) !== -1;
+        item.hidden = !match;
+        if (match) visible += 1;
+      });
+      if (empty) empty.hidden = visible !== 0;
+      if (trackIt && query) track('faq_search', { query: query, results: visible });
+    }
+
+    input.addEventListener('input', function () {
+      run(false);
+    });
+    input.addEventListener('change', function () {
+      run(true);
+    });
+    document.addEventListener('lh:lang', function () {
+      run(false);
+    });
   }
 
   function initReveal() {
@@ -686,11 +745,14 @@
   /* ------------------------------------------------------------------ boot */
 
   function boot() {
+    document.documentElement.classList.add('is-js');
     applyLang(initialLang(), { persist: false });
     initLangButtons();
     initNav();
     initScroll();
     initReveal();
+    initRouteTabs();
+    initFaqSearch();
     initCalculator();
     initQuoteForm();
     initRequestForm();

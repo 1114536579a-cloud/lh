@@ -219,9 +219,9 @@ function writeManifest() {
     description: 'Sourcing, consolidation and delivery from China to Russia, Belarus, Kazakhstan and Kyrgyzstan.',
     start_url: '/',
     display: 'browser',
-    background_color: '#f6f8fb',
-    theme_color: '#0b3d68',
-    icons: [{ src: '/assets/brand/favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
+    background_color: '#f4f5fd',
+    theme_color: '#2b2dc0',
+    icons: [{ src: '/assets/brand/logo.png', sizes: 'any', type: 'image/png', purpose: 'any' }],
   };
   fs.writeFileSync(path.join(root, 'site.webmanifest'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
 }
@@ -236,7 +236,10 @@ function main() {
 
   copyFile(path.join(srcDir, 'assets/css/styles.css'), path.join(root, 'assets/css/styles.css'));
   copyFile(path.join(srcDir, 'assets/js/site.js'), path.join(root, 'assets/js/site.js'));
-  copyFile(path.join(srcDir, 'assets/brand/favicon.svg'), path.join(root, 'assets/brand/favicon.svg'));
+  for (const name of ['logo.png', 'favicon.svg']) {
+    const from = path.join(srcDir, 'assets/brand', name);
+    if (fs.existsSync(from)) copyFile(from, path.join(root, 'assets/brand', name));
+  }
 
   // Raster assets (hero, portrait, QR codes) live in assets/img/ and are only
   // re-copied when a source copy exists, so a rebuild never deletes them.

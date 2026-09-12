@@ -4,13 +4,13 @@
   "description": "Sourcing, consolidation and delivery from China to Russia, Belarus, Kazakhstan and Kyrgyzstan.",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#f6f8fb",
-  "theme_color": "#0b3d68",
+  "background_color": "#f4f5fd",
+  "theme_color": "#2b2dc0",
   "icons": [
     {
-      "src": "/assets/brand/favicon.svg",
+      "src": "/assets/brand/logo.png",
       "sizes": "any",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any"
     }
   ]

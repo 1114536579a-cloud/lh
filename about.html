@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n-doctitle="meta.about.title">О компании LiHui Cargo — логистика между Китаем и русскоязычными рынками</title>
 <meta name="description" content="Закупка и доставка из Китая для магазинов, оптовиков, совместных закупок и частных клиентов. Один менеджер, прозрачные этапы, прямые маршруты в Россию, Беларусь, Казахстан и Кыргызстан." data-i18n-desc="meta.about.desc">
-<meta name="theme-color" content="#0b3d68">
+<meta name="theme-color" content="#2b2dc0">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.lihui-cargo.ru/about">
-<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/brand/favicon.svg">
+<link rel="icon" href="assets/brand/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/logo.png">
 <link rel="manifest" href="site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LiHui International Logistics">
@@ -41,30 +41,25 @@
   </div>
 </div>
 <header class="header" id="header">
-  <div class="container header__inner">
-    <a class="brand" href="index.html" aria-label="LiHui International Logistics">
-      <svg class="brand__svg" viewBox="0 0 48 48" role="img" aria-label="LiHui Cargo">
-    <rect width="48" height="48" rx="12" fill="#0b3d68"/>
-    <path d="M11 31.5h18.5" stroke="#f0a63c" stroke-width="3" stroke-linecap="round"/>
-    <path d="M14.5 24.5h13.5" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".85"/>
-    <path d="M18 17.5h10" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".55"/>
-    <circle cx="34" cy="24" r="6.5" fill="none" stroke="#f0a63c" stroke-width="2.4"/>
-    <path d="M34 20.5v7m-3.5-3.5h7" stroke="#f0a63c" stroke-width="2.2" stroke-linecap="round"/>
-  </svg>
-      <span class="brand__text">
-        <strong data-i18n="brand.name">LiHui International Logistics</strong>
-        <small data-i18n="brand.sub">Закупка и доставка из Китая</small>
-      </span>
-    </a>
-    <nav class="nav" aria-label="Основная навигация" data-i18n-aria="nav.aria"><a href="services.html" data-i18n="nav.services">Услуги</a><a href="routes.html" data-i18n="nav.routes">Маршруты</a><a href="calculator.html" data-i18n="nav.calculator">Калькулятор</a><a href="about.html" class="is-active" aria-current="page" data-i18n="nav.about">О компании</a><a href="contacts.html" data-i18n="nav.contacts">Контакты</a></nav>
-    <div class="header__side">
-      <div class="lang" role="group" aria-label="Язык сайта" data-i18n-aria="ui.langLabel">
+  <div class="container">
+    <div class="header__bar" id="headerBar">
+      <a class="brand" href="index.html" aria-label="LiHui International Logistics">
+        <img class="brand__logo" src="assets/brand/logo.png" width="46" height="46" alt="" aria-hidden="true" decoding="async">
+        <span class="brand__text">
+          <strong data-i18n="brand.name">LiHui International Logistics</strong>
+          <small data-i18n="brand.sub">Закупка и доставка из Китая</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация" data-i18n-aria="nav.aria"><a href="services.html" data-i18n="nav.services">Услуги</a><a href="routes.html" data-i18n="nav.routes">Маршруты</a><a href="calculator.html" data-i18n="nav.calculator">Калькулятор</a><a href="about.html" class="is-active" aria-current="page" data-i18n="nav.about">О компании</a><a href="contacts.html" data-i18n="nav.contacts">Контакты</a></nav>
+      <div class="header__side">
+        <div class="lang" role="group" aria-label="Язык сайта" data-i18n-aria="ui.langLabel">
     <button type="button" data-lang="ru" aria-pressed="true">RU</button><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="zh" aria-pressed="false">中文</button>
   </div>
-      <a class="btn btn--primary btn--sm header__cta" href="contacts.html#request">
-        <span data-i18n="ui.requestQuote">Получить расчёт</span>
-      </a>
-      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Меню" data-i18n-aria="ui.menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <a class="btn btn--primary btn--sm header__cta" href="contacts.html#request">
+          <span data-i18n="ui.requestQuote">Получить расчёт</span>
+        </a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Меню" data-i18n-aria="ui.menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
     </div>
   </div>
   <nav class="drawer" id="drawer" aria-label="Основная навигация" data-i18n-aria="nav.aria" hidden>
@@ -175,24 +170,24 @@
 <h2 class="h2" data-i18n="docs.title">Что вы получаете по ходу заказа</h2>
 <p class="lead" data-i18n="docs.lead">Документы, подтверждения и отчётность по каждому этапу — без устных договорённостей «на словах».</p>
 </div>
-    <ul class="docs"><li class="doc reveal">
-      <span class="doc__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M7 3h7l4 4v14H7V3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M10 12h5m-5 4h5"/></svg></span>
+    <ul class="rail"><li class="rail__item reveal">
+      <span class="rail__dot"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M7 3h7l4 4v14H7V3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M10 12h5m-5 4h5"/></svg></span>
       <h3 data-i18n="doc.1.title">Расчёт до закупки</h3>
       <p data-i18n="doc.1.desc">Стоимость товара, услуг и доставки подтверждается письменно до оплаты.</p>
-    </li><li class="doc reveal">
-      <span class="doc__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="m12 3 8 4.2v9.6L12 21l-8-4.2V7.2L12 3Zm0 0v9m8-4.8-8 4.8m-8-4.8 8 4.8"/></svg></span>
+    </li><li class="rail__item reveal">
+      <span class="rail__dot"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="m12 3 8 4.2v9.6L12 21l-8-4.2V7.2L12 3Zm0 0v9m8-4.8-8 4.8m-8-4.8 8 4.8"/></svg></span>
       <h3 data-i18n="doc.2.title">Фотоотчёт со склада</h3>
       <p data-i18n="doc.2.desc">Фото и видео приёмки, сверка количества и упаковки перед отправкой.</p>
-    </li><li class="doc reveal">
-      <span class="doc__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M3 10h18M16 14h2"/></svg></span>
+    </li><li class="rail__item reveal">
+      <span class="rail__dot"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M3 10h18M16 14h2"/></svg></span>
       <h3 data-i18n="doc.3.title">Документы по оплате</h3>
       <p data-i18n="doc.3.desc">Подтверждения оплаты поставщику и сводный расчёт по вашему заказу.</p>
-    </li><li class="doc reveal">
-      <span class="doc__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M12 7v5l3 2"/><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></span>
+    </li><li class="rail__item reveal">
+      <span class="rail__dot"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M12 7v5l3 2"/><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></span>
       <h3 data-i18n="doc.4.title">Статус отправления</h3>
       <p data-i18n="doc.4.desc">Информация о маршруте и этапе груза в Telegram или WhatsApp.</p>
-    </li><li class="doc reveal">
-      <span class="doc__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></svg></span>
+    </li><li class="rail__item reveal">
+      <span class="rail__dot"><svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></svg></span>
       <h3 data-i18n="doc.5.title">Условия и ответственность</h3>
       <p data-i18n="doc.5.desc">Порядок работы, ограничения по грузам и ответственность сторон фиксируются заранее.</p>
     </li></ul>
@@ -219,14 +214,7 @@
   <div class="container footer__grid">
     <div class="footer__col footer__col--brand">
       <a class="brand brand--footer" href="index.html">
-        <svg class="brand__svg" viewBox="0 0 48 48" role="img" aria-label="LiHui Cargo">
-    <rect width="48" height="48" rx="12" fill="#0b3d68"/>
-    <path d="M11 31.5h18.5" stroke="#f0a63c" stroke-width="3" stroke-linecap="round"/>
-    <path d="M14.5 24.5h13.5" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".85"/>
-    <path d="M18 17.5h10" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity=".55"/>
-    <circle cx="34" cy="24" r="6.5" fill="none" stroke="#f0a63c" stroke-width="2.4"/>
-    <path d="M34 20.5v7m-3.5-3.5h7" stroke="#f0a63c" stroke-width="2.2" stroke-linecap="round"/>
-  </svg>
+        <img class="brand__logo brand__logo--footer" src="assets/brand/logo.png" width="46" height="46" alt="" aria-hidden="true" decoding="async">
         <span class="brand__text"><strong data-i18n="brand.name">LiHui International Logistics</strong><small data-i18n="footer.builtFor">Китай — Россия · Беларусь · Казахстан · Кыргызстан</small></span>
       </a>
       <p data-i18n="footer.desc">Закупка, проверка, консолидация и доставка из Китая в Россию, Беларусь, Казахстан и Кыргызстан — в одном сервисе.</p>
