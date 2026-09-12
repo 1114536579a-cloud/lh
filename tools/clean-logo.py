@@ -1,6 +1,6 @@
 from collections import deque
 from pathlib import Path
-from PIL import Image
+from PIL import Image, ImageDraw
 import colorsys
 import shutil
 
@@ -23,6 +23,9 @@ def main():
         shutil.copy2(SOURCE, BACKUP)
 
     image = Image.open(BACKUP).convert("RGBA")
+    # The purple mark occupies this square in the supplied browser crop.
+    # Crop one extra anti-aliased screenshot pixel on every side.
+    image = image.crop((4, 2, 50, 48))
     width, height = image.size
     pixels = image.load()
     queue = deque()
@@ -56,6 +59,9 @@ def main():
     if not box:
         raise RuntimeError("Logo cleanup removed all pixels")
     cleaned = image.crop(box)
+    mask = Image.new("L", cleaned.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, cleaned.width - 1, cleaned.height - 1), radius=8, fill=255)
+    cleaned.putalpha(Image.composite(cleaned.getchannel("A"), Image.new("L", cleaned.size, 0), mask))
     cleaned.save(SOURCE, optimize=True)
     print(f"cleaned {width}x{height} -> {cleaned.width}x{cleaned.height}; transparent pixels={len(seen)}")
 

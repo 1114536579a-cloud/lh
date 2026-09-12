@@ -143,10 +143,6 @@ export function header(active) {
     <div class="header__bar" id="headerBar">
       <a class="brand" href="index.html" aria-label="${esc(SITE.brand)}">
         ${brandMark()}
-        <span class="brand__text">
-          <strong data-i18n="brand.name">${txt('brand.name')}</strong>
-          <small data-i18n="brand.sub">${txt('brand.sub')}</small>
-        </span>
       </a>
       <nav class="nav" aria-label="${esc(t('nav.aria'))}" data-i18n-aria="nav.aria">${links}</nav>
       <div class="header__side">
@@ -296,10 +292,10 @@ export function head({ page, titleKey, descKey, canonical, schemas = [] }) {
 <meta name="twitter:description" content="${esc(t(descKey))}" data-i18n-twdesc="${descKey}">
 <meta name="twitter:image" content="${SITE.origin}/assets/hero.jpg">
 <meta name="format-detection" content="telephone=no">
-<link rel="stylesheet" href="assets/css/styles.css?v=20260913-7">
+<link rel="stylesheet" href="assets/css/styles.css?v=20260913-8">
 <script type="application/ld+json">${JSON.stringify(allSchemas.length === 1 ? allSchemas[0] : allSchemas)}</script>
-<script defer src="assets/js/i18n.js?v=20260913-7"></script>
-<script defer src="assets/js/site.js?v=20260913-7"></script>
+<script defer src="assets/js/i18n.js?v=20260913-8"></script>
+<script defer src="assets/js/site.js?v=20260913-8"></script>
 </head>
 <body data-page="${page}">
 <a class="skip" href="#main" data-i18n="ui.skipLink">${txt('ui.skipLink')}</a>`;
