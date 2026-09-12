@@ -1760,6 +1760,19 @@ body { background: var(--bg); background-image: none; letter-spacing: -.005em; }
 .media-strip__grid { display:block; }
 .media-strip .stat-tiles { width:100%; }
 
+/* Calm B2B finish: fewer competing controls and tighter reading rhythm. */
+.header__bar,.header.is-stuck .header__bar { min-height:72px; }
+.brand__logo { width:46px; height:46px; border-radius:0; }
+.brand__logo--footer { width:42px; height:42px; }
+.pagehead { padding:60px 0 66px; }
+.pagehead .h1 { font-size:clamp(36px,3.35vw,50px); max-width:1040px; }
+.section__head { display:block; max-width:780px; }
+.section__head .lead { margin-top:12px; }
+.float { gap:8px; }
+.float__btn { width:48px; height:48px; border-radius:12px; }
+.card,.bcard,.svc,.routecard,.calc__form,.calc__result,.calc__side,.faq__item,.faq-card,.channel,.ceo,.qr,.form,.track { transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease; }
+.card:hover,.channel:hover { transform:none; box-shadow:0 12px 30px rgba(7,26,45,.08); }
+
 @media (max-width:1100px) {
   .quote-bar__inner { grid-template-columns:1fr; }
   .quote-bar__head { padding:25px 0 18px; border-right:0; border-bottom:1px solid var(--line); }
@@ -1774,6 +1787,9 @@ body { background: var(--bg); background-image: none; letter-spacing: -.005em; }
 @media (max-width:780px) {
   .quote-bar .hero__panel .quote { padding:20px 0 26px; }
   .quote-bar__head { padding-top:22px; }
+  .header__bar,.header.is-stuck .header__bar { min-height:64px; }
+  .brand__logo { width:42px; height:42px; }
+  .pagehead { padding:46px 0 52px; }
 }
 
 @media (max-width:520px) {

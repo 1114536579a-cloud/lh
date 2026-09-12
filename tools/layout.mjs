@@ -174,18 +174,6 @@ export function floating() {
   return `<div class="float">
   <a class="float__btn float__btn--wa" href="${SITE.whatsapp}" target="_blank" rel="noopener" aria-label="${esc(t('ui.writeWa'))}" data-i18n-aria="ui.writeWa" title="${esc(t('ui.writeWa'))}" data-i18n-title="ui.writeWa">${icon('whatsapp', 'icon')}</a>
   <a class="float__btn float__btn--tg" href="${SITE.telegram}" target="_blank" rel="noopener" aria-label="${esc(t('ui.writeTg'))}" data-i18n-aria="ui.writeTg" title="${esc(t('ui.writeTg'))}" data-i18n-title="ui.writeTg">${icon('telegram', 'icon')}</a>
-  <button class="float__btn" id="favoriteToggle" type="button" aria-pressed="false" aria-label="${esc(t('ui.favorite'))}" data-i18n-aria="ui.favorite" title="${esc(t('ui.favorite'))}" data-i18n-title="ui.favorite">${icon('star')}</button>
-  <button class="float__btn" id="shareToggle" type="button" aria-expanded="false" aria-controls="sharePanel" aria-label="${esc(t('ui.share'))}" data-i18n-aria="ui.share" title="${esc(t('ui.share'))}" data-i18n-title="ui.share">${icon('share')}</button>
-  <button class="float__btn float__btn--top" id="toTop" type="button" aria-label="${esc(t('ui.top'))}" data-i18n-aria="ui.top" title="${esc(t('ui.top'))}" data-i18n-title="ui.top">${icon('up')}</button>
-</div>
-<div class="share-panel" id="sharePanel" hidden>
-  <p data-i18n="ui.shareTitle">${txt('ui.shareTitle')}</p>
-  <div class="share-panel__row">
-    <a href="#" data-share="telegram" target="_blank" rel="noopener">${icon('telegram', 'icon icon--sm')}<span data-i18n="ui.shareTg">${txt('ui.shareTg')}</span></a>
-    <a href="#" data-share="whatsapp" target="_blank" rel="noopener">${icon('whatsapp', 'icon icon--sm')}<span data-i18n="ui.shareWa">${txt('ui.shareWa')}</span></a>
-    <a href="#" data-share="vk" target="_blank" rel="noopener"><span data-i18n="ui.shareVk">${txt('ui.shareVk')}</span></a>
-    <button type="button" id="copyShareBtn"><span data-i18n="ui.copy">${txt('ui.copy')}</span></button>
-  </div>
 </div>
 <div class="mobilebar">
   <a href="tel:${esc(SITE.phone)}" aria-label="${esc(t('ui.call'))}" data-i18n-aria="ui.call">${icon('phone', 'icon icon--sm')}<span data-i18n="ui.call">${txt('ui.call')}</span></a>
@@ -308,10 +296,10 @@ export function head({ page, titleKey, descKey, canonical, schemas = [] }) {
 <meta name="twitter:description" content="${esc(t(descKey))}" data-i18n-twdesc="${descKey}">
 <meta name="twitter:image" content="${SITE.origin}/assets/hero.jpg">
 <meta name="format-detection" content="telephone=no">
-<link rel="stylesheet" href="assets/css/styles.css?v=20260913-6">
+<link rel="stylesheet" href="assets/css/styles.css?v=20260913-7">
 <script type="application/ld+json">${JSON.stringify(allSchemas.length === 1 ? allSchemas[0] : allSchemas)}</script>
-<script defer src="assets/js/i18n.js?v=20260913-6"></script>
-<script defer src="assets/js/site.js?v=20260913-6"></script>
+<script defer src="assets/js/i18n.js?v=20260913-7"></script>
+<script defer src="assets/js/site.js?v=20260913-7"></script>
 </head>
 <body data-page="${page}">
 <a class="skip" href="#main" data-i18n="ui.skipLink">${txt('ui.skipLink')}</a>`;

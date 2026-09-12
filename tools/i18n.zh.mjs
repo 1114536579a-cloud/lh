@@ -94,7 +94,7 @@ export const zh = {
   'home.card.note': '仅在工作时间回复，且只针对您的主动咨询，不会无故来电。',
 
   'stat.air.value': '2–4',
-  'stat.air.label': '天空运到莫斯科',
+  'stat.air.label': '天 · 空运到莫斯科',
   'stat.countries.value': '4',
   'stat.countries.label': '个配送国家',
   'stat.steps.value': '6',
