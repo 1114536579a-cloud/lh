@@ -474,7 +474,7 @@ export const zh = {
   'footer.faq': '常见问题',
   'footer.calc': '运费计算器',
   'footer.routes': '线路与时效',
-  'footer.rights': '© 2026 LiHui International Logistics 保留所有权利。',
+  'footer.rights': '© 2026 LiHui Cargo 保留所有权利。',
   'footer.note': '网站内容仅供参考，最终线路、时效与费用以报价确认为准。',
   'footer.ctaTitle': '今天就需要报价？',
   'footer.ctaBtn': 'Telegram 咨询',

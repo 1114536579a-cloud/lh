@@ -4,7 +4,7 @@
  */
 
 export const SITE = {
-  brand: 'LiHui International Logistics',
+  brand: 'LiHui Cargo',
   brandShort: 'LiHui Cargo',
   domain: 'lihui-cargo.ru',
   origin: 'https://www.lihui-cargo.ru',

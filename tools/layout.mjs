@@ -1,10 +1,9 @@
 import { ru } from './i18n.ru.mjs';
-import { en } from './i18n.en.mjs';
 import { zh } from './i18n.zh.mjs';
 import { SITE, NAV } from './site.data.mjs';
 
-export const DICTS = { ru, en, zh };
-export const LANGS = ['ru', 'en', 'zh'];
+export const DICTS = { ru, zh };
+export const LANGS = ['ru', 'zh'];
 
 /** Look up a string; throws so a typo can never ship an empty label. */
 export function t(key, lang = 'ru') {
@@ -102,7 +101,7 @@ function brandMark(cls = 'brand__logo') {
 }
 
 function langSwitch(cls = 'lang') {
-  const labels = { ru: 'RU', en: 'EN', zh: '中文' };
+  const labels = { ru: 'RU', zh: '中文' };
   return `<div class="${cls}" role="group" aria-label="${esc(t('ui.langLabel'))}" data-i18n-aria="ui.langLabel">
     ${LANGS.map(
       (lang) =>
@@ -236,12 +235,12 @@ export function orgSchema() {
     name: SITE.brand,
     url: `${SITE.origin}/`,
     description:
-      'Sourcing, payment, inspection, consolidation and cross-border delivery from China to Russia, Belarus, Kazakhstan and Kyrgyzstan.',
+      'Закупка, оплата, проверка, консолидация и доставка грузов из Китая в Россию и страны СНГ.',
     areaServed: ['RU', 'BY', 'KZ', 'KG', 'CN'],
-    knowsLanguage: ['ru', 'en', 'zh'],
+    knowsLanguage: ['ru', 'zh'],
     contactPoint: [
-      { '@type': 'ContactPoint', contactType: 'customer service', telephone: SITE.phone, availableLanguage: ['ru', 'en', 'zh'] },
-      { '@type': 'ContactPoint', contactType: 'sales', url: SITE.telegram, availableLanguage: ['ru', 'en', 'zh'] },
+      { '@type': 'ContactPoint', contactType: 'customer service', telephone: SITE.phone, availableLanguage: ['ru', 'zh'] },
+      { '@type': 'ContactPoint', contactType: 'sales', url: SITE.telegram, availableLanguage: ['ru', 'zh'] },
     ],
     sameAs: [SITE.telegram, SITE.whatsapp],
   };
@@ -274,7 +273,7 @@ export function head({ page, titleKey, descKey, canonical, schemas = [] }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n-doctitle="${titleKey}">${esc(t(titleKey))}</title>
 <meta name="description" content="${esc(t(descKey))}" data-i18n-desc="${descKey}">
-<meta name="theme-color" content="#2b2dc0">
+<meta name="theme-color" content="#071a2d">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${canonicalUrl}">
 <link rel="icon" href="assets/brand/logo.png" type="image/png">
@@ -285,17 +284,17 @@ export function head({ page, titleKey, descKey, canonical, schemas = [] }) {
 <meta property="og:title" content="${esc(t(titleKey))}" data-i18n-ogtitle="${titleKey}">
 <meta property="og:description" content="${esc(t(descKey))}" data-i18n-ogdesc="${descKey}">
 <meta property="og:url" content="${canonicalUrl}">
-<meta property="og:image" content="${SITE.origin}/assets/hero.jpg">
+<meta property="og:image" content="${SITE.origin}/assets/img/hero.jpg">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(t(titleKey))}" data-i18n-twtitle="${titleKey}">
 <meta name="twitter:description" content="${esc(t(descKey))}" data-i18n-twdesc="${descKey}">
-<meta name="twitter:image" content="${SITE.origin}/assets/hero.jpg">
+<meta name="twitter:image" content="${SITE.origin}/assets/img/hero.jpg">
 <meta name="format-detection" content="telephone=no">
-<link rel="stylesheet" href="assets/css/styles.css?v=20260913-8">
+<link rel="stylesheet" href="assets/css/styles.css?v=20260914-1">
 <script type="application/ld+json">${JSON.stringify(allSchemas.length === 1 ? allSchemas[0] : allSchemas)}</script>
-<script defer src="assets/js/i18n.js?v=20260913-8"></script>
-<script defer src="assets/js/site.js?v=20260913-8"></script>
+<script defer src="assets/js/i18n.js?v=20260914-1"></script>
+<script defer src="assets/js/site.js?v=20260914-1"></script>
 </head>
 <body data-page="${page}">
 <a class="skip" href="#main" data-i18n="ui.skipLink">${txt('ui.skipLink')}</a>`;

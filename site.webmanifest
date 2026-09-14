@@ -1,11 +1,11 @@
 {
-  "name": "LiHui International Logistics",
+  "name": "LiHui Cargo",
   "short_name": "LiHui Cargo",
-  "description": "Sourcing, consolidation and delivery from China to Russia, Belarus, Kazakhstan and Kyrgyzstan.",
+  "description": "Закупка, консолидация и доставка грузов из Китая в Россию и страны СНГ.",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#f4f5fd",
-  "theme_color": "#2b2dc0",
+  "background_color": "#e9eff3",
+  "theme_color": "#071a2d",
   "icons": [
     {
       "src": "/assets/brand/logo.png",

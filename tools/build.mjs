@@ -38,8 +38,8 @@ const PAGES = [
       {
         '@context': 'https://schema.org',
         '@type': 'Service',
-        name: 'China sourcing, inspection, consolidation and delivery',
-        serviceType: 'Cross-border logistics',
+        name: 'Закупка, проверка, консолидация и доставка грузов из Китая',
+        serviceType: 'Международная логистика',
         provider: { '@type': 'Organization', name: SITE.brand, url: `${SITE.origin}/` },
         areaServed: ['RU', 'BY', 'KZ', 'KG'],
       },
@@ -99,7 +99,7 @@ const PAGES = [
       {
         '@context': 'https://schema.org',
         '@type': 'ContactPage',
-        name: 'LiHui Cargo contacts',
+        name: 'Контакты LiHui Cargo',
         url: `${SITE.origin}/contacts.html`,
       },
     ],
@@ -216,11 +216,11 @@ function writeManifest() {
   const manifest = {
     name: SITE.brand,
     short_name: SITE.brandShort,
-    description: 'Sourcing, consolidation and delivery from China to Russia, Belarus, Kazakhstan and Kyrgyzstan.',
+    description: 'Закупка, консолидация и доставка грузов из Китая в Россию и страны СНГ.',
     start_url: '/',
     display: 'browser',
-    background_color: '#f4f5fd',
-    theme_color: '#2b2dc0',
+    background_color: '#e9eff3',
+    theme_color: '#071a2d',
     icons: [{ src: '/assets/brand/logo.png', sizes: 'any', type: 'image/png', purpose: 'any' }],
   };
   fs.writeFileSync(path.join(root, 'site.webmanifest'), `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
@@ -263,7 +263,7 @@ function main() {
     if (page.crumbs && page.crumbs.length) {
       schemas.push(
         breadcrumbSchema(
-          [{ name: 'Home', path: '' }].concat(page.crumbs.map((key, index) => ({ name: DICTS.ru[key], path: page.canonical }))).slice(0, 2),
+          [{ name: 'Главная', path: '' }].concat(page.crumbs.map((key, index) => ({ name: DICTS.ru[key], path: page.canonical }))).slice(0, 2),
         ),
       );
     }

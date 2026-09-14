@@ -12,7 +12,7 @@
   var FAV_KEY = 'lh-fav';
   var COOKIE_KEY = 'lh-notice';
   var HTML_KEYS = { 'home.title': 1 };
-  var langs = ['ru', 'en', 'zh'];
+  var langs = ['ru', 'zh'];
 
   var site = CONFIG.site || {};
   var modes = CONFIG.modes || { air: { divisor: 6000 }, ground: { divisor: 6000 } };
@@ -150,9 +150,8 @@
     if (fromUrl && langs.indexOf(fromUrl) !== -1) return fromUrl;
     var saved = store(LANG_KEY);
     if (saved && langs.indexOf(saved) !== -1) return saved;
-    var browser = (navigator.language || '').toLowerCase();
-    if (browser.indexOf('zh') === 0) return 'zh';
-    if (browser.indexOf('en') === 0) return 'en';
+    // Russian is the market language. Browser locale must never override it;
+    // only an explicit URL or a prior RU/ZH selection can do so.
     return 'ru';
   }
 
