@@ -101,7 +101,7 @@ function brandMark(cls = 'brand__logo') {
 }
 
 function langSwitch(cls = 'lang') {
-  const labels = { ru: 'RU', zh: '中文' };
+  const labels = { ru: 'RU', zh: 'CN' };
   return `<div class="${cls}" role="group" aria-label="${esc(t('ui.langLabel'))}" data-i18n-aria="ui.langLabel">
     ${LANGS.map(
       (lang) =>
@@ -291,10 +291,10 @@ export function head({ page, titleKey, descKey, canonical, schemas = [] }) {
 <meta name="twitter:description" content="${esc(t(descKey))}" data-i18n-twdesc="${descKey}">
 <meta name="twitter:image" content="${SITE.origin}/assets/img/hero.jpg">
 <meta name="format-detection" content="telephone=no">
-<link rel="stylesheet" href="assets/css/styles.css?v=20260914-1">
+<link rel="stylesheet" href="assets/css/styles.css?v=20260914-2">
 <script type="application/ld+json">${JSON.stringify(allSchemas.length === 1 ? allSchemas[0] : allSchemas)}</script>
-<script defer src="assets/js/i18n.js?v=20260914-1"></script>
-<script defer src="assets/js/site.js?v=20260914-1"></script>
+<script defer src="assets/js/i18n.js?v=20260914-2"></script>
+<script defer src="assets/js/site.js?v=20260914-2"></script>
 </head>
 <body data-page="${page}">
 <a class="skip" href="#main" data-i18n="ui.skipLink">${txt('ui.skipLink')}</a>`;
